@@ -1,0 +1,16 @@
+<div class="form-group row"  style="margin-top: 10px;">
+  <label class="control-label col-sm-4 add-member-label" >Select Order Statuses:&nbsp; </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+  
+    <mat-checkbox  class="col-sm-4" [checked]="true" >Status1</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true">Status2</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true">Status3</mat-checkbox>
+    <mat-checkbox  class="col-sm-4">Status4</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Status5</mat-checkbox>
+    
+  </div>
+  <mat-dialog-actions align="end" style="margin-left: 68%;">
+    <button mat-raised-button class="btn-primary" (click)="close()">Save</button>
+    <button mat-raised-button class="CancelClass" (click)="close()">Cancel</button>
+  </mat-dialog-actions>
+  </div>

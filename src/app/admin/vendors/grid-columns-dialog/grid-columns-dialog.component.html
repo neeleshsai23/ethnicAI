@@ -1,0 +1,31 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4" [checked]="true" >Support</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >Vendor Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >Vendor Group</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >Contact Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >Contact Number</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >Contact Email ID</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >GSTIN</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >Countries</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true" >Product Categories</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true" >View Page</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true" >Preview Products</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true" >Commission Categories</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true" >Order Statuses</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true" >Menu Options</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true" >Status</mat-checkbox>
+   
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()">Configure</button>
+  <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
+</mat-dialog-actions>
+

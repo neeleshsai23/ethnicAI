@@ -1,0 +1,66 @@
+<div class="row" style="margin-top:20px;">
+  <div class="col-xs-6 ">
+  </div>
+  <div class="col-xs-6 ">
+      <div class="flex-p">
+          <button mat-raised-button class="pull-right  btn-primary" (click)="openCollectionDialog()" >
+              <mat-icon>add</mat-icon> Add Collection
+          </button>
+          <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+            Bulk Upload (CSV or XCEL)
+          </button>
+          <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+              Download Sample
+          </button>
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+         >
+          <mat-icon>filter_list</mat-icon> Filter
+      </button>
+      
+  </div>
+  
+</div>
+</div>
+<div class="row" style="margin-top:20px">
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th >SKU#</th>
+                      <th >Product Category</th>
+                      <th >Product Name</th>
+                      <th class="text-center" >Product Features</th>
+                      <th class="text-center">Pricing</th>
+                      <th class="text-center">Inventory</th>
+                      <th class="text-center">Images</th>
+                      <th class="text-center">Status</th>
+                      <th class="text-center">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let value of values">
+                    <td><a>{{value.sku}}</a></td>
+                    <td>{{value.category}}</td>
+                    <td>{{value.product}}</td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openFeaturesDialog()" >{{value.features}}</a></td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openPricingDialog()" >{{value.pricing}}</a></td>
+                    <td class="text-center">{{value.inventory}}</td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;">{{value.images}}</a></td>
+                    <td [ngStyle]="{'color': value.status=='Active'? 'rgb(72, 158, 19)' : 'red'}" style="text-align: center !important;">
+                        {{value.status}}
+                    </td>
+                      
+                    <td  class="text-center">
+                        <a style="cursor: pointer;"  >
+                            <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                        </a>
+                        <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+                    </td> 
+                  </tr>
+  
+              </tbody>
+          </table>
+        </div>
+    </div>
+</div>

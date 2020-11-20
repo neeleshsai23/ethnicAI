@@ -1,0 +1,71 @@
+<div class="row" style="margin-top:20px;">
+  <div class="col-xs-6 ">
+  </div>
+  <div class="col-xs-6 ">
+      <div class="flex-p">
+          <button mat-raised-button class="pull-right  btn-primary" (click)="openVendorDialog()">
+              <mat-icon>add</mat-icon> Onboard Vendor
+          </button>
+          <button mat-raised-button  class="pull-right  btn-primary margin-right-10" (click)="openGridColumnsDialog()">
+              <mat-icon>grid_on</mat-icon>Grid Columns
+          </button>
+      </div>
+  </div>
+</div>
+<div class="row" style="margin-top:20px">
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th >Support</th>
+                      <th >Vendor Name</th>
+                      <th >Vendor Group</th>
+                      <th >Contact Name</th>
+                      <th >Contact Number</th>
+                      <th >Contact Email ID</th>
+                      <th >GSTIN</th>
+                      <th class="text-center">Countries</th>
+                      <th class="text-center">Product Categories</th>
+                      <th class="text-center">View Page</th>
+                      <th class="text-center">Preview Products</th>
+                      <th class="text-center">Commission Categories</th>
+                      <th class="text-center">Order Statuses</th>
+                      <th class="text-center">Menu Options</th>
+                      <th class="text-center">Status</th>
+                      <th class="text-center">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let value of values">
+                    <td><a style="color:red">{{value.support}}</a></td>
+                    <td>{{value.vendor}}</td>
+                    <td>{{value.group}}</td>
+                    <td>{{value.name}}</td>
+                    <td>{{value.number}}</td>
+                    <td>{{value.email}}</td>
+                    <td>{{value.gst}}</td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;"(click)="openCountriesDialog()">{{value.countries}}</a></td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openCategoriesDialog()">{{value.categories}}</a></td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;" target="_blank" routerLink="/"><mat-icon>visibility</mat-icon></a></td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;" target="_blank" routerLink="/">{{value.products}}</a></td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;">Add</a></td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openStatusesDialog()">{{value.statuses}}</a></td>
+                    <td class="text-center">-</td>
+                    <td [ngStyle]="{'color': value.status=='Active'? 'rgb(72, 158, 19)' : value.status == 'Inactive'? 'red': 'rgba(100,100,100,1)'}" style="text-align: center !important;">
+                        {{value.status}}
+                    </td>
+                      
+                    <td  class="text-center">
+                        <a style="cursor: pointer;"  >
+                            <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                        </a>
+                        <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+                    </td> 
+                  </tr>
+  
+              </tbody>
+          </table>
+        </div>
+    </div>
+</div>

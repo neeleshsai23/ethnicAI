@@ -1,0 +1,224 @@
+<div id="country-dialog" style="background: rgb(68,68,68);height:60px">
+  <div style="margin-top: 7px;margin-right: 20px;">
+    <p style="color: rgba(230,230,230,1);">Choose another country or region to see content specify to you location</p>
+  </div>
+  <div style="margin-left:10px">
+    <select style="width:200px;border-radius:5px;padding:5px 8px;background:rgb(88, 87, 87);color: white;">
+      <option>Australia</option>
+      <option>U.A.E</option>
+      <option>UK</option>
+      <option>Canada</option>
+      <option>USA</option>
+    </select>
+  </div>
+  <div>
+    <button style="padding:5px 10px;border:none;border-radius:5px;margin-left:10px;background:linear-gradient(#42a1ec, #0070c9);color: white;" (click)="closeDialog()">Continue</button>
+  </div>
+  <div style="margin-top: 7px;">
+    <button style="background: rgb(68,68,68);border: none;outline: none;margin-left:10px" (click)="closeDialog()"><mat-icon style="color: white;">close</mat-icon></button>
+  </div>
+</div>
+
+<div id="search-mobile">
+  <div>
+    <input type="text" class="form-control" />
+    <button style="padding:5px 10px;border:none;border-radius:5px;margin-left:10px;background:linear-gradient(#42a1ec, #0070c9);color: white;">Search</button>
+  </div>  
+</div>
+<nav fxLayout="row" fxLayoutAlign="space-between center">
+  <a class="menu-phone" style="cursor: pointer;"><mat-icon style="color: black;" (click)="viewCategories()">menu</mat-icon></a>
+  
+  <div fxLayout="row" fxLayoutAlign="center center" class="logo">
+    <img src="../../assets/images/logo_ai.png"/>
+  </div>
+  <div class="search" >
+    <input type="text" class="inputSearch"/>
+    <button style="padding:5px 10px;border:none;border-radius:5px;margin-left:10px;background:linear-gradient(#42a1ec, #0070c9);color: white;">Search</button>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:10px">
+    <div *ngIf="!loggedIn" fxLayout="column" fxLayoutAlign="center center" class="icons" (click)="gotoLogin()">
+      <mat-icon>login</mat-icon>
+      <p>Login</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="icons">
+      <mat-icon>favorite_border</mat-icon>
+      <p>Favourites</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="icons">
+      <mat-icon>location_on</mat-icon>
+      <p>Address</p>
+    </div>
+    <div *ngIf="loggedIn" fxLayout="column" fxLayoutAlign="center center" class="icons" (click)="logout()">
+      <mat-icon>account_circle</mat-icon>
+      <p>Profile</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="icons">
+      <mat-icon>shopping_cart</mat-icon>
+      <p>Cart</p>
+    </div> 
+  </div>
+</nav>
+<div class="categories">
+  <div fxLayout="row" fxLayoutAlign="space-around center" style="width:70%">
+    <div>
+      <a>Category 1<span class="caret"></span></a>
+    </div>
+    <div>
+      <a>Category 2<span class="caret"></span></a>
+    </div>
+    <div>
+      <a>Category 3<span class="caret"></span></a>
+    </div>
+    <div>
+      <a>Category 4<span class="caret"></span></a>
+    </div>
+    <div>
+      <a>Category 5<span class="caret"></span></a>
+    </div>
+    <div>
+      <a>Category 6<span class="caret"></span></a>
+    </div>
+    <div>
+      <a>Category 7<span class="caret"></span></a>
+    </div>
+    <div>
+      <a>Category 8<span class="caret"></span></a>
+    </div>
+    <div>
+      <a>Category 9<span class="caret"></span></a>
+    </div>
+    
+  </div>
+</div>
+<div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators" style="margin-top:100px;">
+      <li data-target="#myCarousel" data-slide-to="0"  class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="../../assets/images/slideshow1.webp" alt="Slideshow1" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="../../assets/images/slideshow2.webp" alt="Slideshow2" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="../../assets/images/slideshow3.webp" alt="Slideshow3" style="width:100%;">
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+<div class="cards" fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 80%;margin-top: 30px;">
+    <img src="../../assets/images/card1.webp"/>
+    <img src="../../assets/images/card2.webp"/>
+    <img src="../../assets/images/card3.webp"/>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px;">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">SHOP BY OCCASSION</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 80%;margin-top:20px">
+    <button style="background: rgb(224,205,165);color: rgb(41,80,116);border: none;border-radius: 10px;width: 150px;margin-bottom:10px;padding:10px 0;font-size: 18px;font-weight: bold;">Daily</button>
+    <button style="background: rgb(224,205,165);color: rgb(41,80,116);border: none;border-radius: 10px;width: 150px;margin-bottom:10px;padding:10px 0;font-size: 18px;font-weight: bold;">Festive</button>
+    <button style="background: rgb(224,205,165);color: rgb(41,80,116);border: none;border-radius: 10px;width: 150px;margin-bottom:10px;padding:10px 0;font-size: 18px;font-weight: bold;">Party</button>
+    <button style="background: rgb(224,205,165);color: rgb(41,80,116);border: none;border-radius: 10px;width: 150px;margin-bottom:10px;padding:10px 0;font-size: 18px;font-weight: bold;">Wedding</button>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">RECOMMENDED FOR YOU</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:20px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px" >
+      <img src="../../assets/images/rec1.webp" style="width: 250px;height: 350px;" />
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Jaipur Wonders</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img src="../../assets/images/rec2.webp"  style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img src="../../assets/images/rec3.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Flawless Florals</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img src="../../assets/images/rec4.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img src="../../assets/images/rec5.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Flawless Florals</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">Best Sellers</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:20px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;" >
+      <img src="../../assets/images/bs1.webp" style="width: 250px;height: 350px;" />
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Jaipur Wonders</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img src="../../assets/images/bs2.webp"  style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img src="../../assets/images/bs3.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Flawless Florals</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img src="../../assets/images/bs4.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img src="../../assets/images/bs5.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Flawless Florals</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+  </div>
+  
+
+</div>
+
+<!-- Resposive  -->
+<div id="categories-mobile">
+  <div fxLayout="column" fxLayoutAlign="flex-start center" style="width:70%;background: white;">
+    <a >Category 1</a>
+    <a>Category 2</a>
+    <a>Category 3</a>
+    <a>Category 4</a>
+    <a>Category 5</a>
+    <a>Category 6</a>
+    <a>Category 7</a>
+    <a>Category 8</a>
+    <a>Category 9</a>
+  </div>
+  <div  fxLayout="row">
+    <a style="margin-left:20px;margin-top:20px;cursor: pointer;" (click)="closeCategories()"><mat-icon style="color:white;">close</mat-icon></a>
+  </div>
+</div>
+

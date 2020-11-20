@@ -1,0 +1,18 @@
+.or {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.or:before,
+.or:after {
+  content: '';
+  flex: 1 1;
+  border-bottom: 1px solid rgba(200, 200, 200, 1);
+  margin: auto;
+}
+.or:before {
+  margin-right: 10px;
+}
+.or:after {
+  margin-left: 10px;
+}

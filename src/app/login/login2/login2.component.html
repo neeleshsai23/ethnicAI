@@ -1,0 +1,26 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <img style="margin-top: 20px;" src="../../assets/images/logo_ai.png" />
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <div style="box-shadow: 0 0 5px 2px rgba(230,230,230,1);border-radius: 5px;margin-top: 50px;padding:20px;width: 400px;">
+          <h2>Login</h2>
+          <div fxLayout="row">
+            <p>{{username}}</p>
+            <a style="color:rgb(66,119,194);margin-left: 10px;cursor: pointer;" (click)="gotoLogin(false)">Change</a>
+          </div>
+          <input type="password" class="form-control" formControlName="password" placeholder="Enter Password"/>
+          <input type="submit" class="form-control btn-primary" style="margin-top: 15px;border-radius: 5px;" value="Continue">
+          <p class="or">OR</p>
+          <button *ngIf="!otp" class="form-control btn-primary" style="margin-top: 15px;border-radius: 5px;" (click)="otp = !otp">Get an OTP to your email</button>
+          
+          <input *ngIf="otp" type="text" placeholder="Enter OTP" class="form-control"/>
+          <p *ngIf="otp" style="text-decoration: underline;color:rgb(66,119,194);margin-top: 10px;cursor: pointer;">Resend OTP</p>
+
+      </div>
+     
+      
+  </form>
+
+  <p style="margin-top: 30px;">&#169; 2010-2022, EAI Retail LLP</p>
+
+</div>

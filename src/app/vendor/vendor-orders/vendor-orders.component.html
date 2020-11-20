@@ -1,0 +1,44 @@
+<div class="row-wrap">
+  <div class="w-100">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="pills">
+          <ul class="nav nav-pills" style="margin-top: 15px;">
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/payments']">
+                 Payments
+              </a>
+            </li>
+           
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/cancellations']">
+                 Cancellations
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/dispatch']">
+                 Dispatch
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/tracking']">
+                 Tracking
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/returns']">
+                 Returns
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/closure']">
+                Closure
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
