@@ -15,7 +15,6 @@ import { PipesModule } from "./theme/pipes/pipes.module";
 import { routing } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { LayoutComponent } from "./layout/layout.component";
-import { NotFoundComponent } from "./me/not-found/not-found.component";
 import { AppSettings } from "./app.settings";
 import { LoginComponent } from "./login/login.component";
 import { SidenavComponent } from "./theme/components/sidenav/sidenav.component";
