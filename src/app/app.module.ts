@@ -97,7 +97,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   declarations: [
     AppComponent,
     LayoutComponent,
-    NotFoundComponent,
     SidenavComponent,
     VerticalMenuComponent,
     HorizontalMenuComponent,
