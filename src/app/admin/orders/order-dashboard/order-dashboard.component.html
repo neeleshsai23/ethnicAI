@@ -1,0 +1,53 @@
+<p class="col-sm-12" style="margin-top: 20px !important;">
+  <span style="font-size: 18px;font-weight: bold; margin-right: 8px">Order Name:</span>
+  <span style="font-size: 16px; margin-right: 8px">P-12564 (79GGXC Gloucester, Ottawa)</span>
+  <span class="pull-right" style="font-size: 16px; margin-right: 8px;margin-top: 2px;"> Active</span>
+  <span class="pull-right" style="font-size: 18px;font-weight: bold; margin-right: 8px">Order Status:</span>
+  
+  <!-- <span style="font-size: 16px; margin-right: 8px">(Toronto Towers) </span> -->
+</p>
+<div class="row super-row" style="padding: 5px 24px 10px 23px">
+  <a routerLinkActive="active-link" routerLink="/eai/orders/order-dashboard/payment"
+  class="col-sm font-color">Payment
+  <br /> </a>
+  
+      <a routerLinkActive="active-link" routerLink="/eai/orders/order-dashboard/cancellation"
+      class="col-sm font-color">Cancellation
+      <br /></a>
+      
+      <a routerLinkActive="active-link" routerLink="/eai/orders/order-dashboard/dispatch"
+      class="col-sm font-color">Dispatch
+      <br />
+  </a>
+  <!-- <a routerLinkActive="active-link" routerLink="/ibs/projects/project-dashboard/scope" class="col-sm font-color">Scope
+      <br /></a> -->
+      <!-- <a routerLinkActive="active-link" routerLink="/bw/manage/projects/project-dashboard/budget" class="col-sm font-color">Budget
+          <br /></a> -->
+          
+          
+          <a routerLinkActive="active-link" routerLink="/eai/orders/order-dashboard/tracking"
+          class="col-sm font-color" >Tracking
+          <br /></a>
+          <a routerLinkActive="active-link" routerLink="/eai/orders/order-dashboard/return"
+          class="col-sm font-color">Return
+      </a>
+      <br />
+      <a routerLinkActive="active-link" routerLink="/eai/orders/order-dashboard/closure"
+      class="col-sm font-color">Closure
+  </a>
+      <!-- <a routerLinkActive="active-link" routerLink="/ibs/projects/project-dashboard/manage" class="col-sm font-color">Manage
+          <br /></a> -->
+          <!--   
+              <a routerLinkActive="active-link" routerLink="/bw/manage/projects/project-dashboard/tender" class="col-sm font-color">Tender
+                  <br /> </a> -->
+                 
+      </div>
+      
+      <div class="w-100">
+          <div class="flex-p">
+              <div class="row wrap">
+                  <div class="col-sm-12 no-padding">
+                      <router-outlet></router-outlet>
+                  </div>
+              </div>
+          </div>

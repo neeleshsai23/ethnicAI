@@ -17,17 +17,25 @@ export class MenuService {
     let temp = [];
     if (this.userType == 'admin') {
       temp.push(
-        new Menu (1, 'Radar', '/eai/radar', null, 'analytics', null, false, 0,"white",true), 
-        new Menu (2, 'Customers', '/eai/customers', null, 'groups', null, false, 0,"white",true), 
-        new Menu (3, 'Vendors', '/eai/vendors', null, 'business_center', null, false, 0,"white",true), 
-        new Menu (4, 'Orders', '/eai/orders', null, 'dns', null, false, 0,"white",true), 
-        new Menu (5, 'Logistics', '/eai/logistics', null, 'local_shipping', null, false, 0,"white",true), 
-        new Menu (6, 'Finance', '/eai/finance', null, 'account_balance', null, false, 0,"white",true), 
-        new Menu (7, 'Admin', '/eai/admin', null, 'admin_panel_settings', null, true, 0,"white",true),   
-        new Menu (8, 'Master Data', '/eai/admin/masterdata', null, 'reorder', null, false, 7,"white",true),  
-        new Menu (9, 'Users', '/eai/admin/users', null, 'people', null, false, 7,"white",true), 
-        new Menu (10, 'Settings', '/eai/admin/settings', null, 'settings', null, false, 7,"white",true), 
-        new Menu (11, 'Lookup Options', '/eai/admin/lookup', null, 'search', null, false, 7,"white",true),
+        new Menu (1, 'Dashboard', '/eai/dashboard', null, 'analytics', null, false, 0,"white",true), 
+        new Menu (2, 'Vendors', '/eai/vendors', null, 'groups', null, false, 0,"white",true), 
+        new Menu (3, 'Categories', '/eai/categories', null, 'business_center', null, false, 0,"white",true), 
+        new Menu (4, 'Inventory', '/eai/inventory', null, 'dns', null, false, 0,"white",true), 
+        new Menu (5, 'Catalog', '/eai/catalog', null, 'local_shipping', null, false, 0,"white",true), 
+        new Menu (6, 'Orders', '/eai/orders', null, 'account_balance', null, false, 0,"white",true), 
+        new Menu (7, 'Payouts', '/eai/payouts', null, 'account_balance', null, false, 0,"white",true), 
+        new Menu (8, 'Reports', '/eai/reports', null, 'layers', null, false, 0,"white",true), 
+        new Menu (9, 'Admin', '/eai/admin', null, 'admin_panel_settings', null, true, 0,"white",true),
+        new Menu (10, 'Master Data', '/eai/admin/master-data', null, 'group_add', null, false, 9,"white",true),
+        new Menu (10, 'Staff users', '/eai/admin/staff-users', null, 'settings_applications', null, false, 9,"white",true),
+        new Menu (10, 'Manage Tickets','/eai/admin/manage-tickets', null, 'zoom_in', null, false, 9,"white",true),
+        new Menu (10, 'Theme Design', '/eai/admin/theme-design', null, 'group', null, false, 9,"white",true),
+        new Menu (10, 'Manage FAQ', '/eai/admin/manage-faq', null, 'web_asset', null, false, 9,"white",true),
+        new Menu (10, 'Home Layout','/eai/admin/home-layout', null, 'business_center', null, false, 9,"white",true),
+        new Menu (10, 'CMS Pages', '/eai/admin/cms-pages', null, 'payments', null, false, 9,"white",true),
+        new Menu (10, 'Home Banner', '/eai/admin/home-banner', null, 'analytics', null, false, 9,"white",true),
+        new Menu (10, 'Settings', '/eai/admin/settings', null, 'account_balance_wallet', null, false, 9,"white",true),   
+      
         );
       } else if (this.userType == 'vendor') {
         temp.push(

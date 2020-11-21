@@ -1,0 +1,31 @@
+<div class="row-wrap" style="margin-top: 20px;">
+  <div class="w-100">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="pills">
+                  <ul class="nav nav-pills">
+                      <li routerLinkActive="active">
+                          <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/orders/active']">
+                              <mat-icon>grid_on</mat-icon> Active
+                          </a>
+                      </li>
+                      <li routerLinkActive="active">
+                          <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/orders/archives']">
+                              <mat-icon>crop_square</mat-icon> Archives
+                          </a>
+                      </li>
+                      <li routerLinkActive="active">
+                          <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/orders/map-view']">
+                              <mat-icon>place </mat-icon> Map view
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="h-100 w-100">
+  <img src="../../../assets/images/notfound.webp"/>
+</div>

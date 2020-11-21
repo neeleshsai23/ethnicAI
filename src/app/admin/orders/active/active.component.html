@@ -1,0 +1,109 @@
+<div class="row-wrap" style="margin-top: 20px;">
+    <div class="w-100">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pills">
+                    <ul class="nav nav-pills">
+                        <li routerLinkActive="active">
+                            <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/orders/active']">
+                                <mat-icon>grid_on</mat-icon> Active
+                            </a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/orders/archives']">
+                                <mat-icon>crop_square</mat-icon> Archives
+                            </a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/orders/map-view']">
+                                <mat-icon>place </mat-icon> Map view
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100">
+<div class="row" style="margin-top: 30px;">
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th class="text-center">Order #</th>
+                      <th class="text-center">Order Name</th>
+                      <th class="text-center">Client</th>
+                      <th class="text-center">Consultant</th>
+                      <th class="text-center">BOQ Items</th>
+                      <th class="text-center">LA #</th>
+                      <th class="text-center">LA Date</th>
+                      <th class="text-center">Agreement #</th>
+                      <th class="text-center">Agreement Date</th>
+                      <th class="text-center">Start Date</th>
+                      <th class="text-center">Target Date </th>
+                      <th class="text-center">Total cost</th>
+                      <th class="text-center">Billed</th>
+                      <th class="text-center">Paid</th>
+                      <th class="text-center">Margin</th>
+                      <th class="text-center">Status </th>
+                      <th class="text-center">Completion</th>
+                      <th class="text-center" style="width: 112px!important;">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+                      <td style="min-width: 50px !important;"><a  matTooltip="View Order Dashboard"
+                          routerLink="/eai/orders/order-dashboard" target="_blank">
+                          {{item.project_code}}
+                      </a>
+                  </td>
+                  <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                  <td style="text-align: center!important;">{{item.project_name }}</td>
+                  <td style="text-align: center!important;">{{item.client }}</td>
+                  <td style="text-align: center!important;">{{item.consultant }}</td>
+                  <td style="min-width: 70px !important;"><a style="color: blue;cursor: pointer;"
+>
+                    {{item.BOQ_Items}}
+                </a>
+            </td>
+                  <td style="text-align: center!important;">{{item.la }}</td>
+                  <td style="text-align: center!important;">{{item.la_date }}</td>
+                  <td style="text-align: center!important;">{{item.agreement }}</td>
+                  <td style="text-align: center!important;">{{item.agreement_date }}</td>
+                  <td style="text-align: center!important;">{{item.start_date }}</td>
+                  <td style="text-align: center!important;">{{item.target_date }}</td>
+                  <td style="text-align: center!important;">{{item.total_cost }}</td>
+                  <td style="text-align: center!important;">{{item.billed }}</td>
+                  <td style="text-align: center!important;">{{item.paid }}</td>
+                  <td style="text-align: center!important;">{{item.margin }}</td>
+                  <td style="text-align: center!important;">{{item.Status}}</td>
+                  
+ 
+          <!-- <td style="text-align: center!important;">{{item.awardedAmount}}</td> -->
+         
+      <td style="text-align: center!important;">{{item.Completion }}</td>
+      <td  class="text-center">
+          <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Project" (click)="openProjectDialog(item)">
+              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+          </a>
+          <a ><i class="fa fa-trash red" matTooltip="Delete Project"  style="cursor: pointer;"(click)="openDeleteDialog(item)"></i></a>
+      </td> 
+  </tr>
+ 
+</tbody>
+</table>
+<mat-paginator 
+[pageSizeOptions]="[9, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+<!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)"
+  showFirstLastButtons></mat-paginator> -->
+</div>
+</div>
+</div>
+  </div>
+</div>

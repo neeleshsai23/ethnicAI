@@ -35,7 +35,7 @@ export class Login2Component implements OnInit {
     }else if(this.username==='admin@ethnic.com' && values["password"]=="Password1!"){
       localStorage.setItem("loginUser", values["username"]);
       localStorage.setItem('userType','admin');
-      this.route.navigate(['/eai'])
+      this.route.navigate(['/eai/dashboard'])
     }else if(this.username==='admin@vendor.com' && values["password"]=="Password1!"){
       localStorage.setItem("loginUser", values["username"]);
       localStorage.setItem('userType','vendor');

@@ -79,7 +79,7 @@ export class BreadcrumbComponent {
             "Requisition":"This is Requisition Screen",
             "Work Orders":"This is Work Orders Screen",
 
-            "Inventory":"This is Inventory Screen",
+           
             "Consignment":"This is Consignment Screen",
             "Gate Passes":"This is Gate Passes Screen",
             "GRN":"This is GRN Screen",
@@ -128,11 +128,19 @@ export class BreadcrumbComponent {
             "Logistics": "This is Logistics Screen",
             "Radar": "This is Radar Screen",
             "Vendors": "This is Vendors Screen",
-            "Orders": "This is Orders Screen",
+            "Orders": "This screen is used to manage the orders",
             "Customers": "This is Customers Screen",
             "Dashboard": "This is Dashboard Screen",
             "Collections": "This is Collections Screen",
-            "Store": "This is Stores Screen"
+            "Store": "This is Stores Screen",
+            "Categories":"This screen is used to manage the categories",
+
+            "Inventory":"This screen is used to manage the inventory",
+
+            "Catalog":"This screen is used to manage the catalog",
+            "Payouts":"This screen is used to manage the payouts",
+            "Reports":"This screen is used to manage the reports"
+
         };
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {

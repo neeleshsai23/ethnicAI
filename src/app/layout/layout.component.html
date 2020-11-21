@@ -38,6 +38,10 @@
                     <!-- <button mat-icon-button><mat-icon title="Notifications">notification_important</mat-icon></button>
                     <button mat-icon-button [routerLink]="['/bw/message-center']"><mat-icon title="Message Center">message</mat-icon></button>
                     <button mat-icon-button><mat-icon title="Approvals">verified_user</mat-icon></button> -->
+                    <app-messages  matTooltip="View Alerts" fxShow="false" fxShow.gt-xs></app-messages>
+                    <!-- <mat-slide-toggle  [(ngModel)]= "slide" [ngClass]="{'test':slide}" matTooltip="change language"> </mat-slide-toggle> -->
+                    <button mat-icon-button ><mat-icon title="Notifications" >notification_important</mat-icon></button> 
+                    <button mat-icon-button ><mat-icon title="Message Center">message</mat-icon></button>
                     <app-fullscreen></app-fullscreen>
                     <app-user-menu></app-user-menu>
                 </div>
