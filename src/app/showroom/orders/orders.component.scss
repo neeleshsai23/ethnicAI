@@ -1,0 +1,17 @@
+.searchdiv {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  border: 1px solid gray;
+}
+
+.searchbar {
+  width: 300px;
+  padding: 10px 5px;
+  border: none;
+  outline: none;
+}
+
+img:hover {
+  cursor: pointer;
+}

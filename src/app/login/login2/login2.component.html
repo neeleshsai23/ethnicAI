@@ -9,9 +9,9 @@
             <a style="color:rgb(66,119,194);margin-left: 10px;cursor: pointer;" (click)="gotoLogin(false)">Change</a>
           </div>
           <input type="password" class="form-control" formControlName="password" placeholder="Enter Password"/>
-          <input type="submit" class="form-control btn-primary" style="margin-top: 15px;border-radius: 5px;" value="Continue">
+          <input type="submit" class="form-control" style="margin-top: 15px;border-radius: 5px;background:linear-gradient(rgb(247,212,131), rgb(236,176,105));color: rgb(50,50,50,1);" value="Login">
           <p class="or">OR</p>
-          <button *ngIf="!otp" class="form-control btn-primary" style="margin-top: 15px;border-radius: 5px;" (click)="otp = !otp">Get an OTP to your email</button>
+          <button *ngIf="!otp" class="form-control" style="margin-top: 15px;border-radius: 5px;background: linear-gradient(rgb(200,200,200),rgb(170,170,170));color: rgb(255,255,255,1);" (click)="otp = !otp">Get an OTP to your email</button>
           
           <input *ngIf="otp" type="text" placeholder="Enter OTP" class="form-control"/>
           <p *ngIf="otp" style="text-decoration: underline;color:rgb(66,119,194);margin-top: 10px;cursor: pointer;">Resend OTP</p>

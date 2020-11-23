@@ -1,0 +1,220 @@
+<div class="w-100">
+  <div class="container" style="margin-top:20px">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <h2>Your Orders</h2>
+      </div>
+      <div fxLayout="row">
+        <div class="searchdiv">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+          <input class="searchbar" type="text" placeholder="Search all Orders"/>
+        </div>
+        <button style="padding:0 5px;margin-left: 10px;border: none;outline: none;border-radius: 5px;background:linear-gradient(rgb(247,212,131), rgb(236,176,105));color: rgba(40,40,40,1);">Search Orders</button>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="border-bottom: 1px solid gray;margin-top: 20px;">
+      <div style="padding: 8px 15px;border-bottom: 5px solid rgba(245, 130, 31, 1); ">
+        <h4>Orders</h4>
+      </div>
+      <div style="padding: 8px 15px;">
+        <h4>Open Orders</h4>
+      </div>
+      <div style="padding: 8px 15px;">
+        <h4>Cancelled Orders</h4>
+      </div>
+      <div style="padding: 8px 15px;">
+        <h4>Archives</h4>
+      </div>
+      
+    </div>
+
+    <div fxLayout="row" fxLayoutALign="flex-start center" style="margin-top: 30px;">
+      <div fxLayout="row">
+        <p style="margin-top: 7px;"><span style="font-weight: bold;">3 Orders </span>placed in </p>
+      </div>
+      <div>
+        <mat-select [(value)]="selected" style="width: 150px;border: 1px solid gray;padding:5px 8px;border-radius: 5px;margin-left: 10px;">
+          <mat-option [value]=1 >past 3 months</mat-option>
+          <mat-option [value]=2 >past 6 months</mat-option>
+          <mat-option [value]=3 >past 9 months</mat-option>
+          <mat-option [value]=4 >past 12 months</mat-option>
+        </mat-select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 20px;">
+    <div fxLayout="column" style="border:1px solid gray;border-radius:4px">
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:8px 15px;background: rgba(220,220,220,1);">
+        <div fxLayout="column">
+          <p>ORDER PLACED</p>
+          <p>16 November 2020</p>
+        </div>
+        <div fxLayout="column">
+          <p>TOTAL</p>
+          <p>1234.45</p>
+        </div>
+        <div fxLayout="column">
+          <p>SHIPPED TO</p>
+          <p style="color: blue;">John Doe</p>
+        </div>
+        <div fxLayout="column">
+          <p>ORDER # - 1234</p>
+          <p style="color: blue;">Order Detailed |  Invoice</p>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="flex-start flex-start" style="padding:8px 15px">
+        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+          <div>
+            <h4 style="font-weight:bold">Delivered 16-Nov-2020</h4>
+            <h5>Package was handled directly to the customer</h5>
+          </div>
+          <div>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);">Track Package</button>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+         
+          <div fxLayout="row" fxLayoutAlign="space-between flex-start">
+            <img src="../../../assets/images/pick1.webp" style="width:200px;height:200px"/>
+            <div fxLayout="column" style="margin-left: 20px;">
+              <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+              <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+              <p>In Stock</p>
+            </div>
+          </div>
+          <div fxLayout="column">
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Return or replace items</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Share gift receipt</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Leave Seller feedback</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Leave delivery feedback</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Write a product review</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Archive order</button>
+          </div>
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container" style="margin-top: 20px;">
+    <div fxLayout="column" style="border:1px solid gray;border-radius:4px">
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:8px 15px;background: rgba(220,220,220,1);">
+        <div fxLayout="column">
+          <p>ORDER PLACED</p>
+          <p>16 November 2020</p>
+        </div>
+        <div fxLayout="column">
+          <p>TOTAL</p>
+          <p>1234.45</p>
+        </div>
+        <div fxLayout="column">
+          <p>SHIPPED TO</p>
+          <p style="color: blue;">John Doe</p>
+        </div>
+        <div fxLayout="column">
+          <p>ORDER # - 1234</p>
+          <p style="color: blue;">Order Detailed |  Invoice</p>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="flex-start flex-start" style="padding:8px 15px">
+        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+          <div>
+            <h4 style="font-weight:bold">Delivered 16-Nov-2020</h4>
+            <h5>Package was handled directly to the customer</h5>
+          </div>
+          <div>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);">Track Package</button>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+         
+          <div fxLayout="row" fxLayoutAlign="space-between flex-start">
+            <img src="../../../assets/images/pick2.webp" style="width:200px;height:200px"/>
+            <div fxLayout="column" style="margin-left: 20px;">
+              <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+              <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+              <p>In Stock</p>
+            </div>
+          </div>
+          <div fxLayout="column">
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Return or replace items</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Share gift receipt</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Leave Seller feedback</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Leave delivery feedback</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Write a product review</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Archive order</button>
+          </div>
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container" style="margin-top: 20px;">
+    <div fxLayout="column" style="border:1px solid gray;border-radius:4px">
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:8px 15px;background: rgba(220,220,220,1);">
+        <div fxLayout="column">
+          <p>ORDER PLACED</p>
+          <p>16 November 2020</p>
+        </div>
+        <div fxLayout="column">
+          <p>TOTAL</p>
+          <p>1234.45</p>
+        </div>
+        <div fxLayout="column">
+          <p>SHIPPED TO</p>
+          <p style="color: blue;">John Doe</p>
+        </div>
+        <div fxLayout="column">
+          <p>ORDER # - 1234</p>
+          <p style="color: blue;">Order Detailed |  Invoice</p>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="flex-start flex-start" style="padding:8px 15px">
+        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+          <div>
+            <h4 style="font-weight:bold">Delivered 16-Nov-2020</h4>
+            <h5>Package was handled directly to the customer</h5>
+          </div>
+          <div>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);">Track Package</button>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+         
+          <div fxLayout="row" fxLayoutAlign="space-between flex-start">
+            <img src="../../../assets/images/pick3.webp" style="width:200px;height:200px"/>
+            <div fxLayout="column" style="margin-left: 20px;">
+              <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+              <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+              <p>In Stock</p>
+            </div>
+          </div>
+          <div fxLayout="column">
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Return or replace items</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Share gift receipt</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Leave Seller feedback</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Leave delivery feedback</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Write a product review</button>
+            <button style="width: 180px;border:1px solid gray;padding:5px 10px;background: rgba(230,230,230,1);margin-bottom: 5px;">Archive order</button>
+          </div>
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

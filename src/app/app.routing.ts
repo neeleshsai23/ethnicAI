@@ -7,7 +7,11 @@ import { ShowroomComponent } from "./showroom/showroom.component";
 export const routes: Routes = [
   
   { path: "login", component: LoginComponent,data:{breadcrumb:"Login"}},
-  {path:"",component:ShowroomComponent,data:{breadcrumb:"Showroom"}},
+  {
+    path:"",
+    component:ShowroomComponent,
+    loadChildren:"./showroom/showroom.module#ShowroomModule"
+  },
   {
     path:"eai",
     component:LayoutComponent,

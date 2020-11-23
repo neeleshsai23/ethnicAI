@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {Router} from '@angular/router';
+import {
+  PerfectScrollbarDirective,
+  PerfectScrollbarConfigInterface,
+} from "ngx-perfect-scrollbar";
 
 @Component({
   selector: 'app-showroom',
@@ -9,6 +13,10 @@ import {Router} from '@angular/router';
 export class ShowroomComponent implements OnInit {
   loggedIn:boolean = false;
 
+  @ViewChildren(PerfectScrollbarDirective) pss: QueryList<
+    PerfectScrollbarDirective
+  >;
+
   constructor(public route: Router) { }
 
   ngOnInit() {
@@ -17,6 +25,18 @@ export class ShowroomComponent implements OnInit {
     }else{
       this.loggedIn = false;
     }
+  }
+
+  closePrivacyDialog(){
+    document.getElementById('privacy-dialog').style.display = 'none';
+  }
+
+  closeSubscribeDialog(){
+    document.getElementById('subscribe-dialog').style.display='none';
+  }
+
+  public scrollToTop() {
+    window.scrollTo(0,0);
   }
 
   gotoLogin(){

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.username_entered = true;
       this.show_next = true;
     }else{
-      console.log("null")
+      alert("Invalid Credentials")
     }
     
 

@@ -1,0 +1,23 @@
+img:hover {
+  cursor: pointer;
+}
+
+li {
+  color: whitesmoke;
+}
+
+li.selected {
+  color: #ffd700;
+}
+
+.instructions li {
+  color: black;
+}
+
+// .imagediv:focus {
+//   border: 5px solid rgba(245, 130, 31, 1);
+// }
+
+// .imagediv:active {
+//   border: 5px solid rgba(245, 130, 31, 1);
+// }

@@ -1,0 +1,222 @@
+<div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators" style="margin-top:100px;">
+      <li data-target="#myCarousel" data-slide-to="0"  class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <img [routerLink]="['/product']" src="../../../assets/images/slideshow1.webp" alt="Slideshow1" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img [routerLink]="['/product']" src="../../../assets/images/slideshow2.webp" alt="Slideshow2" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img [routerLink]="['/product']" src="../../../assets/images/slideshow3.webp" alt="Slideshow3" style="width:100%;">
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+<div class="cards" class="container" fxLayout="column" fxLayoutAlign="center center" style="margin-top:30px">
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:70px">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div fxLayout="row" fxLayoutAlign="center center" style="width: 200px;height: 200px;border-radius: 50%;background:linear-gradient(rgb(78,78,78), rgb(17,17,17)) ;">
+        <img [routerLink]="['/product']" src="../../../assets/images/saree1.png" style="width:80%;height:220px"/>
+      </div>
+      <p style="margin-top: 50px;font-size:20px;font-family: Brush Script MT, Brush Script Std, cursive;">Pattu Sarees</p>
+
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div fxLayout="column" fxLayoutAlign="center center" style="width: 200px;height: 200px;border-radius: 50%;background:linear-gradient(rgb(78,78,78), rgb(17,17,17)) ;">
+        <img [routerLink]="['/product']" src="../../../assets/images/saree2.png" style="width:80%;height:220px"/>
+      </div>
+      <p style="margin-top: 50px;font-size:20px;font-family: Brush Script MT, Brush Script Std, cursive;">Everyday Kurtis</p>
+
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div fxLayout="column" fxLayoutAlign="center center" style="width: 200px;height: 200px;border-radius: 50%;background:linear-gradient(rgb(78,78,78), rgb(17,17,17)) ;">
+        <img [routerLink]="['/product']" src="../../../assets/images/saree3.png" style="width:80%;height:230px"/>
+      </div>
+      <p style="margin-top: 50px;font-size:20px;font-family: Brush Script MT, Brush Script Std, cursive;">Wedding Wear</p>
+
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div fxLayout="column" fxLayoutAlign="center center" style="width: 200px;height: 200px;border-radius: 50%;background:linear-gradient(rgb(78,78,78), rgb(17,17,17)) ;">
+        <img [routerLink]="['/product']" src="../../../assets/images/saree4.png" style="width:80%;height:220px"/>
+      </div>
+      <p style="margin-top: 50px;font-size:20px;font-family: Brush Script MT, Brush Script Std, cursive;">Festive Lehengas</p>
+
+    </div>
+    
+    
+    
+    
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px;">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">FEATURED PRODUCTS</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width:100%;margin-top: 50px;">
+    <img [routerLink]="['/product']" src="../../../assets/images/card1.webp"/>
+    <img [routerLink]="['/product']" src="../../../assets/images/card2.webp"/>
+    <img [routerLink]="['/product']" src="../../../assets/images/card3.webp"/>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px;">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">SHOP BY OCCASSION</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:20px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px" >
+      <img [routerLink]="['/product']" src="../../../assets/images/soc1.webp" style="width: 250px;height: 350px;" />
+      
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img [routerLink]="['/product']" src="../../../assets/images/soc2.webp"  style="width: 250px;height: 350px;"/>
+      
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img [routerLink]="['/product']" src="../../../assets/images/soc3.webp" style="width: 250px;height: 350px;"/>
+      
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img [routerLink]="['/product']" src="../../../assets/images/soc4.webp" style="width: 250px;height: 350px;"/>
+      
+    </div>
+  </div>
+  <!-- <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 80%;margin-top:20px">
+    <button style="background: rgb(224,205,165);color: rgb(41,80,116);border: none;border-radius: 10px;width: 150px;margin-bottom:10px;padding:10px 0;font-size: 18px;font-weight: bold;">Daily</button>
+    <button style="background: rgb(224,205,165);color: rgb(41,80,116);border: none;border-radius: 10px;width: 150px;margin-bottom:10px;padding:10px 0;font-size: 18px;font-weight: bold;">Festive</button>
+    <button style="background: rgb(224,205,165);color: rgb(41,80,116);border: none;border-radius: 10px;width: 150px;margin-bottom:10px;padding:10px 0;font-size: 18px;font-weight: bold;">Party</button>
+    <button style="background: rgb(224,205,165);color: rgb(41,80,116);border: none;border-radius: 10px;width: 150px;margin-bottom:10px;padding:10px 0;font-size: 18px;font-weight: bold;">Wedding</button>
+  </div> -->
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">RECOMMENDED FOR YOU</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:20px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px" >
+      <img [routerLink]="['/product']" src="../../../assets/images/rec1.webp" style="width: 250px;height: 350px;" />
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Jaipur Wonders</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img [routerLink]="['/product']" src="../../../assets/images/rec2.webp"  style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img [routerLink]="['/product']" src="../../../assets/images/rec3.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Flawless Florals</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+      <img [routerLink]="['/product']" src="../../../assets/images/rec4.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">BEST SELLERS</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:20px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;" >
+      <img [routerLink]="['/product']" src="../../../assets/images/bs1.webp" style="width: 250px;height: 350px;" />
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Jaipur Wonders</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/bs2.webp"  style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/bs3.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Flawless Florals</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/bs4.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">SHOP BY PRICE</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:20px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;" >
+      <img [routerLink]="['/product']" src="../../../assets/images/price1.webp" style="width: 280px;height: 380px;" />
+      
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/price2.webp"  style="width: 280px;height: 380px;"/>
+      
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/price3.webp" style="width: 280px;height: 380px;"/>
+      
+    </div>
+    
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">TOP PICKS</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:20px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;" >
+      <img [routerLink]="['/product']" src="../../../assets/images/pick1.webp" style="width: 250px;height: 350px;" />
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/pick2.webp"  style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/pick3.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/pick4.webp" style="width: 250px;height: 350px;"/>
+      <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+      <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+      <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+    </div>
+    
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:30px">
+    <h3 style="color: rgb(202,96,78);font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">E ANYTHING INDIAN PROMISES</h3>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="width: 100%;margin-top:20px">
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;" >
+      <img [routerLink]="['/product']" src="../../../assets/images/promise1.PNG" style="width: 280px;height: 380px;" />
+      
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/promise2.PNG"  style="width: 280px;height: 380px;"/>
+      
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width: 280px;">
+      <img [routerLink]="['/product']" src="../../../assets/images/promise3.PNG" style="width: 280px;height: 380px;"/>
+      
+    </div>
+    
+  </div>
+  
+
+</div>

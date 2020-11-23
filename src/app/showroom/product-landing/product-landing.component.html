@@ -1,0 +1,140 @@
+<div class="w-100" style="padding:20px">
+  <div fxLayout="row" fxLayoutAlign="space-between flex-start" style="margin-top:20px;padding-bottom: 50px;border-bottom: 1px solid gray;">
+    <div fxLayout="column">
+      <div style="width:50px;height:80px;border:1px solid black;margin-bottom: 10px;" class="imagediv">
+        <img src="../../../assets/images/product1.jpg" style="width: 100%;height: 100%;" (click)="selectImage(0)"/>
+      </div>
+      <div style="width:50px;height:80px;border:1px solid black;margin-bottom: 10px;" class="imagediv">
+        <img src="../../../assets/images/product2.jpg" style="width: 100%;height: 100%;" (click)="selectImage(1)"/>
+      </div>
+      <div style="width:50px;height:80px;border:1px solid black;margin-bottom: 10px;" class="imagediv">
+        <img src="../../../assets/images/product3.jpg" style="width: 100%;height: 100%;" (click)="selectImage(2)"/>
+      </div>
+      <div style="width:50px;height:80px;border:1px solid black;margin-bottom: 10px;" class="imagediv">
+        <img src="../../../assets/images/product4.jpg" style="width: 100%;height: 100%;" (click)="selectImage(3)"/>
+      </div>
+      <div style="width:50px;height:80px;border:1px solid black;margin-bottom: 10px;" class="imagediv">
+        <img src="../../../assets/images/product5.jpg" style="width: 100%;height: 100%;" (click)="selectImage(4)"/>
+      </div>
+    </div>
+    <div>
+      <img [src]="selected_image" style="width: 500px;height: 700px;"/>
+    </div>
+    <div fxLayout="column" style="padding:0 20px" >
+      <h3>Amayra Women's Cotton Anarkali Kurti</h3>
+      <div fxLayout="row">
+        <div fxLayout="row">
+          <ul *ngFor="let star of stars" style="display: inline-block;list-style-type: none;" >
+            <li  [ngClass]="{'selected': (star <= selectedValue)}">
+                <i class="fa fa-star"></i>
+             </li>
+          </ul> 
+        </div>
+        <p style="color:blue">234 ratings</p>
+      </div>
+      <div fxLayout="row">
+        <p>Price : </p>
+        <p style="color:brown"> &nbsp;&#x20B9; 799.00</p>
+      </div>
+      <p>Inclusive of all taxes</p>
+      <div fxLayout="row">
+        <p style="font-weight: bold;margin-top: 6px;">Size :</p>
+        <div style="width:100px;margin-left: 10px;">
+          <mat-select class="form-control"  placeholder="Select">
+            <mat-option>XS</mat-option>
+            <mat-option>S</mat-option>
+            <mat-option>M</mat-option>
+            <mat-option>L</mat-option>
+            <mat-option>XL</mat-option>
+            <mat-option>XXL</mat-option>
+          </mat-select>
+        </div>
+        
+      </div>
+      <div fxlayout="column" style="margin-top:20px">
+        <ul class="instructions">
+          <li>Care Instructions: Machine Wash</li>
+          <li>Material: Cotton</li>
+          <li>Occasion: Casual Wear</li>
+          <li>Highlight: Beautiful buti print with laces at bottom and sleeves</li>
+          <li>Care Instruction: Machine Wash</li>
+          <li>Disclaimer: Product color may slightly vary due to photographic lighting sources or your monitor settings.</li>
+        </ul>
+
+      </div>
+    </div>
+    <div fxLayout="column" >
+      <div fxLayout="column" style="padding:20px;box-shadow: 0 0 2px 0 gray;">
+        <button style="background: linear-gradient(#F6DC9C,#F0C24E);color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px;margin-bottom: 10px;">Add to Cart</button>
+        <button style="background:linear-gradient(rgb(247,212,131), rgb(236,176,105));color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px">Buy Now</button>
+        <hr>
+        <button style="color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px">Add to Wish List</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" style="margin-top:30px;padding:15px">
+      <h3 style="font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">Customers also Liked</h3>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" style="width: 100%;margin-top:10px">
+      <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px" >
+        <img [routerLink]="['/product']" src="../../../assets/images/rec1.webp" style="width: 250px;height: 350px;" />
+        <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Jaipur Wonders</button>
+        <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+        <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+        <button style="background: rgb(239,239,239);color: black;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Add to Cart</button>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+        <img [routerLink]="['/product']" src="../../../assets/images/rec2.webp"  style="width: 250px;height: 350px;"/>
+        <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+        <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+        <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+        <button style="background: rgb(239,239,239);color: black;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Add to Cart</button>
+
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+        <img [routerLink]="['/product']" src="../../../assets/images/rec3.webp" style="width: 250px;height: 350px;"/>
+        <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Flawless Florals</button>
+        <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+        <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+        <button style="background: rgb(239,239,239);color: black;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Add to Cart</button>
+
+      </div>
+      
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="flex-start center" style="margin-top:30px;padding:15px">
+      <h3 style="font-weight: bold;background: rgba(255,255,255,0.8);box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);">Cutsomers who bought items in your cart also bought in other categories</h3>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" style="width: 100%;margin-top:10px">
+      <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px" >
+        <img [routerLink]="['/product']" src="../../../assets/images/rec1.webp" style="width: 250px;height: 350px;" />
+        <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Jaipur Wonders</button>
+        <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+        <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+        <button style="background: rgb(239,239,239);color: black;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Add to Cart</button>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+        <img [routerLink]="['/product']" src="../../../assets/images/rec2.webp"  style="width: 250px;height: 350px;"/>
+        <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">The Dyed Delights</button>
+        <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+        <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+        <button style="background: rgb(239,239,239);color: black;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Add to Cart</button>
+
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" style="background: white;padding:15px;border-radius: 10px;width:280px">
+        <img [routerLink]="['/product']" src="../../../assets/images/rec3.webp" style="width: 250px;height: 350px;"/>
+        <button style="background: rgb(199,157,107);color: white;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Flawless Florals</button>
+        <p style="margin-top:10px">Pink And Coral Shaded Anarkali Dress With Bandhani And Foil Print</p>
+        <p style="color:rgb(199,157,107) ;">Rs. 2700</p>
+        <button style="background: rgb(239,239,239);color: black;border:none;border-radius:5px;padding:5px 10px;margin-top:10px">Add to Cart</button>
+
+      </div>
+      
+    </div>
+
+  </div>
+</div>
