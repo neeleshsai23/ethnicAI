@@ -1,0 +1,24 @@
+
+
+<div class="row-wrap">
+      <div class="col-xs-12" style="margin-top: 20px;">
+        <div class="pills">
+          <ul class="nav nav-pills">
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/dashboard/overview/summary']" routerLinkActive="router-link-active" >
+                Summary
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/dashboard/overview/mapview']" routerLinkActive="router-link-active" >
+                <mat-icon>place </mat-icon> Map view
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</div> 
+<div>
+  <router-outlet></router-outlet>
+   
+</div> 

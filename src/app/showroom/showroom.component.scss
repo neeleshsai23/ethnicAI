@@ -25,14 +25,74 @@ img:hover {
   justify-content: center;
   background: rgb(223, 205, 169);
   height: 60px;
-  color: rgb(74, 99, 123);
+  color: rgb(100, 100, 100);
   font-weight: bold;
 }
 
-.search {
+// .search {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// Search Bar Styles
+
+#search {
+  width: fit-content;
+  display: flex;
+  border-radius: 30px;
+  overflow: hidden;
+  background: white;
+  color: rgb(226, 110, 99);
+  height: 60px;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: inherit;
+}
+
+#line1,
+#line2,
+#line3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 60%;
+  border-left: 1px solid lightgray;
+}
+
+#search1:hover {
+  background: rgba(200, 200, 200, 1);
+}
+
+#search2:hover {
+  background: rgba(200, 200, 200, 1);
+}
+
+#search3:hover {
+  background: rgba(200, 200, 200, 1);
+}
+
+#search4:hover {
+  background: rgba(200, 200, 200, 1);
+}
+
+#search1div {
+  display: none;
+  position: absolute;
+  top: 130px;
+  min-width: 200px;
+  height: auto;
+  z-index: 20;
+  background: rgb(210, 210, 210);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.myPanelClass {
+  margin-top: 30px !important;
 }
 
 .icons {
@@ -90,6 +150,41 @@ img:hover {
     0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.dropdowndiv {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: auto;
+  width: auto;
+  height: auto;
+  z-index: 20;
+  background: rgb(223, 205, 169);
+  border: 0.2px solid white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.dropdowndiv div {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+// .dropdowndiv p {
+//   font-weight: normal;
+// }
+
+.navdiv:hover {
+  border-bottom: 4px solid white;
+  cursor: pointer;
+}
+
+.navdiv:hover .dropdowndiv {
+  display: block;
 }
 
 .cards {
@@ -171,15 +266,17 @@ img:hover {
 #privacy-dialog {
   z-index: 16;
   position: fixed;
-  bottom: 0;
-  display: flex;
+  bottom: 20px;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 rgba(170, 170, 170, 1);
 }
 
 #subscribe-dialog {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -193,8 +290,9 @@ img:hover {
   animation: scale 0.3s;
 }
 
-h4 {
+h5 {
   font-weight: bold;
+  color: white;
 }
 
 .popular {

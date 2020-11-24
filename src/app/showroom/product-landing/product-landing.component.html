@@ -18,9 +18,10 @@
       </div>
     </div>
     <div>
-      <img [src]="selected_image" style="width: 500px;height: 700px;"/>
+      <img [src]="selected_image" style="width: 500px;height: 600px;"/>
     </div>
-    <div fxLayout="column" style="padding:0 20px" >
+    <div fxLayout="column" style="padding:0 20px;max-width:400px" >
+      <h5 style="color:rgb(0,115,141)">Visit the Amayra Store</h5>
       <h3>Amayra Women's Cotton Anarkali Kurti</h3>
       <div fxLayout="row">
         <div fxLayout="row">
@@ -33,7 +34,7 @@
         <p style="color:blue">234 ratings</p>
       </div>
       <div fxLayout="row">
-        <p>Price : </p>
+        <p style="color:rgb(0,115,141)">Price : </p>
         <p style="color:brown"> &nbsp;&#x20B9; 799.00</p>
       </div>
       <p>Inclusive of all taxes</p>
@@ -52,7 +53,7 @@
         
       </div>
       <div fxlayout="column" style="margin-top:20px">
-        <ul class="instructions">
+        <ul class="instructions" style="font-size:16px">
           <li>Care Instructions: Machine Wash</li>
           <li>Material: Cotton</li>
           <li>Occasion: Casual Wear</li>
@@ -62,14 +63,27 @@
         </ul>
 
       </div>
-    </div>
-    <div fxLayout="column" >
-      <div fxLayout="column" style="padding:20px;box-shadow: 0 0 2px 0 gray;">
-        <button style="background: linear-gradient(#F6DC9C,#F0C24E);color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px;margin-bottom: 10px;">Add to Cart</button>
-        <button style="background:linear-gradient(rgb(247,212,131), rgb(236,176,105));color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px">Buy Now</button>
+
+      <div fxLayout="column" style="margin-top:20px;padding:20px;box-shadow: 0 0 2px 0 gray;width: 300px;">
+        <button style="width:250px;border-radius: 4px;background: linear-gradient(#F6DC9C,#F0C24E);color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px;margin-bottom: 10px;">Add to Cart</button>
+        <button style="width:250px;border-radius: 4px;background:linear-gradient(rgb(247,212,131), rgb(236,176,105));color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px">Buy Now</button>
         <hr>
-        <button style="color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px">Add to Wish List</button>
+        <button style="width:250px;border-radius: 4px;color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px">Add to Wish List</button>
       </div>
+
+      
+    </div>
+    <div fxLayout="column" style="margin-top: 20px;" >
+      <div>
+        <img src="../../../assets/images/adv.png" style="width:250px;height:400px"/>
+
+      </div>
+      <!-- <div fxLayout="column" style="padding:20px;box-shadow: 0 0 2px 0 gray;width:300px !important;">
+        <button style="width:250px;border-radius: 4px;background: linear-gradient(#F6DC9C,#F0C24E);color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px;margin-bottom: 10px;">Add to Cart</button>
+        <button style="width:250px;border-radius: 4px;background:linear-gradient(rgb(247,212,131), rgb(236,176,105));color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px">Buy Now</button>
+        <hr>
+        <button style="width:250px;border-radius: 4px;color: rgba(40,40,40,1);border: 1px solid gray;padding:5px 25px">Add to Wish List</button>
+      </div> -->
 
     </div>
 

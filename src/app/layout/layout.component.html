@@ -17,7 +17,7 @@
                     </button>
 
                     <a *ngIf="settings.menu == 'horizontal'" style="color:rgba(240,240,240,1)" (click)="closeSubMenus()">
-                        <img alt="logo" class="logo-default logo-img" style="height: 33px;margin-left:10px;" src="../../assets/images/logo_ai.png">
+                        <img alt="logo" class="logo-default logo-img" style="height: 90px;margin-left:10px;" src="../../assets/images/logo_white.png">
                         
                     </a>
      
@@ -38,7 +38,7 @@
                     <!-- <button mat-icon-button><mat-icon title="Notifications">notification_important</mat-icon></button>
                     <button mat-icon-button [routerLink]="['/bw/message-center']"><mat-icon title="Message Center">message</mat-icon></button>
                     <button mat-icon-button><mat-icon title="Approvals">verified_user</mat-icon></button> -->
-                    <app-messages  matTooltip="View Alerts" fxShow="false" fxShow.gt-xs></app-messages>
+                    <!-- <app-messages  matTooltip="View Alerts" fxShow="false" fxShow.gt-xs></app-messages> -->
                     <!-- <mat-slide-toggle  [(ngModel)]= "slide" [ngClass]="{'test':slide}" matTooltip="change language"> </mat-slide-toggle> -->
                     <button mat-icon-button ><mat-icon title="Notifications" >notification_important</mat-icon></button> 
                     <button mat-icon-button ><mat-icon title="Message Center">message</mat-icon></button>
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </mat-toolbar>
-        <div id="main-content" class="inner-sidenav-content transition-2" [ngStyle]="url=='/simc/dashboard'?{'background-color':'rgb(12, 18, 42)'}:url=='/me/dashboard'?{'background-color':'rgb(12, 18, 42)'}:{'background-color':'#fff'}" perfectScrollbar
+        <div id="main-content" class="inner-sidenav-content transition-2" style="font-family:'Roboto',sans-serif" perfectScrollbar
             [disabled]="!settings.fixedHeader">
             <app-breadcrumb></app-breadcrumb>
             <router-outlet></router-outlet>

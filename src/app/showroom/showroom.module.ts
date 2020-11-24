@@ -16,12 +16,12 @@ import { ProductLandingComponent } from './product-landing/product-landing.compo
 
 export const routes = [
    {path:"",redirectTo:"home",pathMatch:"full"},
-   {path:"home",component:HomeComponent,data:{breadcrumb:"Home"}},
-   {path:"cart",component:CartComponent,data:{breadcrumb:"Cart"}},
+   {path:"home",component:HomeComponent,data:{breadcrumb:"eAnythingIndian - Online Ethnic Clothing Store"}},
+   {path:"cart",component:CartComponent,data:{breadcrumb:"Shopping Cart"}},
    {path:"wishlist",component:WishlistComponent,data:{breadcrumb:"Wishlist"}},
-   {path:"account",component:AccountComponent,data:{breadcrumb:"Account"}},
-   {path:"orders",component:OrdersComponent,data:{breadcrumb:"Orders"}},
-   {path:"product",component:ProductLandingComponent,data:{breadcrumb:"Product"}}
+   {path:"account",component:AccountComponent,data:{breadcrumb:"My Account"}},
+   {path:"orders",component:OrdersComponent,data:{breadcrumb:"My Orders"}},
+   {path:"product",component:ProductLandingComponent,data:{breadcrumb:"Product Landing Page"}}
 ]
 
 

@@ -12,8 +12,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 export const routes = [
   { path: "",redirectTo:'summary',data:{breadcrumb:"Dashboard"},pathMatch: 'full'},
-  { path: "summary", component: SummaryComponent,data:{breadcrumb:"Dashboard"}},
-  { path: "vendors", component: DashboardVendorsComponent,data:{breadcrumb:"Dashboard"}},
+  { path: "summary", component: SummaryComponent,loadChildren:"./summary/summary.module#SummaryModule",data:{breadcrumb:"Dashboard"}},
+  { path: "vendors", component: DashboardVendorsComponent,loadChildren:"./dashboard-vendors/dashboard-vendors.module#DashboardVendorsModule",data:{breadcrumb:"Dashboard"}},
 
 ]
 @NgModule({
@@ -25,4 +25,5 @@ export const routes = [
     ]
   
 })
-export class DashboardModule { }
+
+export class DashboardModule{ }

@@ -1,3 +1,40 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="h-100 w-100">
-  <img src="../../../assets/images/notfound.webp"/>
+<div class="row-wrap">
+  
+  <div class="col-xs-12" >
+    <div class="pills">
+      <ul class="nav nav-pills" style="margin-top: 15px;">
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/dashboard/overview']">
+            <mat-icon>grid_on</mat-icon> Overview
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/dashboard/revenue']">
+            <mat-icon>layers</mat-icon> Revenue
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/dashboard/cancelled']">
+            <mat-icon>layers</mat-icon> Cancelled Orders
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/dashboard/topten']">
+            <mat-icon>layers</mat-icon> Top 10 Products
+          </a>
+        </li>
+        
+      </ul>
+    </div>
 </div>
+</div>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+

@@ -2,3 +2,30 @@
 img:hover {
   cursor: pointer;
 }
+
+.accountdivs {
+  padding: 8px 25px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 350px;
+  height: 100px;
+}
+
+.accountdivs:hover {
+  background: rgba(230, 230, 230, 1);
+  cursor: pointer;
+}
+
+.quicklinks {
+  padding: 8px 25px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 350px;
+  height: 250px;
+}
+
+.quicklinks p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(223, 150, 14);
+}

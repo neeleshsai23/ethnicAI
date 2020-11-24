@@ -21,8 +21,8 @@ export class MenuService {
         new Menu (2, 'Vendors', '/eai/vendors', null, 'groups', null, false, 0,"white",true), 
         new Menu (3, 'Categories', '/eai/categories', null, 'business_center', null, false, 0,"white",true), 
         new Menu (4, 'Inventory', '/eai/inventory', null, 'dns', null, false, 0,"white",true), 
-        new Menu (5, 'Catalog', '/eai/catalog', null, 'local_shipping', null, false, 0,"white",true), 
-        new Menu (6, 'Orders', '/eai/orders', null, 'account_balance', null, false, 0,"white",true), 
+        new Menu (5, 'Catalog', '/eai/catalog', null, 'view_module', null, false, 0,"white",true), 
+        new Menu (6, 'Orders', '/eai/orders', null, 'reorder', null, false, 0,"white",true), 
         new Menu (7, 'Payouts', '/eai/payouts', null, 'account_balance', null, false, 0,"white",true), 
         new Menu (8, 'Reports', '/eai/reports', null, 'layers', null, false, 0,"white",true), 
         new Menu (9, 'Admin', '/eai/admin', null, 'admin_panel_settings', null, true, 0,"white",true),
@@ -39,21 +39,35 @@ export class MenuService {
         );
       } else if (this.userType == 'vendor') {
         temp.push(
-          new Menu (1, 'Store', '/vendor/store', null, 'store', null, false, 0,"white",true),
-          new Menu (2, 'Dashboard', '/vendor/dashboard', null, 'dashboard', null, false, 0,"white",true),
-          new Menu (3, 'Products', '/vendor/products', null, 'view_module', null, true, 0,"white",true),
-          new Menu (4, 'Collections', '/vendor/products/collections', null, 'collections', null, false, 3,"white",true),
-          new Menu (5, 'Inventory', '/vendor/products/inventory', null, 'business_center', null, false, 3,"white",true), 
-          new Menu (6, 'Orders', '/vendor/orders', null, 'dns', null, false, 0,"white",true),
-          new Menu (7, 'Logistics', '/vendor/logistics', null, 'local_shipping', null, false, 0,"white",true), 
-          new Menu (8, 'Customers', '/vendor/customers', null, 'groups', null, false, 0,"white",true), 
-          new Menu (9, 'Finance', '/vendor/finance', null, 'account_balance', null, true, 0,"white",true),
-          new Menu (10, 'Receivables', '/vendor/finance/receivables', null, 'request_quote', null, false, 9,"white",true),
-          new Menu (11, 'Revenue', '/vendor/finance/revenue', null, 'attach_money', null, false, 9,"white",true),
-          new Menu (12, 'Tax', '/vendor/finance/tax', null, 'money_off', null, false, 9,"white",true), 
-          new Menu (13, 'My Account', '/vendor/user', null, 'admin_panel_settings', null, true, 0,"white",true),   
-          new Menu (14, 'Users', '/vendor/user/users', null, 'people', null, false, 13,"white",true), 
-          new Menu (15, 'Settings', '/vendor/user/settings', null, 'settings', null, false, 13,"white",true), 
+          // new Menu (1, 'Radar', '/vendor/radar', null, 'analytics', null, false, 0,"white",true), 
+          // new Menu (2, 'Store', '/vendor/store', null, 'store', null, false, 0,"white",true),
+          new Menu (3, 'Dashboard', '/vendor/dashboard', null, 'dashboard', null, false, 0,"white",true),
+          new Menu (4, 'Catalog', '/vendor/catalog', null, 'view_module', null, true, 0,"white",true),
+          new Menu (5, 'Collections', '/vendor/catalog/collections', null, 'collections', null, false, 4,"white",true),
+          new Menu (6, 'Inventory', '/vendor/catalog/inventory', null, 'business_center', null, false, 4,"white",true), 
+          new Menu (7, 'Orders', '/vendor/orders', null, 'reorder', null, false, 0,"white",true),
+          new Menu (8, 'Deals', '/vendor/deals', null, 'local_offer', null, false, 0,"white",true),
+          new Menu (9, 'Bundles', '/vendor/bundles', null, 'view_list', null, false, 0,"white",true),
+          new Menu (10, 'Inventory', '/vendor/inventory', null, 'dns', null, false, 0,"white",true),
+
+         
+          new Menu (11, 'Logistics', '/vendor/logistics', null, 'local_shipping', null, false, 0,"white",true), 
+          new Menu (12, 'Reviews', '/vendor/reviews', null, 'rate_review', null, false, 0,"white",true), 
+          // new Menu (13, 'Profile', '/vendor/profile', null, 'account_box', null, false, 0,"white",true), 
+
+          // new Menu (9, 'Customers', '/vendor/customers', null, 'groups', null, false, 0,"white",true), 
+          // new Menu (10, 'Finance', '/vendor/finance', null, 'account_balance', null, true, 0,"white",true),
+          // new Menu (11, 'Receivables', '/vendor/finance/receivables', null, 'request_quote', null, false, 10,"white",true),
+          // new Menu (12, 'Revenue', '/vendor/finance/revenue', null, 'attach_money', null, false, 10,"white",true),
+          // new Menu (13, 'Tax', '/vendor/finance/tax', null, 'money_off', null, false, 10,"white",true), 
+          new Menu (14, 'My Account', '/vendor/user', null, 'admin_panel_settings', null, true, 0,"white",true),   
+          new Menu (15, 'Staff Users', '/vendor/user/users', null, 'contact_page', null, false, 14,"white",true), 
+          new Menu (16, 'Support Tickets', '/vendor/user/support', null, 'support', null, false, 14,"white",true), 
+          new Menu (17, 'Master Data', '/vendor/user/masterdata', null, 'group_add', null, false, 14,"white",true), 
+
+          new Menu (18, 'Settings', '/vendor/user/settings', null, 'settings', null, false, 14,"white",true), 
+          new Menu (19, 'Lookup Options', '/vendor/user/lookup', null, 'zoom_in', null, false, 14,"white",true), 
+
           );
         }
         

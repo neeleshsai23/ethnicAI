@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList, ViewChildren} from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren,AfterViewInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {
   PerfectScrollbarDirective,
@@ -10,7 +10,7 @@ import {
   templateUrl: './showroom.component.html',
   styleUrls: ['./showroom.component.scss']
 })
-export class ShowroomComponent implements OnInit {
+export class ShowroomComponent implements OnInit,AfterViewInit {
   loggedIn:boolean = false;
 
   @ViewChildren(PerfectScrollbarDirective) pss: QueryList<
@@ -25,6 +25,87 @@ export class ShowroomComponent implements OnInit {
     }else{
       this.loggedIn = false;
     }
+  }
+
+  ngAfterViewInit(){
+    document.getElementById('search1').addEventListener('mouseenter',()=>{
+      document.getElementById('line1').style.display="none";
+    })
+
+    document.getElementById('search1').addEventListener('mouseleave',()=>{
+      document.getElementById('line1').style.display="flex";
+    })
+
+    document.getElementById('search2').addEventListener('mouseenter',()=>{
+      document.getElementById('line2').style.display="none";
+    })
+
+    document.getElementById('search2').addEventListener('mouseleave',()=>{
+      document.getElementById('line2').style.display="flex";
+    })
+
+    document.getElementById('search3').addEventListener('mouseenter',()=>{
+      document.getElementById('line3').style.display="none";
+    })
+
+    document.getElementById('search3').addEventListener('mouseleave',()=>{
+      document.getElementById('line3').style.display="flex";
+    })
+
+
+    document.getElementById('search1').addEventListener('click',()=>{
+      document.getElementById('search1').style.background="rgba(255,255,255,1)";
+
+      document.getElementById('search').style.background = "rgb(248,248,248)";
+      document.getElementById('search2').style.removeProperty('background');
+      document.getElementById('search3').style.removeProperty('background');
+      document.getElementById('search4').style.removeProperty('background');
+    })
+    
+    document.getElementById('search2').addEventListener('click',()=>{
+      document.getElementById('search2').style.background="rgba(255,255,255,1)";
+      document.getElementById('search').style.background = "rgb(248,248,248)";
+      document.getElementById('search1').style.removeProperty('background');
+      document.getElementById('search3').style.removeProperty('background');
+      document.getElementById('search4').style.removeProperty('background');
+    })
+    
+    document.getElementById('search3').addEventListener('click',()=>{
+      document.getElementById('search3').style.background="rgba(255,255,255,1)";
+      document.getElementById('search').style.background = "rgb(248,248,248)";
+      document.getElementById('search1').style.removeProperty('background');
+      document.getElementById('search2').style.removeProperty('background');
+      
+      document.getElementById('search4').style.removeProperty('background');
+    })
+    
+    document.getElementById('search4').addEventListener('click',()=>{
+      document.getElementById('search4').style.background="rgba(255,255,255,1)";
+      document.getElementById('search').style.background = "rgb(248,248,248)";
+      document.getElementById('search1').style.removeProperty('background');
+      document.getElementById('search2').style.removeProperty('background');
+      document.getElementById('search3').style.removeProperty('background');
+     
+    })
+
+    // document.getElementById('searchbutton').addEventListener('click',()=>{
+      
+
+    // })
+  }
+
+  logoutUser(){
+    localStorage.clear();
+    window.location.reload();
+  }
+
+  submitSearch(){
+    console.log('hello')
+    document.getElementById('search').style.background="white";
+      document.getElementById('search1').style.removeProperty('background');
+      document.getElementById('search2').style.removeProperty('background');
+      document.getElementById('search3').style.removeProperty('background');
+      document.getElementById('search4').style.removeProperty('background');
   }
 
   closePrivacyDialog(){

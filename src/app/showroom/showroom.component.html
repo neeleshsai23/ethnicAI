@@ -1,3 +1,4 @@
+<app-breadcrumb style="display: none;"></app-breadcrumb>
 <div id="country-dialog" style="background: rgb(68,68,68);height:60px">
   <!-- <div style="margin-top: 7px;margin-right: 20px;">
     <p style="color: rgba(230,230,230,1);">Choose another country or region to see content specify to you location</p>
@@ -40,18 +41,88 @@
   <div fxLayout="row" fxLayoutAlign="center center" class="logo" [routerLink]="['/home']">
     <img src="../../assets/images/logo_web.png" style="height: 100px;"/>
   </div>
-  <div class="search" >
+  <div fxLayout="row" >
+
+  </div>
+  <!-- <div class="search" >
     <input type="text" class="inputSearch"/>
     <button style="padding:5px 10px;border:none;border-radius:5px;margin-left:10px;background:linear-gradient(rgb(247,212,131), rgb(236,176,105));color: rgba(40,40,40,1);">Search</button>
+  </div> -->
+  <div id="search" fxLayout="row" fxLayoutAlign="start center">
+    <div id="search1" style="display:flex;flex-direction:column;padding:5px 25px;border-radius:30px;height: inherit;">
+      <label>Search</label>
+      <input type="text" matInput placeholder="whats on your mind">
+      
+      
+    </div>
+    <div id="line1">  
+
+    </div>
+    <div id="search2" style="display:flex;flex-direction:column;padding:5px 25px;border-radius:30px;height: inherit;">
+      <label>Category</label>
+      <div style="width:130px">
+        <mat-select placeholder="Select Category" style="width: inherit;" disableOptionCentering panelClass="myPanelClass" >
+          <mat-option [value]="1">Salwar Kameez</mat-option>
+          <mat-option [value]="2">Saree</mat-option>
+          <mat-option [value]="3">Saree Blouse</mat-option>
+          <mat-option [value]="4">Lehengas</mat-option>
+          <mat-option [value]="5">Gowns</mat-option>
+          <mat-option [value]="6">Kurtas</mat-option>
+          <mat-option [value]="7">Bridals</mat-option>
+        </mat-select>
+      </div>
+      
+    </div>
+    <div id="line2">  
+
+    </div>
+    <div id="search3" style="display:flex;flex-direction:column;padding:5px 25px;border-radius:30px;height: inherit;">
+      <label>Occassion</label>
+      <div style="width:130px">
+        <mat-select placeholder="Select Occassion" style="width: inherit;" disableOptionCentering panelClass="myPanelClass" >
+          <mat-option [value]="1">Wedding</mat-option>
+          <mat-option [value]="2">Mehendi</mat-option>
+          <mat-option [value]="3">Sangeet</mat-option>
+          <mat-option [value]="4">Lehengas</mat-option>
+        </mat-select>
+      </div>
+      
+    </div>
+    <div id="line3">  
+
+    </div>
+    <div id="search4" style="display:flex;align-items:center;justify-content:center;padding:5px 25px;border-radius:30px;height: inherit;">
+      <div style="display:flex;flex-direction:column;">
+        <label>Age group</label>
+        <div style="width:130px">
+          <mat-select placeholder="Select Age Group" style="width: inherit;" disableOptionCentering panelClass="myPanelClass" >
+            <mat-option [value]="1">Men</mat-option>
+            <mat-option [value]="2">Women</mat-option>
+            <mat-option [value]="3">Boys</mat-option>
+            <mat-option [value]="4">Girls</mat-option>
+            
+          </mat-select>
+        </div>
+      </div>
+      
+      <button (click)="submitSearch()" style="margin-left:10px;width:40px;height:40px;border-radius:50%;background:rgb(199,157,107);border:none;outline:none;z-index:5">
+        <mat-icon style="color: white;">search</mat-icon>
+      </button>
+      
+    </div>
   </div>
   <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:10px">
     <!-- <div *ngIf="!loggedIn" fxLayout="column" fxLayoutAlign="center center" class="icons" (click)="gotoLogin()">
       <mat-icon>login</mat-icon>
       <p>Login</p>
     </div> -->
-    <div fxLayout="column" fxLayoutAlign="center flex-start" class="icons" >
-      <p>Hello,</p>
-      <p style="transform: scale(1.2);margin-top: -8px;">Sign Up</p>
+    <div fxLayout="column" fxLayoutAlign="center flex-start" class="icons"  >
+      <p>Hello Anurag,</p>
+      <!-- <p style="transform: scale(1.2);margin-top: -8px;">Sign Up</p> -->
+      <p *ngIf="!loggedIn" style="transform: scale(1.2);margin-top: -8px;margin-left: 5px;" [routerLink]="['/login']">Log In</p>
+      <p *ngIf="loggedIn" style="transform: scale(1.2);margin-top: -8px;margin-left: 5px;" (click)="logoutUser()">Log Out</p>
+      
+
     </div>
     <div fxLayout="column" fxLayoutAlign="center center" class="icons" [routerLink]="['/account']">
       <mat-icon>account_box</mat-icon>
@@ -66,7 +137,7 @@
       <p>My Orders</p>
     </div> -->
     
-    <div fxLayout="column" fxLayoutAlign="center center" class="icons cartbox">
+    <div fxLayout="column" fxLayoutAlign="center center" class="icons cartbox" [routerLink]="['/cart']">
       <mat-icon>shopping_cart</mat-icon>
       <p>Cart</p>
       <div class="cartdiv">
@@ -77,47 +148,454 @@
   </div>
 </nav>
 <div class="categories">
-  <div fxLayout="row" fxLayoutAlign="space-around center" style="width:80%">
-    <div>
+  <div fxLayout="row" fxLayoutAlign="space-around center" style="width:80%;height: inherit;">
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
       <a>SALWAR KAMEEZ<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">STYLE</h4>
+            <div fxLayout="column">
+              <p>See All Salwar Kameez</p>
+              <p>Anarkali Suits</p>
+              <p>Sharara Suits</p>
+              <p>Designer</p>
+              <p>Palazzo Suits</p>
+              <p>Dhoti Suits</p>
+              <p>Straight Cut</p>
+              <p>Crop Top Suits</p>
+              <p>Unstitched</p>
+              <!-- <p>Indowestern Anarkali</p>
+              <p>Jump Suits</p>
+              <p>Cape Suits</p>
+              <p>Patiala Suits</p> -->
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">OCCASSION</h4>
+            <div fxLayout="column" >
+              <p>Wedding</p>
+              <p>Part Wear</p>
+              <p>Festive</p>
+              <p>Engagement</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">FABRIC</h4>
+            <div fxLayout="column" >
+              <p>Silk</p>
+              <p>Georgette</p>
+              <p>Net</p>
+              <p>Cotton Silk</p>
+              <p>Cotton</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">QUICK LINKS</h4>
+            <div fxLayout="column" >
+              <p>Ready to Ship</p>
+              <p>Plus Size</p>
+              <p>Best Sellers</p>
+              <p>Suits Under 200USD</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">COLORS</h4>
+            <div fxLayout="column" >
+              <p>Yellow</p>
+              <p>Black</p>
+              <p>Rani Pink</p>
+              <p>Grey</p>
+              <p>Peach</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div>
-      <a>SAREE<span class="caret"></span></a>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
+      <a >SAREE<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">STYLE</h4>
+            <div fxLayout="column" >
+              <p>See All Sarees</p>
+              <p>Embroidered Sarees</p>
+              <p>Designer Sarees</p>
+              <p>Ready Pleated Sarees</p>
+              <p>Plain Sarees with Designer Blouse</p>
+              <p>Plain Sarees</p>
+              <p>Printed Sarees</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">OCCASSION</h4>
+            <div fxLayout="column" >
+              <p>Bridal</p>
+              <p>Part Wear</p>
+              <p>Wedding</p>
+              <p>Festive</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">FABRIC</h4>
+            <div fxLayout="column" >
+              <p>Net</p>
+              <p>Banarasi</p>
+              <p>Chiffon</p>
+              <p>Georgette</p>
+              <p>Silk</p>
+              <p>Organza</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">QUICK LINKS</h4>
+            <div fxLayout="column" >
+              <p>Sarees Under USD 200</p>
+              <p>Best Sellers</p>
+              <p>Ready to Ship</p>
+              <p>Ready Blouse</p>
+              <p>Saree Blouse</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">COLORS</h4>
+            <div fxLayout="column" >
+              <p>Black</p>
+              <p>Red</p>
+              <p>Green</p>
+              <p>Blue</p>
+              <p>Pink</p>
+              <p>Beige</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
       <a>SAREE BLOUSE<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">STYLE</h4>
+            <div fxLayout="column" >
+              <p>See All Saree Blouses</p>
+              <p>Designer Saree Blouse</p>
+              <p>Plus Size Saree Blouse</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">FABRIC</h4>
+            <div fxLayout="column" >
+              <p>Velvet</p>
+              <p>Raw Silk</p>
+              <p>Silk</p>
+              <p>Satin</p>
+              <p>Dupion</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">QUICK LINKS</h4>
+            <div fxLayout="column" >
+              <p>Blouses Under USD 200</p>
+              <p>Best Sellers</p>
+              <p>Ready to Ship</p>
+              <p>Custom Made Saree Blouse</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">COLORS</h4>
+            <div fxLayout="column" >
+              <p>Golden</p>
+              <p>Black</p>
+              <p>Beige</p>
+              <p>Orange</p>
+              <p>Cream</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
       <a>LEHENGAS<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">STYLE</h4>
+            <div fxLayout="column" >
+              <p>See All Lehengas</p>
+              <p>Bridal</p>
+              <p>Designer Choli</p>
+              <p>Bridesmaid</p>
+              <p>Crop Top and Skirt</p>
+              <p>Circular Cut</p>
+              <p>Drape</p>
+              <p>Jacket</p>
+              <p>Cape</p>
+              <p>Printed</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">OCCASSION</h4>
+            <div fxLayout="column" >
+              <p>Part Wear</p>
+              <p>Mehendi</p>
+              <p>Sangeet</p>
+              <p>Reception</p>
+              <p>Wedding</p>
+              <p>Day Wedding</p>
+              <p>Intimate Wedding</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">QUICK LINKS</h4>
+            <div fxLayout="column" >
+              <p>Lehengas Under USD 400</p>
+              <p>Best Sellers</p>
+              <p>Ready to Ship</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">COLORS</h4>
+            <div fxLayout="column" >
+              <p>Green</p>
+              <p>Yellow</p>
+              <p>Peach</p>
+              <p>Red</p>
+              <p>Turq</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
       <a>GOWNS<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">STYLE</h4>
+            <div fxLayout="column" >
+              <p>See All Gowns</p>
+              <p>Designer</p>
+              <p>Evening</p>
+              <p>Indowestern</p>
+              <p>Drape</p>
+              <p>Dresses</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">OCCASSION</h4>
+            <div fxLayout="column" >
+              <p>Bridal</p>
+              <p>Part Wear</p>
+              <p>Reception</p>
+              <p>Sangeet</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">QUICK LINKS</h4>
+            <div fxLayout="column" >
+              <p>Gowns Under USD 300</p>
+              <p>Best Sellers</p>
+              <p>Ready to Ship</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">COLORS</h4>
+            <div fxLayout="column" >
+              <p>Navy Blue</p>
+              <p>Pink</p>
+              <p>Maroon</p>
+              <p>Grey</p>
+              <p>Blue</p>
+              <p>Red</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div>
-      <a>KURTAS<span class="caret"></span></a>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="center center">
+      <a>KURTIS<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">STYLE</h4>
+            <div fxLayout="column" >
+              <p>See All Kurtis</p>
+              <p>Long Kurti</p>
+              <p>Kurta Set</p>
+              <p>Tunics</p>
+              <p>Designer Kurtis</p>
+              <p>Melange</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">OCCASSION</h4>
+            <div fxLayout="column" >
+              <p>Casual</p>
+              <p>Part Wear</p>
+              <p>Festive</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">FABRIC</h4>
+            <div fxLayout="column" >
+              <p>Cotton</p>
+              <p>Georgette</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">QUICK LINKS</h4>
+            <div fxLayout="column" >
+              <p>Kurtis Under USD 50</p>
+              <p>Best Sellers</p>
+              <p>Ready to Ship</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">BOTTOM WEAR</h4>
+            <div fxLayout="column" >
+              <p>Leggings / Churidhar</p>
+              <p>Cigarette Pants</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">COLORS</h4>
+            <div fxLayout="column" >
+              <p>Black</p>
+              <p>White</p>
+              <p>Green</p>
+              <p>Cream</p>
+              <p>Yellow</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
       <a>BRIDALS<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">COLLECTIONS</h4>
+            <div fxLayout="column" >
+              <p>Engagement</p>
+              <p>Sangeet</p>
+              <p>Reflection</p>
+              <p>Mehrang</p>
+              <p>Glitter</p>
+              <p>Fusion</p>
+              <p>Festive</p>
+              <p>Cape</p>
+              <p>Fashion Show</p>
+              <p>Athena</p>
+              <!-- <p>Zinnia</p>
+              <p>Mirabell</p>
+              <p>Frill</p>
+              <p>Santacruz Store</p>
+              <p>Worli Store</p>
+              <p>Viviana Store</p>
+              <p>Goregaon Store</p>
+              <p>Lucknowi Store</p>
+              <p>Bandhani</p> -->
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">TRENDS</h4>
+            <div fxLayout="column" >
+              <p>Ready to Ship</p>
+              <p>Kesa</p>
+              <p>Resort Prints</p>
+              <p>Leheriya</p>
+              <p>The Evening Champagnes</p>
+              <p>The jaipuri Classics</p>
+              <p>Gulzar x Bahar</p>
+              <p>The Teal Waters</p>
+              <p>The Dark Forest</p>
+              <!-- <p>The Heritage Series</p>
+              <p>Floral Paradise</p>
+              <p>The Power of Peplum</p>
+              <p>Bride and Baarat</p>
+              <p>Kalki Couture</p>
+              <p>Dianty Drape</p>
+              <p>Paint it Pastel</p>
+              <p>Picture Perfect</p>
+              <p>Maternity Dresses</p> -->
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
     </div>
-    <div>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
       <a>NEW ARRIVALS<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <div fxLayout="column" >
+              <p>Latest Salwar Suits</p>
+              <p>Latest Sarees</p>
+              <p>Latest Lehengas</p>
+              <p>Latest Gowns</p>
+              <p>Latest Kurtis</p>
+            </div>
+          </div>
+
+          
+        </div>
+
+      </div>
+
+      
     </div>
-    <div>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
       <a>SALE<span class="caret"></span></a>
+      <div class="dropdowndiv">
+        <div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">CATEGORY</h4>
+            <div fxLayout="column" >
+              <p>Salwaar Kameez</p>
+              <p>Saree</p>
+              <p>Lehengas</p>
+              <p>Gowns</p>
+              <p>Kurti</p>
+              <p>Saree Blouse</p>
+            </div>
+          </div>
+          <div fxLayout="column" style="max-width: 150px !important;padding-right:20px;">
+            <h4 style="color: black;">DISCOUNT</h4>
+            <div fxLayout="column" >
+              <p>Festive Sale</p>
+              <p>30% and Above</p>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
     </div>
-    <div>
-      <a>BEST SELLERS<span class="caret"></span></a>
+    <div class="navdiv" style="height: inherit;" fxLayout="row" fxLayoutAlign="flex-start center">
+      <a>BEST SELLERS</a>
     </div>
+  </div> 
     
-  </div>
 </div>
+
 
 <router-outlet perfectScrollbar></router-outlet>
 
-<footer class="w-100" fxLayout="column" fxLayoutAlign="center center" style="background: rgb(246, 247, 248);padding:20px;margin-top: 30px;">
+<footer class="w-100" fxLayout="column" fxLayoutAlign="center center" style="background:rgb(35,47,62);padding:20px;margin-top: 30px;">
   <div style="width: 80%;" fxLayout="row" fxLayoutAlign="space-between flex-start">
     <div fxLayout="column">
-      <h4>ONLINE SHOPPING</h4>
+      <h5>ONLINE SHOPPING</h5>
       <div fxLayout="column" style="color:rgba(140,140,140,1)">
         <p>Men</p>
         <p>Women</p>
@@ -127,7 +605,7 @@
 
     </div>
     <div fxLayout="column">
-      <h4>USEFUL LINKS</h4>
+      <h5>USEFUL LINKS</h5>
       <div fxLayout="column" style="color:rgba(140,140,140,1)">
         <p>Contact Us</p>
         <p>FAQ</p>
@@ -144,13 +622,13 @@
       </div>
     </div>
     <div fxLayout="column">
-      <h4>EXPERIENCE EAnythingIndian APP ON MOBILE</h4>
+      <h5>EXPERIENCE eAnythingIndian APP ON MOBILE</h5>
       <div fxLayout="row">
         <img src="../../assets/images/play.png" style="width:150px;height:50px;margin-right: 10px;"/>
         <img src="../../assets/images/appstore.png" style="width:150px;height:50px"/>
 
       </div>
-      <h4 style="margin-top: 40px;">KEEP IN TOUCH</h4>
+      <h5 style="margin-top: 40px;">KEEP IN TOUCH</h5>
       <div fxLayout="row">
         <img src="../../assets/images/facebook.png" style="width:30px;height:30px;margin-right: 10px;"/>
         <img src="../../assets/images/twitter.png" style="width:30px;height:30px;margin-right: 10px;"/>
@@ -162,17 +640,17 @@
     <div fxLayout="column" fxLayoutAlign="flex-start flex-start" style="margin-top: 20px;">
       <div fxLayout="row" fxLayoutAlign="center center">
         <img src="../../assets/images/original.png" style="width:40px;height: 40px;margin-right: 10px;"/>
-        <h4>100% ORIGINAL</h4>
+        <h5>100% ORIGINAL</h5>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 10px;">
         <img src="../../assets/images/shipping.png" style="width:40px;height: 40px;margin-right: 10px;"/>
-        <h4>INTERNATIONAL SHIPPING</h4>
+        <h5>INTERNATIONAL SHIPPING</h5>
       </div>
     </div>
   </div>
 
   <div style="width: 80%;margin-top:30px" fxLayout="column">
-    <h4 class="popular">POPULAR SEARCHES</h4>
+    <h5 class="popular">POPULAR SEARCHES</h5>
     <div style="color:rgba(140,140,140,1);margin-top: 20px;">
       <p style="line-height: 30px">Makeup | Dresses For Girls | T-Shirts | Sandals | Blazers For Men | Handbags | Ladies Watches | Bags
          | Wallets | Tops | Earrings | Kurtis | Designer Blouse | Gowns | Rings | Punjabi Suits | Lipstick
@@ -180,7 +658,7 @@
       </p>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center" style="color:rgba(140,140,140,1);margin-top: 20px;">
-      <p>In Case of any Concern, <span style="color: blue;font-size: 18px;">Contact Us</span></p>
+      <p>In Case of any Concern, <span style="color: white;font-size: 18px;">Contact Us</span></p>
       <p>&#169; 2020 www.ethnic.optionmatrix.org. All rights reserved.</p>
 
     </div>
@@ -189,16 +667,30 @@
 
 </footer>
 
-<div class="w-100" id="privacy-dialog" style="background: rgb(240,239,237);padding:20px">
-  <div style="width:60%;" fxLayout="column" fxLayoutAlign="center center">
-    <p style="font-size: 18px;color: black;font-weight: bold;">We value your privacy</p>
-    <p>In order to run a successful website, we and certain third parties are setting cookies and storing information to personalise your experience. We require your consent for doing so.</p>
-    <button style="padding:8px 10px;background: rgb(157,58,34);color: white;border: none;outline: none;border-radius: 5px;" (click)="closePrivacyDialog()">I Agree</button>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div id="privacy-dialog" style="background: rgb(240,239,237);width:80%" >
+    <div style="width:inherit;" fxLayout="column" fxLayoutAlign="center flex-start" style="padding:20px">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h5 style="color:black">Your Privacy</h5>
+        <mat-icon style="color: blue;">https</mat-icon>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="flex-start flex-start">
+        <p>We use cookies and similar technologies to hepl personalise content, tailor and measure ads, and provide a better experience. By clicking OK or turning an option on in Cookie Preferences, you agree to this, as outlined in our <span style="font-weight: bold;text-decoration: underline;">Cookie Policy</span>. To change prefernces or withdraw consent, please update your Cookie Preferences.</p>
+        <button style="padding:8px 10px;background: white;color: black;border:none;box-shadow: 0 0 0 1px black;outline: none;border-radius: 5px;width:350px !important;margin-left: 10px;" (click)="closePrivacyDialog()">Cookie Preferences</button>
+        <button style="padding:8px 10px;background: black;color: white;border:none;outline: none;border-radius: 5px;width:250px !important;margin-left: 10px;" (click)="closePrivacyDialog()">OK</button>
+      </div>
+      
+    </div>
   </div>
+
+</div>
   
 
 
-</div>
+  
+
+
+
 
 <div fxLayout="row" fxLayoutAlign="center center" class="back-to-top transition-2" (click)="scrollToTop();">
   <mat-icon>arrow_upward</mat-icon>

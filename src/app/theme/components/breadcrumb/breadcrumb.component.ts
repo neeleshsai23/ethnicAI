@@ -139,7 +139,18 @@ export class BreadcrumbComponent {
 
             "Catalog":"This screen is used to manage the catalog",
             "Payouts":"This screen is used to manage the payouts",
-            "Reports":"This screen is used to manage the reports"
+            "Reports":"This screen is used to manage the reports",
+            "Reviews":"This is Reviews Screen",
+            "Bundles":"This is Bundles Screen",
+            "Deals":"This is Deals Screen",
+            "Profile":"This is Profile Screen",
+
+            "Shopping Cart": "Shopping Cart",
+            "eAnythingIndian - Online Ethnic Clothing Store":"eAnythingIndian - Online Ethnic Clothing Store",
+            "Wishlist" : "Wishlist",
+            "My Account": "My Account",
+            "My Orders": "My Orders",
+            "Product Landing Page": "Product Landing Page"
 
         };
         this.router.events.subscribe(event => {

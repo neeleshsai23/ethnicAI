@@ -1,0 +1,273 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 flex-p" style="margin-top: 20px;">
+  <div class="row ">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="w-100 flex-p">
+        <div class="dashboard-stat blue-madison">
+          <div class="visual">
+            <i class="fa fa-users fa-1x"></i>
+          </div>
+          <div class="details">
+            <div class="number">
+             Active Products
+            </div>
+            <div class="desc">
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="w-100 flex-p">
+        <div class="dashboard-stat blue-madison">
+          <div class="visual">
+            <i class="fa fa-users fa-1x"></i>
+          </div>
+          <div class="details">
+            <div class="number">
+              Orders till Date
+            </div>
+            <div class="desc">
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="w-100 flex-p">
+        <div class="dashboard-stat ppurple-madison">
+          <div class="visual">
+            <i class="fa fa-users"></i>
+          </div>
+          <div class="details">
+            <div class="number">
+              WIP Orders
+            </div>
+            <div class="desc">
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="w-100 flex-p">
+        <div class="dashboard-stat blue-madison">
+          <div class="visual">
+            <i class="fa fa-users fa-1x"></i>
+          </div>
+          <div class="details">
+            <div class="number">
+              New Products
+            </div>
+            <div class="desc">
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="row ">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="w-100 flex-p">
+        <div class="dashboard-stat green-haze">
+          <div class="visual">
+            <i class="fa fa-percent"></i>
+          </div>
+          <div class="details">
+            <div class="number">
+             Active Customers
+            </div>
+            <div class="desc">
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="w-100 flex-p">
+        <div class="dashboard-stat blue-madison">
+          <div class="visual">
+            <i class="fa fa-file"></i>
+          </div>
+          <div class="details">
+            <div class="number">
+              Inventory
+            </div>
+            <div class="desc">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="w-100 flex-p">
+        <div class="dashboard-stat ppurple-madison">
+          <div class="visual">
+            <i class="fa fa-file"></i>
+          </div>
+          <div class="details">
+            <div class="number">
+              Revenue (Current Year)
+            </div>
+            <div class="desc">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="w-100 flex-p">
+        <div class="dashboard-stat blue-madison">
+          <div class="visual">
+            <i class="fa fa-users fa-1x"></i>
+          </div>
+          <div class="details">
+            <div class="number">
+              Revenue (Current Month)
+            </div>
+            <div class="desc">
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-100" style="margin:30px 0" fxLayoutAlign="flex-end center">
+    <div fxLayout="center center">
+        <label style="margin-top:4px;margin-right:10px;text-align:right;font-size: 18px;">Select Vendor :</label>
+        <div style="width: 250px;border-radius:10px">
+            <mat-select class="form-control"
+              required placeholder="Select Vendor">
+              <mat-option ></mat-option>
+              
+            </mat-select>
+          </div>
+    </div>
+</div>
+  <div class="row" style="padding-left:7px !important;padding-right:7px !important;">
+    <div fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+      <mat-card>
+        <mat-card-header fxLayoutAlign="center center">                
+            <mat-card-subtitle><h2>Monthly Trend of Orders per Day</h2></mat-card-subtitle>
+        </mat-card-header>
+        <div class="w-100 h-300p">
+            <ngx-charts-line-chart
+                [scheme]="colorScheme"
+                [results]="analytics"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegends"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [autoScale]="autoScale"
+                (select)="onSelect($event)">
+            </ngx-charts-line-chart>                  
+        </div>
+    </mat-card>
+  </div>
+</div>
+
+<div class="row ">
+  <div fxFlex="100" fxFlex.gt-sm="50" class="flex-p">
+    <div class="flex-p"> 
+      <mat-card>
+        <mat-card-header fxLayoutAlign="center center">                
+          <mat-card-subtitle><h2>Orders by Country</h2></mat-card-subtitle>
+        </mat-card-header>
+        <div class="w-100 h-300p">
+          <ngx-charts-pie-chart
+          [scheme]="colorScheme"
+          [results]="single"
+          [legend]="showLegend"
+          [explodeSlices]="explodeSlices"
+          [labels]="showLabels"
+          [doughnut]="doughnut"
+          [gradient]="gradient"
+          (select)="onSelect($event)">
+        </ngx-charts-pie-chart>                  
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div fxFlex="100" fxFlex.gt-sm="50" class="flex-p">
+  <div class="flex-p"> 
+    <mat-card>
+      <mat-card-header fxLayoutAlign="center center">                
+        <mat-card-subtitle><h2>Customers by Country</h2></mat-card-subtitle>
+      </mat-card-header>
+      <div class="w-100 h-300p">
+        <ngx-charts-pie-chart
+        [scheme]="colorScheme"
+        [results]="singles"
+        [legend]="showLegend"
+        [explodeSlices]="explodeSlices"
+        [labels]="showLabels"
+        [doughnut]="doughnut"
+        [gradient]="gradient"
+        (select)="onSelect($event)">
+      </ngx-charts-pie-chart>                  
+    </div>
+  </mat-card>
+</div>
+</div>
+
+</div>
+
+<div class="row ">
+  <div fxFlex="100" fxFlex.gt-sm="50" class="flex-p">
+    <div class="flex-p"> 
+      <mat-card>
+        <mat-card-header fxLayoutAlign="center center">                
+          <mat-card-subtitle><h2>Inventory by Category</h2></mat-card-subtitle>
+        </mat-card-header>
+        <div class="w-100 h-300p">
+          <ngx-charts-pie-chart
+          [scheme]="colorScheme"
+          [results]="single"
+          [legend]="showLegend"
+          [explodeSlices]="explodeSlices"
+          [labels]="showLabels"
+          [doughnut]="doughnut"
+          [gradient]="gradient"
+          (select)="onSelect($event)">
+        </ngx-charts-pie-chart>                  
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div fxFlex="100" fxFlex.gt-sm="50" class="flex-p">
+  <div class="flex-p"> 
+    <mat-card>
+      <mat-card-header fxLayoutAlign="center center">                
+        <mat-card-subtitle><h2>Sales by Country</h2></mat-card-subtitle>
+      </mat-card-header>
+      <div class="w-100 h-300p">
+        <ngx-charts-pie-chart
+        [scheme]="colorScheme"
+        [results]="singles"
+        [legend]="showLegend"
+        [explodeSlices]="explodeSlices"
+        [labels]="showLabels"
+        [doughnut]="doughnut"
+        [gradient]="gradient"
+        (select)="onSelect($event)">
+      </ngx-charts-pie-chart>                  
+    </div>
+  </mat-card>
+</div>
+</div>
+
+</div>
+

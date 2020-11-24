@@ -17,8 +17,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 export const routes = [
-   
-   
+   {path:"",redirectTo:"dashboard",pathMatch:"full"},
+
     {path:"dashboard",loadChildren:"./dashboard/dashboard.module#DashboardModule",component:DashboardComponent,data:{breadcrumb:"Dashboard"}},
     { path: "vendors",loadChildren:"./vendors/vendors.module#VendorsModule", component: VendorsComponent,data:{breadcrumb:"Vendors"}},
     { path: "categories",loadChildren:"./categories/categories.module#CategoriesModule", component: CategoriesComponent,data:{breadcrumb:"Categories"}},

@@ -1,3 +1,11 @@
 img:hover {
   cursor: pointer;
 }
+
+li {
+  color: rgb(221, 213, 213);
+}
+
+li.selected {
+  color: #ffd700;
+}

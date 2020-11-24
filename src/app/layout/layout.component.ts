@@ -48,12 +48,7 @@ export class LayoutComponent implements OnInit {
     private menuService: MenuService
   ) {
     this.settings = this.appSettings.settings;
-    this.router.events.subscribe((e) => {
-      if (e instanceof NavigationEnd) {
-        this.url=e.url.toString();
-        console.log('layout',this.url)
-      }
-    });
+    
   }
 
   ngOnInit() {

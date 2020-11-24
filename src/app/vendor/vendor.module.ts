@@ -15,13 +15,33 @@ import { DispatchComponent } from './vendor-orders/dispatch/dispatch.component';
 import { TrackingComponent } from './vendor-orders/tracking/tracking.component';
 import { ReturnsComponent } from './vendor-orders/returns/returns.component';
 import { ClosureComponent } from './vendor-orders/closure/closure.component';
+import { OverviewComponent } from './dashboard/overview/overview.component';
+import { RevenueComponent } from './dashboard/revenue/revenue.component';
+import { CancelledOrdersComponent } from './dashboard/cancelled-orders/cancelled-orders.component';
+import { TopTenProductsComponent } from './dashboard/top-ten-products/top-ten-products.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { DealsComponent } from './deals/deals.component';
+import { BundlesComponent } from './bundles/bundles.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { LogisticsComponent } from './logistics/logistics.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MyAccountComponent } from './my-account/my-account.component';
 
 export const routes= [
-    {path:"",redirectTo:"products",pathMatch:"full"},
-    {path:"products",loadChildren:"./products/products.module#ProductsModule"},
-    {path:"store",component:DashboardComponent,data:{breadcrumb:"Store"}},
+    {path:"",redirectTo:"dashboard",pathMatch:"full"},
+    {path:"radar",component:LogisticsComponent,data:{breadcrumb:"Radar"}},
+    {path:"store",component:LogisticsComponent,data:{breadcrumb:"Store"}},
 
-      {path:"dashboard",component:DashboardComponent,data:{breadcrumb:"Dashboard"}},
+    {path:"catalog",loadChildren:"./products/products.module#ProductsModule"},
+    {path:"store",component:DashboardComponent,data:{breadcrumb:"Store"}},
+    {path:"deals",component:DealsComponent,data:{breadcrumb:"Deals"}},
+    {path:"bundles",component:BundlesComponent,data:{breadcrumb:"Bundles"}},
+    {path:"inventory",component:InventoryComponent,data:{breadcrumb:"Inventory"}},
+
+      {path:"dashboard",component:DashboardComponent,loadChildren:"./dashboard/dashboard-vendor.module#DashboardVendorModule",data:{breadcrumb:"Dashboard"}},
+      
+
       {path:"orders",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
       {path:"orders/payments",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
 
@@ -32,7 +52,9 @@ export const routes= [
       {path:"orders/returns",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
       {path:"orders/closure",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
 
-            {path:"logistics",component:VendorOrdersComponent,data:{breadcrumb:"Logistics"}},
+            {path:"logistics",component:LogisticsComponent,data:{breadcrumb:"Logistics"}},
+            {path:"reviews",component:ReviewsComponent,data:{breadcrumb:"Reviews"}},
+            {path:"profile",component:ProfileComponent,data:{breadcrumb:"Profile"}},
             {path:"customers",component:VendorOrdersComponent,data:{breadcrumb:"Customers"}},
 
       {path:"finance",redirectTo:"finance/receivables",pathMatch:"full",data:{breadcrumb:"Finance"}},
@@ -43,10 +65,16 @@ export const routes= [
       {path:"user",redirectTo:"user/users",pathMatch:"full"},
       {path:"user/users",component:VendorFinanceComponent,data:{breadcrumb:"Users"}},
       {path:"user/settings",component:VendorFinanceComponent,data:{breadcrumb:"Settings"}},
+      {path:"user/support",component:VendorFinanceComponent,data:{breadcrumb:"Settings"}},
+      {path:"user/masterdata",component:VendorFinanceComponent,data:{breadcrumb:"Settings"}},
+      {path:"user/lookup",component:VendorFinanceComponent,data:{breadcrumb:"Settings"}},
+
+
+
 ]
 
 @NgModule({
-    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent, PaymentsComponent, CancellationsComponent, DispatchComponent, TrackingComponent, ReturnsComponent, ClosureComponent],
+    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent, PaymentsComponent, CancellationsComponent, DispatchComponent, TrackingComponent, ReturnsComponent, ClosureComponent,  CatalogComponent, DealsComponent, BundlesComponent, InventoryComponent, LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
