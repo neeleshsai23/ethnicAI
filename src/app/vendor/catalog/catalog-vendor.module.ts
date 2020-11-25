@@ -13,19 +13,18 @@ import { FeaturesDialogComponent } from './collections/features-dialog/features-
 import { PricingDialogComponent } from './collections/pricing-dialog/pricing-dialog.component';
 
 export const routes= [
-    {path:"",redirectTo:"collections",pathMatch:"full"},
+    {path:"",redirectTo:"products",pathMatch:"full"},
     {path:"inventory",component:InventoryComponent,data:{breadcrumb:"Inventory"}},
-    {path:"collections",component:CollectionsComponent,data:{breadcrumb:"Collections"}}
+    {path:"products",loadChildren:"./collections/collections.module#CollectionsModule",data:{breadcrumb:"Products"}}
 ]
 
 @NgModule({
-    declarations:[ CollectionsComponent, InventoryComponent, AddCollectionDialogComponent, FeaturesDialogComponent, PricingDialogComponent],
+    declarations:[ InventoryComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
         ChartsModule
-      ],
-      entryComponents:[AddCollectionDialogComponent, FeaturesDialogComponent, PricingDialogComponent]
+      ]
 })
 
-export class ProductsModule {}
+export class VendorCatalogModule {}

@@ -1,13 +1,13 @@
-<div class="row" style="margin-top:20px;">
+<div fxLayout="row" style="margin-top:20px;">
   <div class="col-xs-6 ">
   </div>
   <div class="col-xs-6 ">
       <div class="flex-p">
           <button mat-raised-button class="pull-right  btn-primary" (click)="openCollectionDialog()" >
-              <mat-icon>add</mat-icon> Add Collection
+              <mat-icon>add</mat-icon> Add Product
           </button>
           <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
-            Bulk Upload (CSV or XCEL)
+            Bulk Upload (CSV or EXCEL)
           </button>
           <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
               Download Sample
@@ -21,32 +21,34 @@
   
 </div>
 </div>
-<div class="row" style="margin-top:20px">
-  <div class="col-xs-12">
+<div fxLayout="row" style="margin-top:20px">
+  <div class="col-sm-12">
       <div id="grid-table-container" class="table-responsive">
           <table matSort id="example2" class="table table-bordered table-hover">
               <thead class="tbl-head">
                   <tr>
+                      <th>Product Name</th>
                       <th >SKU#</th>
-                      <th >Product Category</th>
-                      <th >Product Name</th>
-                      <th class="text-center" >Product Features</th>
-                      <th class="text-center">Pricing</th>
+                      <th class="text-center">Categories</th>
+                      <th class="text-center">Occasions</th>
                       <th class="text-center">Inventory</th>
-                      <th class="text-center">Images</th>
+                      <th class="text-center">Last Shipped</th>
+                      <th class="text-center">Brand</th>
+                      <!-- <th class="text-center">Images</th> -->
                       <th class="text-center">Status</th>
                       <th class="text-center">Actions</th>
                   </tr>
               </thead>
               <tbody>
                   <tr *ngFor="let value of values">
+                    <td ><a style="color:blue;cursor: pointer;" matTooltip="View Product Dashboard" target="_blank" [routerLink]="['/vendor/catalog/products/dashboard']">{{value.name}}</a></td>
                     <td><a>{{value.sku}}</a></td>
-                    <td>{{value.category}}</td>
-                    <td>{{value.product}}</td>
-                    <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openFeaturesDialog()" >{{value.features}}</a></td>
-                    <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openPricingDialog()" >{{value.pricing}}</a></td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openFeaturesDialog()" matTooltip="Manage Categories" >{{value.categories}}</a></td>
+                    <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openPricingDialog()" matTooltip="Manage Occasions" >{{value.occasions}}</a></td>
                     <td class="text-center">{{value.inventory}}</td>
-                    <td class="text-center"><a style="color:blue;cursor: pointer;">{{value.images}}</a></td>
+                    <td class="text-center">{{value.lastshipped}}</td>
+                    <td class="text-center">{{value.brand}}</td>
+                    <!-- <td class="text-center"><a style="color:blue;cursor: pointer;">{{value.images}}</a></td> -->
                     <td [ngStyle]="{'color': value.status=='Active'? 'rgb(72, 158, 19)' : 'red'}" style="text-align: center !important;">
                         {{value.status}}
                     </td>

@@ -19,7 +19,6 @@ import { OverviewComponent } from './dashboard/overview/overview.component';
 import { RevenueComponent } from './dashboard/revenue/revenue.component';
 import { CancelledOrdersComponent } from './dashboard/cancelled-orders/cancelled-orders.component';
 import { TopTenProductsComponent } from './dashboard/top-ten-products/top-ten-products.component';
-import { CatalogComponent } from './catalog/catalog.component';
 import { DealsComponent } from './deals/deals.component';
 import { BundlesComponent } from './bundles/bundles.component';
 import { InventoryComponent } from './inventory/inventory.component';
@@ -33,11 +32,11 @@ export const routes= [
     {path:"radar",component:LogisticsComponent,data:{breadcrumb:"Radar"}},
     {path:"store",component:LogisticsComponent,data:{breadcrumb:"Store"}},
 
-    {path:"catalog",loadChildren:"./products/products.module#ProductsModule"},
+    {path:"catalog",loadChildren:"./catalog/catalog-vendor.module#VendorCatalogModule"},
     {path:"store",component:DashboardComponent,data:{breadcrumb:"Store"}},
     {path:"deals",component:DealsComponent,data:{breadcrumb:"Deals"}},
     {path:"bundles",component:BundlesComponent,data:{breadcrumb:"Bundles"}},
-    {path:"inventory",component:InventoryComponent,data:{breadcrumb:"Inventory"}},
+    {path:"inventory",component:InventoryComponent,loadChildren:"./inventory/inventory-vendor.module#VendorInventoryModule",data:{breadcrumb:"Inventory"}},
 
       {path:"dashboard",component:DashboardComponent,loadChildren:"./dashboard/dashboard-vendor.module#DashboardVendorModule",data:{breadcrumb:"Dashboard"}},
       
@@ -74,7 +73,7 @@ export const routes= [
 ]
 
 @NgModule({
-    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent, PaymentsComponent, CancellationsComponent, DispatchComponent, TrackingComponent, ReturnsComponent, ClosureComponent,  CatalogComponent, DealsComponent, BundlesComponent, InventoryComponent, LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent],
+    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent, PaymentsComponent, CancellationsComponent, DispatchComponent, TrackingComponent, ReturnsComponent, ClosureComponent,  DealsComponent, BundlesComponent, InventoryComponent, LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

@@ -1,44 +1,34 @@
-<div class="row-wrap">
-  <div class="w-100">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="pills">
-          <ul class="nav nav-pills" style="margin-top: 15px;">
-            <li routerLinkActive="active">
-              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/payments']">
-                 Payments
-              </a>
-            </li>
-           
-            <li routerLinkActive="active">
-              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/cancellations']">
-                 Cancellations
-              </a>
-            </li>
-            <li routerLinkActive="active">
-              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/dispatch']">
-                 Dispatch
-              </a>
-            </li>
-            <li routerLinkActive="active">
-              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/tracking']">
-                 Tracking
-              </a>
-            </li>
-            <li routerLinkActive="active">
-              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/returns']">
-                 Returns
-              </a>
-            </li>
-            <li routerLinkActive="active">
-              <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/closure']">
-                Closure
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+<div fxLayout="row"  style="padding: 5px 5px 10px 5px;margin-top: 30px;">
+
+  <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/payments']"
+    class="col-sm font-color">Payments
+  </a>
+  <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/cancellations']"
+    class="col-sm font-color">Cancellations
+  </a>
+
+  <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/dispatch']"
+    class="col-sm font-color">Dispatch
+  </a>
+
+  <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/tracking']"
+    class="col-sm font-color">Tracking
+  </a>
+  <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/returns']"
+    class="col-sm font-color">Returns
+  </a>
+
+  <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/closure']"
+    class="col-sm font-color">Closure
+  </a>
 </div>
 <router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+

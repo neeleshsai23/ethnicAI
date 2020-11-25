@@ -17,10 +17,10 @@ export class CollectionsComponent implements OnInit {
   }
 
   values: any = [
-    {sku:"#1234",category:"Category1",product:"Oxidises Necklace",features:3,pricing:3,inventory:360,images:3,status:"Active"},
-    {sku:"#9087",category:"Category1",product:"Earrings Set",features:5,pricing:4,inventory:500,images:4,status:"Inactive"},
-    {sku:"#9865",category:"Category1",product:"Kurti & Pallazo",features:5,pricing:3,inventory:100,images:"Add",status:"Active"},
-    {sku:"#3456",category:"Category1",product:"Kurti & Pallazo",features:5,pricing:3,inventory:100,images:"Add",status:"Active"},
+   {name:"Khadi Kurta",sku:"123-456",categories:3,occasions:3,inventory:300,lastshipped:"22-11-20",brand:"ABC INC",status:"Active"},
+   {name:"Khadi Kurta",sku:"123-456",categories:3,occasions:3,inventory:300,lastshipped:"22-11-20",brand:"ABC INC",status:"Inactive"},
+   {name:"Khadi Kurta",sku:"123-456",categories:3,occasions:3,inventory:300,lastshipped:"22-11-20",brand:"ABC INC",status:"Active"},
+   {name:"Khadi Kurta",sku:"123-456",categories:3,occasions:3,inventory:300,lastshipped:"22-11-20",brand:"ABC INC",status:"Active"}
 
   ]
 
@@ -33,14 +33,14 @@ export class CollectionsComponent implements OnInit {
 
   openFeaturesDialog(){
     this.dialog.open(FeaturesDialogComponent,{
-      width:"600px",
+      width:"700px",
       height:"auto"
     })
   }
 
   openPricingDialog(){
     this.dialog.open(PricingDialogComponent,{
-      width:"600px",
+      width:"700px",
       height:"auto"
     })
   }

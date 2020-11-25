@@ -134,6 +134,8 @@ export class BreadcrumbComponent {
             "Collections": "This is Collections Screen",
             "Store": "This is Stores Screen",
             "Categories":"This screen is used to manage the categories",
+            "Products":"This is Products Screen",
+            "Product Dashboard":"This is Product Dashboard Screen",
 
             "Inventory":"This screen is used to manage the inventory",
 
