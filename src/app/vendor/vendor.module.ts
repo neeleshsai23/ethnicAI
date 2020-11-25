@@ -41,15 +41,8 @@ export const routes= [
       {path:"dashboard",component:DashboardComponent,loadChildren:"./dashboard/dashboard-vendor.module#DashboardVendorModule",data:{breadcrumb:"Dashboard"}},
       
 
-      {path:"orders",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
-      {path:"orders/payments",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
-
-      {path:"orders/cancellations",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
-
-      {path:"orders/dispatch",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
-      {path:"orders/tracking",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
-      {path:"orders/returns",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
-      {path:"orders/closure",component:VendorOrdersComponent,data:{breadcrumb:"Orders"}},
+      {path:"orders",component:VendorOrdersComponent,loadChildren:"./vendor-orders/vendor-orders.module#VendorOrdersModule",data:{breadcrumb:"Orders"}},
+      
 
             {path:"logistics",component:LogisticsComponent,data:{breadcrumb:"Logistics"}},
             {path:"reviews",component:ReviewsComponent,data:{breadcrumb:"Reviews"}},
@@ -73,7 +66,7 @@ export const routes= [
 ]
 
 @NgModule({
-    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent, PaymentsComponent, CancellationsComponent, DispatchComponent, TrackingComponent, ReturnsComponent, ClosureComponent,  DealsComponent, BundlesComponent, InventoryComponent, LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent],
+    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent,   DealsComponent, BundlesComponent, InventoryComponent, LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

@@ -1,0 +1,36 @@
+<div class="row-wrap">
+  
+  <div class="col-xs-12" >
+    <div class="pills">
+      <ul class="nav nav-pills" style="margin-top: 15px;">
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/summary/analytics']">
+            <mat-icon>analytics</mat-icon> Analytics
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/summary/gridview']">
+            <mat-icon>grid_on</mat-icon> Grid View
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/summary/mapview']">
+            <mat-icon>place </mat-icon> Map View
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+</div>
+</div>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
