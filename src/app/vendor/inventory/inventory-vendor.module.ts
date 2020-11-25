@@ -12,9 +12,12 @@ import { OutgoingComponent } from './outgoing/outgoing.component';
 import { ClosingComponent } from './closing/closing.component';
 import { PhysicalComponent } from './physical/physical.component';
 import { ReconciliationComponent } from './reconciliation/reconciliation.component';
+import { AddInventoryDialogComponent } from './incoming/add-inventory-dialog/add-inventory-dialog.component';
+import { AddPhysicalDialogComponent } from './physical/add-physical-dialog/add-physical-dialog.component';
+
 
 export const routes= [
-    {path:"",redirectTo:"physical",pathMatch:"full"},
+    {path:"",redirectTo:"opening",pathMatch:"full"},
     {path:"opening",component:OpeningComponent},
     {path:"incoming",component:IncomingComponent},
     {path:"outgoing",component:OutgoingComponent},
@@ -24,13 +27,13 @@ export const routes= [
 ]
 
 @NgModule({
-    declarations:[OpeningComponent, IncomingComponent, OutgoingComponent, ClosingComponent, PhysicalComponent, ReconciliationComponent],
+    declarations:[OpeningComponent, IncomingComponent, OutgoingComponent, ClosingComponent, PhysicalComponent, ReconciliationComponent, AddInventoryDialogComponent, AddPhysicalDialogComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
         ChartsModule
       ],
-      entryComponents:[]
+      entryComponents:[AddInventoryDialogComponent, AddPhysicalDialogComponent]
 })
 
 export class VendorInventoryModule {}

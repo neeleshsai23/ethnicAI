@@ -4,14 +4,17 @@ import { MatAutocompleteTrigger } from '@angular/material';
 
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-
-
+import {MatDialogRef} from '@angular/material';
 @Component({
-  selector: 'app-opening',
-  templateUrl: './opening.component.html',
-  styleUrls: ['./opening.component.scss']
+  selector: 'app-add-physical-dialog',
+  templateUrl: './add-physical-dialog.component.html',
+  styleUrls: ['./add-physical-dialog.component.scss']
 })
-export class OpeningComponent implements OnInit {
+export class AddPhysicalDialogComponent implements OnInit {
+
+  close():void{
+    this.dialogRef.close()
+  }
   @ViewChild('autoCompleteInput', { read: MatAutocompleteTrigger })
   autoComplete: MatAutocompleteTrigger;
 
@@ -25,7 +28,7 @@ export class OpeningComponent implements OnInit {
     {sku:"123-456",name:"Khadi Kurta",balance:"400",consumption:"55",status:"Active"},
     {sku:"123-456",name:"Khadi Kurta",balance:"400",consumption:"55",status:"Active"}
   ]
-  constructor() { }
+  constructor( public dialogRef: MatDialogRef<AddPhysicalDialogComponent>) { }
 
   filteredOptions: Observable<string[]>;
   scrollEvent = (event: any): void => {

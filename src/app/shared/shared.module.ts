@@ -44,6 +44,7 @@ import {
   MatTooltipModule,
   MatStepperModule
 } from '@angular/material';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { jqxKanbanComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxkanban';
 import { CarouselModule } from 'primeng/carousel';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
@@ -52,6 +53,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DeleteConfirmDialogComponent } from './delete-confirm-dialog/delete-confirm-dialog.component';
 import { AdditemtypeDialogComponent } from './additemtype-dialog/additemtype-dialog.component';
+
 
 
 @NgModule({
@@ -101,7 +103,8 @@ import { AdditemtypeDialogComponent } from './additemtype-dialog/additemtype-dia
     ProgressBarModule, ConfirmDialogModule,
     TooltipModule, OwlDateTimeModule, OwlNativeDateTimeModule,    FormsModule,
     ReactiveFormsModule,
-    CalendarModule,NgxChartsModule
+    CalendarModule,NgxChartsModule,
+    ScrollingModule
   ],
   exports: [
     CarouselModule, OwlDateTimeModule, OwlNativeDateTimeModule,NgxChartsModule,
@@ -147,7 +150,8 @@ import { AdditemtypeDialogComponent } from './additemtype-dialog/additemtype-dia
     ProgressBarModule, ConfirmDialogModule,
     TooltipModule, jqxKanbanComponent,FormsModule,
     ReactiveFormsModule,
-    CalendarModule
+    CalendarModule,
+    ScrollingModule
   ],
   entryComponents: [
     ScheduleDialogComponent],

@@ -27,22 +27,22 @@
           <table matSort id="example2" class="table table-bordered table-hover">
               <thead class="tbl-head">
                   <tr>
-                      <th>Product Name</th>
-                      <th >SKU#</th>
-                      <th class="text-center">Categories</th>
-                      <th class="text-center">Occasions</th>
-                      <th class="text-center">Inventory</th>
-                      <th class="text-center">Last Shipped</th>
-                      <th class="text-center">Brand</th>
-                      <!-- <th class="text-center">Images</th> -->
-                      <th class="text-center">Status</th>
-                      <th class="text-center">Actions</th>
+                    <th>SKU#</th>
+                    <th>Product Name</th>
+                    <th class="text-center">Categories</th>
+                    <th class="text-center">Occasions</th>
+                    <th class="text-center">Inventory</th>
+                    <th class="text-center">Last Shipped</th>
+                    <th class="text-center">Brand</th>
+                    <!-- <th class="text-center">Images</th> -->
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Actions</th>
                   </tr>
               </thead>
               <tbody>
                   <tr *ngFor="let value of values">
-                    <td ><a style="color:blue;cursor: pointer;" matTooltip="View Product Dashboard" target="_blank" [routerLink]="['/vendor/catalog/products/dashboard']">{{value.name}}</a></td>
                     <td><a>{{value.sku}}</a></td>
+                    <td ><a style="color:blue;cursor: pointer;" matTooltip="View Product Dashboard" target="_blank" [routerLink]="['/vendor/catalog/products/dashboard']">{{value.name}}</a></td>
                     <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openFeaturesDialog()" matTooltip="Manage Categories" >{{value.categories}}</a></td>
                     <td class="text-center"><a style="color:blue;cursor: pointer;" (click)="openPricingDialog()" matTooltip="Manage Occasions" >{{value.occasions}}</a></td>
                     <td class="text-center">{{value.inventory}}</td>
