@@ -9,16 +9,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VendorOrdersComponent } from './vendor-orders/vendor-orders.component';
 import { VendorFinanceComponent } from './vendor-finance/vendor-finance.component';
-import { PaymentsComponent } from './vendor-orders/payments/payments.component';
-import { CancellationsComponent } from './vendor-orders/cancellations/cancellations.component';
-import { DispatchComponent } from './vendor-orders/dispatch/dispatch.component';
-import { TrackingComponent } from './vendor-orders/tracking/tracking.component';
-import { ReturnsComponent } from './vendor-orders/returns/returns.component';
-import { ClosureComponent } from './vendor-orders/closure/closure.component';
-import { OverviewComponent } from './dashboard/overview/overview.component';
-import { RevenueComponent } from './dashboard/revenue/revenue.component';
-import { CancelledOrdersComponent } from './dashboard/cancelled-orders/cancelled-orders.component';
-import { TopTenProductsComponent } from './dashboard/top-ten-products/top-ten-products.component';
 import { DealsComponent } from './deals/deals.component';
 import { BundlesComponent } from './bundles/bundles.component';
 import { InventoryComponent } from './inventory/inventory.component';
@@ -26,6 +16,8 @@ import { LogisticsComponent } from './logistics/logistics.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MyAccountComponent } from './my-account/my-account.component';
+import { VendorOrdersDashboardComponent } from './vendor-orders/vendor-orders-dashboard/vendor-orders-dashboard.component';
+
 
 export const routes= [
     {path:"",redirectTo:"dashboard",pathMatch:"full"},
@@ -42,7 +34,8 @@ export const routes= [
       
 
       {path:"orders",component:VendorOrdersComponent,loadChildren:"./vendor-orders/vendor-orders.module#VendorOrdersModule",data:{breadcrumb:"Orders"}},
-      
+      {path:"orders/dashboard",component:VendorOrdersDashboardComponent,loadChildren:"./vendor-orders/vendor-orders-dashboard/vendor-orders-dashboard.module#VendorOrdersDashboardModule",data:{breadcrumb:"Dashboard"}},
+            
 
             {path:"logistics",component:LogisticsComponent,data:{breadcrumb:"Logistics"}},
             {path:"reviews",component:ReviewsComponent,data:{breadcrumb:"Reviews"}},
@@ -66,7 +59,7 @@ export const routes= [
 ]
 
 @NgModule({
-    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent,   DealsComponent, BundlesComponent, InventoryComponent, LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent],
+    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent,   DealsComponent, BundlesComponent, InventoryComponent, LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent,VendorOrdersDashboardComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

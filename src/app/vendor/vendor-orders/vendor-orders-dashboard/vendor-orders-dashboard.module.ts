@@ -12,6 +12,7 @@ import { ShipmentsVendorOrdersComponent } from './shipments-vendor-orders/shipme
 import { ReturnsVendorOrdersComponent } from './returns-vendor-orders/returns-vendor-orders.component';
 import { CancellationsVendorOrdersComponent } from './cancellations-vendor-orders/cancellations-vendor-orders.component';
 import { RefundsVendorOrdersComponent } from './refunds-vendor-orders/refunds-vendor-orders.component';
+import { AddConsignmentDialogComponent } from './consignments-vendor-orders/add-consignment-dialog/add-consignment-dialog.component';
 
 
 export const routes= [
@@ -27,12 +28,13 @@ export const routes= [
 ]
 
 @NgModule({
-    declarations:[ItemsVendorOrdersComponent, ConsignmentsVendorOrdersComponent, ShipmentsVendorOrdersComponent, ReturnsVendorOrdersComponent, CancellationsVendorOrdersComponent, RefundsVendorOrdersComponent],
+    declarations:[ItemsVendorOrdersComponent, ConsignmentsVendorOrdersComponent, ShipmentsVendorOrdersComponent, ReturnsVendorOrdersComponent, CancellationsVendorOrdersComponent, RefundsVendorOrdersComponent, AddConsignmentDialogComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
         ChartsModule
-      ]
+      ],
+      entryComponents:[AddConsignmentDialogComponent]
 })
 
 export class VendorOrdersDashboardModule {}

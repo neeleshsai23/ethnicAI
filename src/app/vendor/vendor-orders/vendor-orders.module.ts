@@ -8,17 +8,16 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PaymentsComponent } from './payments/payments.component';
 import { CancellationsComponent } from './cancellations/cancellations.component';
-import { DispatchComponent } from 'src/app/admin/orders/order-dashboard/dispatch/dispatch.component';
-import { TrackingComponent } from 'src/app/admin/orders/order-dashboard/tracking/tracking.component';
+import { DispatchComponent } from './dispatch/dispatch.component';
+import { TrackingComponent } from './tracking/tracking.component';
 import { ReturnsComponent } from './returns/returns.component';
-import { ClosureComponent } from 'src/app/admin/orders/order-dashboard/closure/closure.component';
+import { ClosureComponent } from './closure/closure.component';
 import { SummaryComponent } from './summary/summary.component';
-import { VendorOrdersDashboardComponent } from './vendor-orders-dashboard/vendor-orders-dashboard.component';
 
 
 export const routes= [
     {path:"",redirectTo:"summary",pathMatch:"full"},
-    {path:"summary",component:SummaryComponent,loadChildren:"./summary/summary-vendor.module#VendorSummaryModule",data:{breadcrumb:"orders"}},
+    {path:"summary",component:SummaryComponent,loadChildren:"./summary/summary-vendor.module#VendorSummaryModule",data:{breadcrumb:"Orders"}},
     {path:"payments",component:PaymentsComponent,data:{breadcrumb:"Orders"}},
 
     {path:"cancellations",component:CancellationsComponent,data:{breadcrumb:"Orders"}},
@@ -27,13 +26,13 @@ export const routes= [
     {path:"tracking",component:TrackingComponent,data:{breadcrumb:"Orders"}},
     {path:"returns",component:ReturnsComponent,data:{breadcrumb:"Orders"}},
     {path:"closure",component:ClosureComponent,data:{breadcrumb:"Orders"}},
-    {path:"dashboard",component:VendorOrdersDashboardComponent,loadChildren:"./vendor-orders-dashboard/vendor-orders-dashboard.module#VendorOrdersDashboardModule",data:{breadcrumb:"Dashboard"}}
+    // {path:"dashboard",component:VendorOrdersDashboardComponent,loadChildren:"./vendor-orders-dashboard/vendor-orders-dashboard.module#VendorOrdersDashboardModule",data:{breadcrumb:"Dashboard"}}
 
 
 ]
 
 @NgModule({
-    declarations:[PaymentsComponent, CancellationsComponent, DispatchComponent, TrackingComponent, ReturnsComponent, ClosureComponent, SummaryComponent, VendorOrdersDashboardComponent,],
+    declarations:[PaymentsComponent, CancellationsComponent, DispatchComponent, TrackingComponent, ReturnsComponent, ClosureComponent, SummaryComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
