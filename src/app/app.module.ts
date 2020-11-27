@@ -52,6 +52,7 @@ import {
 } from "@agm/js-marker-clusterer";
 import { ShowroomComponent } from './showroom/showroom.component';
 import { Login2Component } from './login/login2/login2.component';
+import { TestComponent } from './test/test.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
@@ -114,6 +115,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     UniversalFilterComponent,
     ShowroomComponent,
     Login2Component,
+    TestComponent,
   ],
   entryComponents: [
     VerticalMenuComponent,

@@ -1,0 +1,149 @@
+<!-- <div class="w-100">
+  <div class="layout" >
+    <div class="nav-tab">
+      <div class="nav-tab-pills" >
+        <div routerLinkActive="active">
+          <a [routerLink]="['/test/test1']">
+            <mat-icon>dns</mat-icon>
+            <span>Items</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-tab-pills" >
+        <div routerLinkActive="active">
+          <a [routerLink]="['/test/test2']">
+            <mat-icon>dns</mat-icon>
+            <span>Top 10 Products</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-tab-pills" >
+        <div routerLinkActive="active">
+          <a [routerLink]="['/test/test3']">
+            <mat-icon>dns</mat-icon>
+            <span>Shipments</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-tab-pills" >
+        <div routerLinkActive="active">
+          <a [routerLink]="['/test/test3']">
+            <mat-icon>dns</mat-icon>
+            <span>Returns</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-tab-pills" >
+        <div routerLinkActive="active">
+          <a [routerLink]="['/test/test3']">
+            <mat-icon>dns</mat-icon>
+            <span>Cancellations</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-tab-pills" >
+        <div routerLinkActive="active">
+          <a [routerLink]="['/test/test3']">
+            <mat-icon>dns</mat-icon>
+            <span>Refunds</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="router-outlet">
+      <router-outlet ></router-outlet>
+    </div>
+    
+      
+    
+  </div>
+</div>
+
+
+ -->
+
+
+ <div class="nav-tab-layout">
+  <div class="nav-tab">
+    <ul class="nav-tab-pills">
+      <li routerLinkActive="active">
+        <a  [routerLink]="['/test/test1']">All Products</a>
+      </li>
+      <li style="width: inherit;">
+        <a >Inventory</a>
+      </li>
+      <li style="width: inherit;">
+        <a >Transfers</a>
+      </li>
+      <li style="width: inherit;">
+        <a >Collections</a>
+      </li>
+    </ul>
+  </div>
+ </div>
+<div class="routing-layout">
+  <div fxLayout="row">
+    <div class="col-xs-3 ">
+    </div>
+    <div class="col-xs-9 ">
+        
+            <button mat-raised-button class="pull-right  btn-primary" (click)="openAddInventoryDialog()" >
+                <mat-icon>add</mat-icon> Add Inventory
+            </button>
+            <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+              Bulk Upload (CSV or EXCEL)
+            </button>
+            <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+                Download Sample
+            </button>
+            <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" >
+            <mat-icon>filter_list</mat-icon> Filter
+        </button>
+    </div>
+  </div>
+  <div class="routing-table-layout">
+    <div class="routing-table-tab">
+      <a routerLinkActive="active" [routerLink]="['/test/test1']">All</a>
+      <a>Active</a>
+      <a>Draft</a>
+      <a>Archived</a>
+    </div>
+    <div fxLayout="row" style="margin-top:20px">
+      <div class="col-xs-6 ">
+      </div>
+      <div class="col-xs-6 ">
+            <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" >
+              <mat-icon>filter_list</mat-icon> Filter
+            </button>
+      </div>
+    </div>
+    <div class="table-responsive" style="margin-top: 20px;">
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox"/></th>
+            <th>Product</th>
+            <th>Status</th>
+            <th>Inventory</th>
+            <th>Type</th>
+            <th>Vendor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td>White Shirt</td>
+            <td>Draft</td>
+            <td>470</td>
+            <td>Shirt</td>
+            <td>Option Matrix</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+ 
+
+

@@ -3,6 +3,7 @@ import { ModuleWithProviders } from "@angular/core";
 import { LayoutComponent } from "./layout/layout.component";
 import { LoginComponent } from "./login/login.component";
 import { ShowroomComponent } from "./showroom/showroom.component";
+import { TestComponent } from "./test/test.component";
 
 export const routes: Routes = [
   
@@ -21,6 +22,11 @@ export const routes: Routes = [
     path:"vendor",
     component:LayoutComponent,
     loadChildren:'./vendor/vendor.module#VendorModule'
+  },
+  {
+    path:"test",
+    component:TestComponent,
+    loadChildren:"./test/test.module#TestModule"
   }
 ];
 

@@ -1,4 +1,51 @@
-<div fxLayout="row"  style="padding: 5px 5px 10px 5px;margin-top: 30px;">
+<div fxLayout="row wrap" >
+  
+  <div class="col-xs-12" >
+    <div class="pills">
+      <ul class="nav nav-pills" style="margin-top: 20px;">
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/summary']">
+             Summary
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/payments']">
+             Payments
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/cancellations']">
+             Cancellations
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/dispatch']">
+             Dispatch
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/tracking']">
+             Tracking
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/return']">
+            Return
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a mat-raised-button class="navtabWidth" [routerLink]="['/vendor/orders/closure']">
+             Closure
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+</div>
+</div>
+
+
+<!-- <div fxLayout="row"  style="padding: 5px 5px 10px 5px;margin-top: 30px;">
   <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/summary']"
     class="col-sm font-color">Summary
   </a>
@@ -24,7 +71,7 @@
   <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/closure']"
     class="col-sm font-color">Closure
   </a>
-</div>
+</div> -->
 <router-outlet></router-outlet>
 
 

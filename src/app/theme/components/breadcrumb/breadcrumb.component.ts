@@ -152,7 +152,8 @@ export class BreadcrumbComponent {
             "Wishlist" : "Wishlist",
             "My Account": "My Account",
             "My Orders": "My Orders",
-            "Product Landing Page": "Product Landing Page"
+            "Product Landing Page": "Product Landing Page",
+            "Test":"This is Test Screen"
 
         };
         this.router.events.subscribe(event => {

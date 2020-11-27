@@ -8,10 +8,10 @@
           </div>
           <div class="details">
             <div class="number">
-             Active Orders
+             Active Orders (20)
             </div>
             <div class="desc">
-        
+              
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
           </div>
           <div class="details">
             <div class="number" >
-              Orders in Transit
+              Orders in Transit (30)
             </div>
             <div class="desc">
         
@@ -44,7 +44,7 @@
           </div>
           <div class="details">
             <div class="number">
-             Avg Orders/ Month
+             Avg Orders/ Month (25)
             </div>
             <div class="desc">
             
@@ -66,7 +66,7 @@
           </div>
           <div class="details">
             <div class="number">
-              Cancelled Orders
+              Cancelled Orders (10)
             </div>
             <div class="desc">
               
@@ -83,7 +83,7 @@
           </div>
           <div class="details">
             <div class="number">
-              Returned Orders
+              Returned Orders (15)
             </div>
             <div class="desc">
              
@@ -100,7 +100,7 @@
           </div>
           <div class="details">
             <div class="number">
-              Delayed Shipments
+              Delayed Shipments (8)
             </div>
             <div class="desc">
         
@@ -192,7 +192,7 @@
         <div class="w-100 h-300p">
           <ngx-charts-pie-chart
           [scheme]="colorScheme"
-          [results]="single"
+          [results]="payments"
           [legend]="showLegend"
           [explodeSlices]="explodeSlices"
           [labels]="showLabels"
@@ -213,7 +213,7 @@
       <div class="w-100 h-300p">
         <ngx-charts-pie-chart
         [scheme]="colorScheme"
-        [results]="singles"
+        [results]="state"
         [legend]="showLegend"
         [explodeSlices]="explodeSlices"
         [labels]="showLabels"

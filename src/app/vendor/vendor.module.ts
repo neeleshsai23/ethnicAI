@@ -11,12 +11,14 @@ import { VendorOrdersComponent } from './vendor-orders/vendor-orders.component';
 import { VendorFinanceComponent } from './vendor-finance/vendor-finance.component';
 import { DealsComponent } from './deals/deals.component';
 import { BundlesComponent } from './bundles/bundles.component';
-import { InventoryComponent } from './inventory/inventory.component';
+// import { InventoryComponent } from './inventory/inventory.component';
 import { LogisticsComponent } from './logistics/logistics.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { VendorOrdersDashboardComponent } from './vendor-orders/vendor-orders-dashboard/vendor-orders-dashboard.component';
+import { ProductsComponent } from './products/products.component';
+import { CustomersComponent } from './customers/customers.component';
 
 
 export const routes= [
@@ -24,11 +26,11 @@ export const routes= [
     {path:"radar",component:LogisticsComponent,data:{breadcrumb:"Radar"}},
     {path:"store",component:LogisticsComponent,data:{breadcrumb:"Store"}},
 
-    {path:"catalog",loadChildren:"./catalog/catalog-vendor.module#VendorCatalogModule"},
+    {path:"products",loadChildren:"./products/products.module#ProductsModule"},
     {path:"store",component:DashboardComponent,data:{breadcrumb:"Store"}},
     {path:"deals",component:DealsComponent,data:{breadcrumb:"Deals"}},
-    {path:"bundles",component:BundlesComponent,data:{breadcrumb:"Bundles"}},
-    {path:"inventory",component:InventoryComponent,loadChildren:"./inventory/inventory-vendor.module#VendorInventoryModule",data:{breadcrumb:"Inventory"}},
+      {path:"customers",component:CustomersComponent,loadChildren:"./customers/customers.module#CustomersModule",data:{breadcrumb:"Customers"}},
+    //     {path:"inventory",component:InventoryComponent,loadChildren:"./inventory/inventory-vendor.module#VendorInventoryModule",data:{breadcrumb:"Inventory"}},
 
       {path:"dashboard",component:DashboardComponent,loadChildren:"./dashboard/dashboard-vendor.module#DashboardVendorModule",data:{breadcrumb:"Dashboard"}},
       
@@ -59,7 +61,7 @@ export const routes= [
 ]
 
 @NgModule({
-    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent,   DealsComponent, BundlesComponent, InventoryComponent, LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent,VendorOrdersDashboardComponent],
+    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent,   DealsComponent, BundlesComponent,  LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent,VendorOrdersDashboardComponent, ProductsComponent, CustomersComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

@@ -42,13 +42,13 @@ export class MenuService {
           // new Menu (1, 'Radar', '/vendor/radar', null, 'analytics', null, false, 0,"white",true), 
           // new Menu (2, 'Store', '/vendor/store', null, 'store', null, false, 0,"white",true),
           new Menu (3, 'Dashboard', '/vendor/dashboard', null, 'dashboard', null, false, 0,"white",true),
-          new Menu (4, 'Catalog', '/vendor/catalog', null, 'view_module', null, true, 0,"white",true),
-          new Menu (5, 'Products', '/vendor/catalog/products', null, 'business_center', null, false, 4,"white",true),
-          new Menu (6, 'Inventory', '/vendor/catalog/inventory', null, 'dns', null, false, 4,"white",true), 
+          new Menu (4, 'Products', '/vendor/products', null, 'view_module', null, true, 0,"white",true),
+          // new Menu (5, 'Products', '/vendor/catalog/products', null, 'business_center', null, false, 4,"white",true),
+          // new Menu (6, 'Inventory', '/vendor/catalog/inventory', null, 'dns', null, false, 4,"white",true), 
           new Menu (7, 'Orders', '/vendor/orders', null, 'reorder', null, false, 0,"white",true),
           new Menu (8, 'Deals', '/vendor/deals', null, 'local_offer', null, false, 0,"white",true),
-          new Menu (9, 'Bundles', '/vendor/bundles', null, 'view_list', null, false, 0,"white",true),
-          new Menu (10, 'Inventory', '/vendor/inventory', null, 'dns', null, false, 0,"white",true),
+          new Menu (9, 'customers', '/vendor/customers', null, 'groups', null, false, 0,"white",true),
+          // new Menu (10, 'Inventory', '/vendor/inventory', null, 'dns', null, false, 0,"white",true),
 
          
           new Menu (11, 'Logistics', '/vendor/logistics', null, 'local_shipping', null, false, 0,"white",true), 

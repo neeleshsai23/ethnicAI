@@ -12,6 +12,8 @@ export class AnalyticsSummaryComponent implements OnInit {
 
   public single: any[];
   public singles: any[];
+  public payments:any[];
+  public state:any[];
   public multi: any[];
   public analytics: any[];
   public showLegend = true;
@@ -36,46 +38,70 @@ export class AnalyticsSummaryComponent implements OnInit {
     this.settings = this.appSettings.settings; 
     const single = [
       {
-        name: 'P-09825',
+        name: 'US',
         value: 20
       },
       {
-        name: 'P-98756',
+        name: 'UAE',
         value: 10
       },
       {
-        name: 'P-38723',
+        name: 'UK',
         value: 15
       },
       {
-        name: 'P-34526',
+        name: 'CANADA',
         value: 30
       },
       {
-        name: 'P-23451',
+        name: 'AUSTRALIA',
         value: 2
       },
     ];
     const singles = [
       {
-        name: 'Ravi',
+        name: 'SAREES',
         value: 20
       },
       {
-        name: 'Srinu',
+        name: 'KURTIS',
         value: 33
       },
       {
-        name: 'Shekar',
+        name: 'LEHENGAS',
         value: 21
       },
       {
-        name: 'Raj',
+        name: 'GOWNS',
         value: 18
       },
       {
-        name: 'Siva',
+        name: 'SALWAR KAMEEZ',
         value: 19
+      }
+    ];
+    const payments = [
+      {
+        name: 'PREPAID',
+        value: 20
+      },
+      {
+        name: 'POSTPAID',
+        value: 15
+      }
+    ];
+    const state = [
+      {
+        name: 'SUCCESSFUL',
+        value: 25
+      },
+      {
+        name: 'CANCELLED',
+        value: 10
+      },
+      {
+        name: 'RETURNED',
+        value: 15
       }
     ];
     const analytics = [
@@ -132,7 +158,7 @@ export class AnalyticsSummaryComponent implements OnInit {
         ]
       }
     ]
-    Object.assign(this, {single,singles,analytics}); 
+    Object.assign(this, {single,singles,payments,state,analytics}); 
   }
   
   public onSelect(event) {
