@@ -3,6 +3,7 @@ import { AppSettings } from './app.settings';
 import { Settings } from './app.settings.model';
 import { ToasterModule, ToasterService, ToasterConfig } from 'angular2-toaster';
 import { setTheme } from 'ngx-bootstrap';
+import { CoalescingComponentFactoryResolver } from './coalescing-component-factory-resolver.service';
 
 
 @Component({
@@ -13,10 +14,11 @@ import { setTheme } from 'ngx-bootstrap';
 export class AppComponent {
   public settings: Settings;
   private toasterService: ToasterService;
-  constructor(public appSettings:AppSettings, toasterService: ToasterService){
+  constructor(public appSettings:AppSettings, toasterService: ToasterService,coalescingResolver: CoalescingComponentFactoryResolver){
     this.toasterService = toasterService;
     this.settings = this.appSettings.settings;
     setTheme('bs4');
+    coalescingResolver.init();
   } 
 
   // ngOnInit() {

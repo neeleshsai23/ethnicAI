@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<div class="nav-tab-layout">
+  <div class="nav-tab">
+    <ul class="nav-tab-pills">
+      <li routerLinkActive="active">
+        <a  [routerLink]="['/vendor/deals/codes']">Discount Codes</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/vendor/deals/autodiscounts']">Automatic Discounts</a>
+      </li>
+      
+    </ul>
+  </div>
+ </div>
+<div class="routing-layout">
+  
+  <router-outlet></router-outlet>
+</div>

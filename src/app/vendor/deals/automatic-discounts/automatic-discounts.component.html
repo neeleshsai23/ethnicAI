@@ -1,1 +1,27 @@
-<router-outlet></router-outlet>
+<div fxLayout="row">
+  <div class="col-xs-3 ">
+  </div>
+  <div class="col-xs-9 ">
+      
+          <button mat-raised-button class="pull-right  btn-primary"  >
+             Create Discount
+          </button>
+          <!-- <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+            Import
+          </button> -->
+          <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+            Export
+          </button>
+          
+  </div>
+</div>
+<div class="routing-table-layout">
+  <div class="routing-table-tab">
+    <a routerLinkActive="active" [routerLink]="['/vendor/deals/autodiscounts/all']">All</a>
+    <a routerLinkActive="active" [routerLink]="['/vendor/deals/autodiscounts/active']">Active</a>
+    <a routerLinkActive="active" [routerLink]="['/vendor/deals/autodiscounts/scheduled']">Scheduled</a>
+    <a routerLinkActive="active" [routerLink]="['/vendor/deals/autodiscounts/expired']">Expired</a>
+  </div>
+  <router-outlet></router-outlet>
+  
+</div>

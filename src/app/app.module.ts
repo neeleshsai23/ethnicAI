@@ -53,11 +53,15 @@ import {
 import { ShowroomComponent } from './showroom/showroom.component';
 import { Login2Component } from './login/login2/login2.component';
 import { TestComponent } from './test/test.component';
+import { CoalescingComponentFactoryResolver } from "./coalescing-component-factory-resolver.service";
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
   suppressScrollX: true,
 };
+
+
 
 @NgModule({
   imports: [
@@ -132,7 +136,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
     },
-
+    CoalescingComponentFactoryResolver
   ],
   bootstrap: [AppComponent],
 })

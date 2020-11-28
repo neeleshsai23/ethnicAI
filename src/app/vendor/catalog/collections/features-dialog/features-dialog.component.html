@@ -1,0 +1,67 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Add  Categories</h1>
+
+</div>
+<!-- <div mat-dialog-content>
+  <form class="form-horizontal">
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label add-member-label">Add Feature :</label>
+      <div class="col-sm-8">
+        <textarea class="form-control" rows="3" style="resize: none;"></textarea>
+      </div>
+    </div>
+    
+
+
+  </form>
+
+</div>
+<mat-dialog-actions align="end" style="margin-left: 68%;margin-bottom:10px">
+  <button mat-raised-button class="btn-primary" (click)="close()">Save</button>
+</mat-dialog-actions>
+<div class="row" style="margin-top:20px">
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th >S.No</th>
+                      <th >Features</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let value of values">
+                    <td><a>{{value.serial}}</a></td>
+                    <td>{{value.features}}</td>
+                    
+                  </tr>
+  
+              </tbody>
+          </table>
+        </div>
+    </div>
+</div> -->
+<div class="form-group row" style="margin-top: 40px;">
+  <label class="control-label col-sm-3 add-member-label">Select Category :&nbsp; </label>
+  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+  
+    <mat-checkbox  class="col-sm-4" [checked]="true" >SALWAR KAMEEZ</mat-checkbox>
+    <mat-checkbox  class="col-sm-4">SAREE</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true">SAREE BLOUSE</mat-checkbox>
+    <mat-checkbox  class="col-sm-4">LEHENGAS</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >GOWNS</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >KURTIS</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" [checked]="true" >BRIDALS</mat-checkbox>
+  </div>
+</div>
+<mat-dialog-actions align="end" style="margin-left: 68%;">
+  <button mat-raised-button class="btn-primary" (click)="close()">Save</button>
+  <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
+</mat-dialog-actions>
+
+<!-- <mat-dialog-actions align="end" style="margin-left: 68%;">
+  <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
+</mat-dialog-actions> -->
+

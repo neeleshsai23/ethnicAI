@@ -1,0 +1,60 @@
+.nav-tab-layout {
+  z-index: 3;
+  position: absolute;
+  top: 40vh;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 20px;
+}
+
+.nav-tab {
+  z-index: 3;
+  width: inherit;
+  color: rgba(190, 190, 190, 1);
+  background: rgb(55, 51, 49);
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.nav-tab-pills {
+  width: inherit;
+  margin-bottom: 0px;
+}
+
+.nav-tab-pills li {
+  width: inherit;
+}
+
+.nav-tab-pills a {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.nav-tab-pills a {
+  color: rgba(190, 190, 190, 1);
+}
+
+.nav-tab-pills a:hover {
+  color: white;
+}
+
+.nav-tab-pills {
+  .active {
+    a {
+      background: rgb(82, 77, 74);
+      color: white;
+    }
+  }
+}
+
+.routing-layout {
+  margin: 20px 20px 0 250px;
+  padding: 20px;
+}

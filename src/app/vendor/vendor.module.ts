@@ -26,10 +26,10 @@ export const routes= [
     {path:"radar",component:LogisticsComponent,data:{breadcrumb:"Radar"}},
     {path:"store",component:LogisticsComponent,data:{breadcrumb:"Store"}},
 
-    {path:"products",loadChildren:"./products/products.module#ProductsModule"},
+    {path:"products",component:ProductsComponent,loadChildren:"./products/products.module#ProductsModule",data:{breadcrumb:"Products"}},
     {path:"store",component:DashboardComponent,data:{breadcrumb:"Store"}},
-    {path:"deals",component:DealsComponent,data:{breadcrumb:"Deals"}},
-      {path:"customers",component:CustomersComponent,loadChildren:"./customers/customers.module#CustomersModule",data:{breadcrumb:"Customers"}},
+    {path:"deals",component:DealsComponent,loadChildren:"./deals/deals.module#DealsModule",data:{breadcrumb:"Deals"}},
+      {path:"customers",component:CustomersComponent,loadChildren:"./customers/customers-vendor.module#CustomersVendorModule",data:{breadcrumb:"Customers"}},
     //     {path:"inventory",component:InventoryComponent,loadChildren:"./inventory/inventory-vendor.module#VendorInventoryModule",data:{breadcrumb:"Inventory"}},
 
       {path:"dashboard",component:DashboardComponent,loadChildren:"./dashboard/dashboard-vendor.module#DashboardVendorModule",data:{breadcrumb:"Dashboard"}},

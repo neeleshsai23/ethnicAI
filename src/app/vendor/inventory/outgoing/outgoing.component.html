@@ -1,0 +1,154 @@
+<div fxLayout="row" style="margin-top:20px;">
+    <div class="col-xs-6 ">
+    </div>
+    <div class="col-xs-6 ">
+        <div class="flex-p">
+            <!-- <button mat-raised-button class="pull-right  btn-primary" (click)="openCollectionDialog()" >
+                <mat-icon>add</mat-icon> Add Product
+            </button>
+            <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+              Bulk Upload (CSV or EXCEL)
+            </button>
+            <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+                Download Sample
+            </button> -->
+            <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+        </button>
+        
+    </div>
+    
+  </div>
+</div>
+
+<div fxLayout="row wrap" >
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle" >
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row col-sm-12">
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Keyword :</div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search by Keyword" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">SKU# :</div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search by SKU#" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Category :</div>
+                        <div class="col-sm-8">
+                            <mat-select class='form-control' placeholder="Search by Category">
+                                <mat-option [value]=1 >SALWAAR KAMEEZ</mat-option>
+                                <mat-option [value]=2 >SAREE</mat-option>
+                                <mat-option [value]=3 >SAREE BLOUSE</mat-option>
+                                <mat-option [value]=4 >LEHENGA</mat-option>
+                                <mat-option [value]=5 >GOWNS</mat-option>
+                                <mat-option [value]=6 >KURTIS</mat-option>
+                                <mat-option [value]=7 >BRIDALS</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="row col-sm-12" style="margin-top:20px" >
+                    <div class="col-sm-4" >
+                        <div class="col-sm-4 newMarginClass">Product Name :</div>
+                        <div class="col-sm-8" >
+                                  <input 
+                                  #autoCompleteInput
+                                         placeholder="Search by Product"
+                                         aria-label="Number"
+                                         class="form-control"
+                                         [formControl]="myControl"
+                                         [matAutocomplete]="auto">
+                                  <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                      {{option}}
+                                    </mat-option>
+                                  </mat-autocomplete>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">Inventory Level :</div>
+                        <div class="col-sm-8">
+                            <mat-select class='form-control' placeholder="Search By Inventory Level">
+                                <mat-option [value]=1 >Normal</mat-option>
+                                <mat-option [value]=2 >Low</mat-option>
+                                <mat-option [value]=3 >Out of Stock</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3" style="margin-top: -5px;">
+                            <button mat-raised-button  class="pull-right btn-primary"><mat-icon>youtube_searched_for</mat-icon> Search</button>
+                            
+                        </div>
+                        <div class="col-sm-3">
+                            <button mat-raised-button style="background-color:#37474f; color:#fff !important;margin-top: -5px" ><mat-icon>settings_backup_restore</mat-icon> Clear</button>
+                            
+                        </div>
+                        <div class="col-sm-2">
+                            <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        
+    </div>
+</div>
+
+
+<div fxLayout="row" style="margin-top:20px">
+    <div class="col-sm-12">
+        <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                    <tr>
+                        <th>SKU#</th>
+                        <th>Product Name</th>
+                        <th class="text-center">Consumption</th>
+                        <th class="text-center">Est.Consumption</th>
+                        <th class="text-center">Stock Alert</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let value of values">
+                      <td><a style="color: blue;">{{value.sku}}</a></td>
+                      <td><a>{{value.name}}</a></td>
+                      <td class="text-center">{{value.consumption}}</td>
+                      <td class="text-center">{{value.estimated}}</td>
+                      <td class="text-center">
+                        <mat-icon [ngStyle]="{'color': value.alert? 'red' : 'rgb(72, 158, 19)'}" style="text-align: center !important;">warning</mat-icon>
+                        </td>  
+                      <!-- <td class="text-center"><a style="color:blue;cursor: pointer;">{{value.images}}</a></td> -->
+                      <td [ngStyle]="{'color': value.status=='Active'? 'rgb(72, 158, 19)' : 'red'}" style="text-align: center !important;">
+                          {{value.status}}
+                      </td>
+                        
+                      <td  class="text-center">
+                          <!-- <a style="cursor: pointer;"  >
+                              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                          </a> -->
+                          <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+                      </td> 
+                    </tr>
+    
+                </tbody>
+            </table>
+          </div>
+      </div>
+  </div>

@@ -35,4 +35,4 @@ export const routes = [
     entryComponents:[ImportCustomersDialogComponent,ExportDialogComponent,AddCustomerDialogComponent]
   
 })
-export class CustomersModule { }
+export class CustomersVendorModule { }

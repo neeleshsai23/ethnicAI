@@ -1,1 +1,213 @@
-<router-outlet></router-outlet>
+<div fxLayout="row">
+  <div class="col-xs-3 ">
+  </div>
+  <div class="col-xs-9 ">
+      
+          <button mat-raised-button class="pull-right  btn-primary" (click)="openAddTransferDialog()" >
+            <mat-icon>add</mat-icon> Add Transfer
+          </button>
+          <!-- <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+            Import
+          </button>
+          <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+            Export
+          </button> -->
+          
+  </div>
+</div>
+<div class="routing-table-layout">
+  <!-- <div class="routing-table-tab">
+    <a routerLinkActive="active" [routerLink]="['/vendor/products/transfers/all']">All</a>
+    <a routerLinkActive="active" [routerLink]="['/vendor/products/transfers/pending']">Pending</a>
+    <a routerLinkActive="active" [routerLink]="['/vendor/products/transfers/partial']">Partial</a>
+    <a routerLinkActive="active" [routerLink]="['/vendor/products/transfers/completed']">Completed</a>
+  </div>
+  <router-outlet></router-outlet> -->
+  <mat-tab-group>
+    <mat-tab label="All"> 
+      
+      <div fxLayout="row" style="margin-top:20px">
+        <div class="col-xs-6 ">
+        </div>
+        <div class="col-xs-6 ">
+              <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" >
+                <mat-icon>filter_list</mat-icon> Filter
+              </button>
+        </div>
+      </div>
+      <div class="table-responsive" style="margin-top: 20px;">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox"/></th>
+              <th style="color:rgba(150,150,150,1)">Showing 2 Transfers</th>
+              <th></th>
+              <th></th>
+              <!-- <th>Status</th>
+              <th>Inventory</th>
+              <th>Type</th>
+              <th>Vendor</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td class="productName" style="font-weight: bold;">#T0002</td>
+              <td>Transfer to WeWork Krishe Emerald</td>
+              <td>Partial</td>
+              <!-- <td>470</td>
+              <td>Shirt</td>
+              <td>Option Matrix</td> -->
+            </tr>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td class="productName" style="font-weight: bold;">#T0002</td>
+              <td>Transfer to WeWork Krishe Emerald</td>
+              <td>Completed</td>
+              <!-- <td>470</td>
+              <td>Shirt</td>
+              <td>Option Matrix</td> -->
+            </tr>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td class="productName" style="font-weight: bold;">#T0002</td>
+              <td>Transfer to WeWork Krishe Emerald</td>
+              <td>Pending</td>
+              <!-- <td>470</td>
+              <td>Shirt</td>
+              <td>Option Matrix</td> -->
+            </tr>
+      
+          </tbody>
+        </table>
+      </div>
+      
+    </mat-tab>
+    <mat-tab label="Partial"> 
+      <div fxLayout="row" style="margin-top:20px">
+        <div class="col-xs-6 ">
+        </div>
+        <div class="col-xs-6 ">
+              <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" >
+                <mat-icon>filter_list</mat-icon> Filter
+              </button>
+        </div>
+      </div>
+      <div class="table-responsive" style="margin-top: 20px;">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox"/></th>
+              <th style="color:rgba(150,150,150,1)">Showing 1 Transfers</th>
+              <th></th>
+              <th></th>
+              <!-- <th>Status</th>
+              <th>Inventory</th>
+              <th>Type</th>
+              <th>Vendor</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td class="productName" style="font-weight: bold;">#T0002</td>
+              <td>Transfer to WeWork Krishe Emerald</td>
+              <td>Partial</td>
+              <!-- <td>470</td>
+              <td>Shirt</td>
+              <td>Option Matrix</td> -->
+            </tr>
+            
+      
+          </tbody>
+        </table>
+      </div>
+      
+      
+    </mat-tab>
+    <mat-tab label="Pending"> 
+      <div fxLayout="row" style="margin-top:20px">
+        <div class="col-xs-6 ">
+        </div>
+        <div class="col-xs-6 ">
+              <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" >
+                <mat-icon>filter_list</mat-icon> Filter
+              </button>
+        </div>
+      </div>
+      <div class="table-responsive" style="margin-top: 20px;">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox"/></th>
+              <th style="color:rgba(150,150,150,1)">Showing 1 Transfers</th>
+              <th></th>
+              <th></th>
+              <!-- <th>Status</th>
+              <th>Inventory</th>
+              <th>Type</th>
+              <th>Vendor</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td class="productName" style="font-weight: bold;">#T0002</td>
+              <td>Transfer to WeWork Krishe Emerald</td>
+              <td>Pending</td>
+              <!-- <td>470</td>
+              <td>Shirt</td>
+              <td>Option Matrix</td> -->
+            </tr>
+            
+      
+          </tbody>
+        </table>
+      </div>
+      
+      
+    </mat-tab>
+    <mat-tab label="Completed">  
+      <div fxLayout="row" style="margin-top:20px">
+        <div class="col-xs-6 ">
+        </div>
+        <div class="col-xs-6 ">
+              <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" >
+                <mat-icon>filter_list</mat-icon> Filter
+              </button>
+        </div>
+      </div>
+      <div class="table-responsive" style="margin-top: 20px;">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox"/></th>
+              <th style="color:rgba(150,150,150,1)">Showing 1 Transfers</th>
+              <th></th>
+              <th></th>
+              <!-- <th>Status</th>
+              <th>Inventory</th>
+              <th>Type</th>
+              <th>Vendor</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td class="productName" style="font-weight: bold;">#T0002</td>
+              <td>Transfer to WeWork Krishe Emerald</td>
+              <td>Completed</td>
+              <!-- <td>470</td>
+              <td>Shirt</td>
+              <td>Option Matrix</td> -->
+            </tr>
+            
+      
+          </tbody>
+        </table>
+      </div>
+      
+      
+    </mat-tab>
+  </mat-tab-group>
+</div>

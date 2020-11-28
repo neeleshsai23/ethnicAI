@@ -15,23 +15,23 @@ import { ImportDialogComponent } from './import-dialog/import-dialog.component';
 import { ExportDialogComponent } from './export-dialog/export-dialog.component';
 
 export const routes = [
-    {path:"",redirectTo:"all",pathMatch:"full"},
-    {path:"all",component:AllComponent},
-    {path:"active",component:ActiveComponent},
-    {path:"draft",component:DraftComponent},
-    {path:"archived",component:ArchivedComponent},
+    // {path:"",redirectTo:"all",pathMatch:"full"},
+    // {path:"all",component:AllComponent},
+    // {path:"active",component:ActiveComponent},
+    // {path:"draft",component:DraftComponent},
+    // {path:"archived",component:ArchivedComponent},
     
 
 ]
 
 @NgModule({
-  declarations: [ AllComponent, ActiveComponent, DraftComponent, ArchivedComponent, AddProductDialogComponent, ImportDialogComponent, ExportDialogComponent],
+  declarations: [ AllComponent, ActiveComponent, DraftComponent, ArchivedComponent, AddProductDialogComponent,ImportDialogComponent, ExportDialogComponent],
   imports: [
     CommonModule,NgxChartsModule,RouterModule.forChild(routes),
       SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
       ChartsModule
     ],
-    entryComponents:[AddProductDialogComponent,ImportDialogComponent,ExportDialogComponent]
+  entryComponents:[AddProductDialogComponent,ImportDialogComponent,ExportDialogComponent]  
   
 })
 

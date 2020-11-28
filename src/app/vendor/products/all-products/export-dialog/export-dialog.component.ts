@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-export-dialog',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExportDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef:MatDialogRef<ExportDialogComponent>) { }
 
   ngOnInit() {
+  }
+
+  close():void{
+    this.dialogRef.close();
   }
 
 }

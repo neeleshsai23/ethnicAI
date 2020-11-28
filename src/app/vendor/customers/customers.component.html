@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+<div class="routing-layout">
+  <div fxLayout="row">
+    <div class="col-xs-3 ">
+    </div>
+    <div class="col-xs-9 ">
+        
+            <button mat-raised-button class="pull-right  btn-primary"  >
+                <mat-icon>add</mat-icon> Add Customer
+            </button>
+            <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+              Import Customers
+            </button>
+            <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
+                Export
+            </button>
+            
+    </div>
+  </div>
+  <div class="routing-table-layout">
+    <div class="routing-table-tab">
+      <a routerLinkActive="active" [routerLink]="['/vendor/customers/all']">All</a>
+      <a routerLinkActive="active" [routerLink]="['/vendor/customers/new']" matTooltip="0 Orders">New</a>
+      <a routerLinkActive="active" [routerLink]="['/vendor/customers/returning']" matTooltip="More than 1 Order">Returning</a>
+      <a routerLinkActive="active" [routerLink]="['/vendor/customers/abandoned']" matTooltip="Abandoned Checkout in last 30 days">Abandoned Checkouts</a>
+      <a routerLinkActive="active" [routerLink]="['/vendor/customers/emailsubs']" matTooltip="subscribed">Email Subscribers</a>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
