@@ -19,6 +19,7 @@ export class MenuService {
       temp.push(
         new Menu (1, 'Dashboard', '/eai/dashboard', null, 'dashboard', null, false, 0,"white",true), 
         new Menu (2, 'Vendors', '/eai/vendors', null, 'groups', null, false, 0,"white",true), 
+        new Menu (20, 'Customers', '/eai/customers', null, 'layers', null, false, 0,"white",true), 
         new Menu (3, 'Categories', '/eai/categories', null, 'category', null, false, 0,"white",true), 
         new Menu (4, 'Inventory', '/eai/inventory', null, 'dns', null, false, 0,"white",true), 
         new Menu (5, 'Catalog', '/eai/catalog', null, 'view_module', null, false, 0,"white",true), 
@@ -27,14 +28,14 @@ export class MenuService {
         new Menu (8, 'Reports', '/eai/reports', null, 'layers', null, false, 0,"white",true), 
         new Menu (9, 'Admin', '/eai/admin', null, 'admin_panel_settings', null, true, 0,"white",true),
         new Menu (10, 'Master Data', '/eai/admin/master-data', null, 'group_add', null, false, 9,"white",true),
-        new Menu (10, 'Staff users', '/eai/admin/staff-users', null, 'contact_page', null, false, 9,"white",true),
-        new Menu (10, 'Manage Tickets','/eai/admin/manage-tickets', null, 'zoom_in', null, false, 9,"white",true),
-        new Menu (10, 'Theme Design', '/eai/admin/theme-design', null, 'design_services', null, false, 9,"white",true),
-        new Menu (10, 'Manage FAQ', '/eai/admin/manage-faq', null, 'web_asset', null, false, 9,"white",true),
-        new Menu (10, 'Home Layout','/eai/admin/home-layout', null, 'view_compact', null, false, 9,"white",true),
-        new Menu (10, 'CMS Pages', '/eai/admin/cms-pages', null, 'payments', null, false, 9,"white",true),
-        new Menu (10, 'Home Banner', '/eai/admin/home-banner', null, 'view_carousel', null, false, 9,"white",true),
-        new Menu (10, 'Settings', '/eai/admin/settings', null, 'settings', null, false, 9,"white",true),   
+        new Menu (11, 'Staff users', '/eai/admin/staff-users', null, 'contact_page', null, false, 9,"white",true),
+        new Menu (12, 'Manage Tickets','/eai/admin/manage-tickets', null, 'zoom_in', null, false, 9,"white",true),
+        new Menu (13, 'Theme Design', '/eai/admin/theme-design', null, 'design_services', null, false, 9,"white",true),
+        new Menu (14, 'Manage FAQ', '/eai/admin/manage-faq', null, 'web_asset', null, false, 9,"white",true),
+        new Menu (15, 'Home Layout','/eai/admin/home-layout', null, 'view_compact', null, false, 9,"white",true),
+        new Menu (16, 'CMS Pages', '/eai/admin/cms-pages', null, 'payments', null, false, 9,"white",true),
+        new Menu (17, 'Home Banner', '/eai/admin/home-banner', null, 'view_carousel', null, false, 9,"white",true),
+        new Menu (18, 'Settings', '/eai/admin/settings', null, 'settings', null, false, 9,"white",true),   
       
         );
       } else if (this.userType == 'vendor') {

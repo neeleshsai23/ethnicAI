@@ -1,3 +1,215 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="h-100 w-100">
-  <img src="../../../assets/images/notfound.webp"/>
+
+<div fxLayout="row col-12" #resizedDiv>
+  <div class="flex-p w-100">
+<div class="row" style="margin-bottom:7px;">
+  <div class="col-xs-6 ">
+  </div>
+  <div class="col-xs-6 ">
+      <div class="flex-p">
+        <button mat-raised-button class="pull-right  btn-primary" (click)="openvendorDialog()">
+            <mat-icon>add</mat-icon> Add Vendor
+        </button>
+        
+        <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+        (click)="filterToggle = !filterToggle">
+        <mat-icon>filter_list</mat-icon> Filter
+    </button>
+         
+      
+  </div>
+  
+</div>
+</div>
+<div fxLayout="row wrap" *ngIf="filterToggle">
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+      <mat-card class="filter">
+          <mat-card-content>
+              <div class="row">
+                  <div class="col-sm-3">
+                      <div class="col-sm-4 newMarginClass">
+                          Keyword: 
+                      </div>
+                      <div class="col-sm-8">
+                          <input type="text" placeholder="Search by Keyword" class="form-control" [formControl]="contactName">
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-4 newMarginClass">
+                          Vendor Name: 
+                      </div>
+                      <div class="col-sm-8">
+                          <input type="text" placeholder="Search by Vendor Name" class="form-control" [formControl]="clientName">
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-4 newMarginClass">
+                          Subscription: 
+                      </div>
+                      <div class="col-sm-8">
+                        <mat-select class="form-control" placeholder="Search by Subscription">
+                         <mat-option>Platinum</mat-option>
+                         <mat-option>Gold</mat-option>
+                         <mat-option>Silver</mat-option>
+                        </mat-select>
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="col-sm-4 newMarginClass">
+                      Activation Date : 
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="date" placeholder="Search by Vendor Name" class="form-control" [formControl]="clientName">
+                    </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-sm-3">
+                    <div class="col-sm-4 newMarginClass">
+                        Exporation Date: 
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="date" placeholder="Search by City" class="form-control" [formControl]="contactName">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="col-sm-4 newMarginClass">
+                        City: 
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" placeholder="Search by City" class="form-control" [formControl]="clientName">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="col-sm-4 newMarginClass">
+                        Countrty: 
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="text" placeholder="Search by Country" class="form-control" [formControl]="clientName">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="col-sm-4 newMarginClass">
+                    Status : 
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Search by Status">
+                      <mat-option>Active</mat-option>
+                      <mat-option>Inactive</mat-option>
+                      
+                     </mat-select>
+                  </div>
+              </div>
+            </div>
+
+            
+
+
+
+              
+             
+              <div class="row" style="padding-top:10px !important">
+                
+                  <div class="col-lg-1" style="margin-left:80%!important;">
+                      <button mat-raised-button  class="pull-right btn-primary"> Search</button>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                      <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                  </div>
+                  <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                      <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                  </a>
+                  
+              </div>
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th style="min-width: 110px;" >Vendor #</th>
+                      <th class="text-center" style="min-width: 120px;">Vendor Name</th>
+                      
+                      <th class="text-center" style="min-width: 110px;">Subscription</th>
+                      <th class="text-center"style="min-width: 110px;">Categories</th>
+                      <th class="text-center"style="min-width: 140px;">Activation Date</th>
+                  
+                      <th class="text-center"style="min-width: 110px;">Expiry Date</th>
+                      <th class="text-center"style="min-width: 110px;">Payments </th>
+                      <th class="text-center"style="min-width: 110px;">Orders</th>
+                      <th class="text-center"style="min-width: 110px;">Contact Name</th>
+                      <th class="text-center"style="min-width: 110px;">CON</th>
+                      <th class="text-center"style="min-width: 150px;">Address</th>
+                      <th class="text-center"style="min-width: 110px;">City</th>
+                      <th class="text-center"style="min-width: 110px;">Country</th>
+                   
+                      <th class="text-center"style="min-width: 110px;">Status</th>
+                      
+                     
+                    
+                      <th class="text-center" style="min-width: 140px;">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+                      <td style="min-width: 70px !important;">
+                          {{item.id}}
+                    
+                  </td>
+                  <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                  
+                  <td style="text-align: center!important;">{{item.vendor}}</td>
+                  <td style="text-align: center!important;">{{item.subscription }}</td>
+                  <td style="text-align: center!important;"> <a style="color: blue;cursor: pointer;" (click)="opencategories()"> {{item.categories }}</a> </td>
+                  <td style="text-align: center!important;">{{item.activation }}</td>
+                  <td style="text-align: center!important;">{{item.expiry }}</td>
+                  <td style="text-align: center!important;"><a style="color: blue;cursor: pointer;">{{item.payments }}</a> </td>
+                  <td style="text-align: center!important;"><a style="color: blue;cursor: pointer;">{{item.orders }}</a> </td>
+                  <td style="text-align: center!important;">{{item.name }}</td>
+                  <td style="text-align: center!important;"><a style="color: blue;cursor: pointer;" (click)="opencon()">{{item.CON }}</a> </td>
+                  <td style="text-align: center!important;">{{item.address }}</td>
+                 
+                  <td style="text-align: center!important;">
+                  {{item.city}}
+                  </td>
+                  <td style="text-align: center!important;">
+                    {{item.country}}
+                    </td>
+                 
+                  <td style="text-align: center!important;"><a style="color: blue;cursor: pointer;">{{item.status }}</a></td>
+         
+                  
+      <td  class="text-center">
+          <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="openProjectDialog(item)">
+              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+          </a>
+          <a ><i class="fa fa-trash red" matTooltip="Delete Item"  style="cursor: pointer;"(click)="openDeleteDialog(item)"></i></a>
+      </td> 
+  </tr>
+ 
+</tbody>
+</table>
+
+<!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)"
+  showFirstLastButtons></mat-paginator> -->
+</div>
+</div>
+</div>
+
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+
+  </div>
 </div>

@@ -140,6 +140,7 @@ export class BreadcrumbComponent {
             "Inventory":"This screen is used to manage the inventory",
 
             "Catalog":"This screen is used to manage the catalog",
+         
             "Payouts":"This screen is used to manage the payouts",
             "Reports":"This screen is used to manage the reports",
             "Reviews":"This is Reviews Screen",

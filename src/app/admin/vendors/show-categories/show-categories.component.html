@@ -1,0 +1,28 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>Categories </h1>
+</div> 
+<p style="margin-left: 10px;">Select Categories :</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate [formGroup]="gridColumnForm" style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >SALWAR KAMEEZ</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >SAREE</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >SAREE BLOUSE</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >LEHENGAS</mat-checkbox>
+    <!-- <mat-checkbox class="col-sm-4" formControlName="BD">BD</mat-checkbox> -->
+    <mat-checkbox  class="col-sm-4"  [checked]="true" >GOWNS</mat-checkbox>
+    <mat-checkbox  class="col-sm-4"  [checked]="false" >KURTIS</mat-checkbox>
+    <mat-checkbox class="col-sm-4"  [checked]="true" >BRIDALS</mat-checkbox>
+  
+    <!-- <mat-checkbox class="col-sm-4" formControlName="Prospects">Invoiced</mat-checkbox> -->
+    <!-- <mat-checkbox class="col-sm-4" formControlName="LastUpdated">Last Updated</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="StartDate">Start Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="FinishDate">End Date</mat-checkbox> -->
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary">Save</button>
+  <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
+</mat-dialog-actions>
+

@@ -14,13 +14,19 @@ import {ChartsModule} from 'ng2-charts';
 import { RouterModule } from '@angular/router';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AddVendorComponent } from './vendors/add-vendor/add-vendor.component';
+import { CustomersComponent } from './customers/customers.component';
+import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
+import { ShowCategoriesComponent } from './vendors/show-categories/show-categories.component';
+import { ConDialogComponent } from './vendors/con-dialog/con-dialog.component';
 
 
 export const routes = [
-   {path:"",redirectTo:"dashboard",pathMatch:"full"},
+ 
 
     {path:"dashboard",loadChildren:"./dashboard/dashboard.module#DashboardModule",component:DashboardComponent,data:{breadcrumb:"Dashboard"}},
     { path: "vendors",loadChildren:"./vendors/vendors.module#VendorsModule", component: VendorsComponent,data:{breadcrumb:"Vendors"}},
+    { path: "customers",loadChildren:"./customers/customers.module#CustomersModule", component: CustomersComponent ,data:{breadcrumb:"Customers"}},
     { path: "categories",loadChildren:"./categories/categories.module#CategoriesModule", component: CategoriesComponent,data:{breadcrumb:"Categories"}},
     { path: "inventory",loadChildren:"./inventory/inventory.module#InventoryModule", component: InventoryComponent,data:{breadcrumb:"Inventory"}},
     { path: "catalog",loadChildren:"./catalog/catalog.module#CatalogModule", component: CatalogComponent,data:{breadcrumb:"Catalog"}},
@@ -33,13 +39,15 @@ export const routes = [
 
 
 @NgModule({
-    declarations: [DashboardComponent, VendorsComponent,CategoriesComponent,InventoryComponent,CatalogComponent,ReportsComponent,
-       PayoutsComponent],
+    declarations: [DashboardComponent, VendorsComponent,CategoriesComponent,InventoryComponent,CatalogComponent,ReportsComponent,AddVendorComponent,
+       PayoutsComponent,CustomersComponent, AddCustomerComponent,ShowCategoriesComponent, ConDialogComponent],
     imports: [
       CommonModule,NgxChartsModule,RouterModule.forChild(routes),
       SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
       ChartsModule
-    ]
+    ],
+    entryComponents:[AddVendorComponent,AddCustomerComponent,ShowCategoriesComponent, ConDialogComponent]
+   
     
   })
 
