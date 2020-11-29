@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-vendor-orders-dashboard',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorOrdersDashboardComponent implements OnInit {
 
+  @Output() newItemEvent = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  exitOrderDashboard(value:boolean){
+    this.newItemEvent.emit(value);
   }
 
 }

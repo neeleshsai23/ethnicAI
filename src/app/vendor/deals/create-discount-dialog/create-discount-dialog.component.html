@@ -1,3 +1,178 @@
-<p>
-  create-discount-dialog works!
-</p>
+
+<div class="w-100" fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon style="cursor: pointer;" (click)="exitCreateDiscount(false)">arrow_back</mat-icon> <h4 style="margin-left:20px">Create Discount Code</h4>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row" >
+          <input type="radio" name="type"/>
+          <p style="font-size:16px;margin-left: 8px;">Discount Code</p>
+          <mat-icon style="margin-left: 8px;" matTooltip="Customers will get a discount if they enter a code at checkout">help_outline</mat-icon>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="type"/>
+          <p style="font-size:16px;margin-left: 8px;">Automatic Discount</p>
+          <mat-icon style="margin-left: 8px;" matTooltip="Customers will get a discount automatically in their cart">help_outline</mat-icon>
+        </div>
+      </div>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <h5>Discount Code</h5>
+        <p style="color:blue">Generate Code</p>
+      </div>
+      <input type="text" class="form-control" placeholder="e.g. SPRINGSALE"/>
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Types</h5>
+      <div style="margin-top:10px">
+        <div fxLayout="row">
+          <input type="radio" name="offer_type"/>
+          <p style="margin-left: 5px;">Percentage</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="offer_type"/>
+          <p style="margin-left: 5px;">Fixed Amount</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="offer_type"/>
+          <p style="margin-left: 5px;">Free Shipping</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="offer_type"/>
+          <p style="margin-left: 5px;">Buy X get Y</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Value</h5>
+
+      <div>
+        <p>Discount Value</p>
+        <input type="text" placeholder="In Percentage"/>
+      </div>
+
+      <hr>
+
+      <p>Applies To</p>
+
+      <div style="margin-top:10px">
+        <div fxLayout="row">
+          <input type="radio" name="discount_specifics"/>
+          <p style="margin-left: 5px;">All Products</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="discount_specifics"/>
+          <p style="margin-left: 5px;">Specific Collections</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="discount_specifics"/>
+          <p style="margin-left: 5px;">Specific Products</p>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Minimum Requirements</h5>
+      <div style="margin-top:10px">
+        <div fxLayout="row">
+          <input type="radio" name="requirements"/>
+          <p style="margin-left: 5px;">None</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="requirements"/>
+          <p style="margin-left: 5px;">Minimum Purchase Amount</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="requirements"/>
+          <p style="margin-left: 5px;">Minimum quantity of items</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Customer Eligibility</h5>
+      <div style="margin-top:10px">
+        <div fxLayout="row">
+          <input type="radio" name="eligibility"/>
+          <p style="margin-left: 5px;">Everyone</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="eligibility"/>
+          <p style="margin-left: 5px;">Specific group of Customers</p>
+        </div>
+        <div fxLayout="row">
+          <input type="radio" name="eligibility"/>
+          <p style="margin-left: 5px;">Specific Customers</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Customer Eligibility</h5>
+      <div style="margin-top:10px">
+        <div fxLayout="row">
+          <input #limit type="checkbox" (click)="showLimit()"/>
+          <p style="margin-left: 5px;">Limit number of times this discount can be used in total
+          </p>
+          
+        </div>
+        <div *ngIf="showInputLimit" style="margin-bottom: 10px;">
+          <input type="number" />
+        </div>
+        <div fxLayout="row">
+          <input type="checkbox" />
+          <p style="margin-left: 5px;">Limit to one use per customer</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Active Dates</h5>
+      <div style="margin-top:10px" fxLayout="row" fxLayoutAlign="space-between start">
+        <div fxLayout="column">
+          <p>Start Date</p>
+          <input type="date"/>
+        </div>
+        <div fxLayout="column">
+          <p>Start Time(IST)</p>
+          <input type="time"/>
+        </div>
+      </div>
+      <div fxLayout="row" style="margin-top: 10px;">
+        <input #endDate type="checkbox" (click)="showDate()"/>
+        <p style="margin-left: 8px;">Set End Date</p>
+      </div>
+      <div *ngIf="showEndDate" style="margin-top:10px" fxLayout="row" fxLayoutAlign="space-between start">
+        <div fxLayout="column">
+          <p>End Date</p>
+          <input type="date"/>
+        </div>
+        <div fxLayout="column">
+          <p>End Time(IST)</p>
+          <input type="time"/>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    
+    <mat-dialog-actions align="end" style="margin-left: 68%;margin-top: 20px;">
+      <!-- <button mat-raised-button class="CancelClass" (click)="showAddProduct = !showAddProduct" style="margin-right:10px" >Back</button> -->
+      <button mat-raised-button class="btn-primary"  >Save</button>
+      
+    </mat-dialog-actions>
+  </div>
+</div>

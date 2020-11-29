@@ -1,29 +1,470 @@
 <div class="routing-layout">
-  <div fxLayout="row">
-    <div class="col-xs-3 ">
+  <div *ngIf="!showAddCustomer">
+    <div fxLayout="row">
+      <div class="col-xs-3 ">
+      </div>
+      <div class="col-xs-9 ">
+          
+          <button mat-raised-button class="pull-right  btn-primary" (click)="showAddCustomer = !showAddCustomer" >
+              <mat-icon>add</mat-icon> Add Customer
+          </button>
+          <button mat-raised-button  class="pull-right  btn-primary margin-right-10" (click)="openImportDialog()" >
+            Import Customers
+          </button>
+          <button mat-raised-button  class="pull-right  btn-primary margin-right-10" (click)="openExportDialog()">
+              Export
+          </button>
+              
+      </div>
     </div>
-    <div class="col-xs-9 ">
-        
-            <button mat-raised-button class="pull-right  btn-primary"  >
-                <mat-icon>add</mat-icon> Add Customer
-            </button>
-            <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
-              Import Customers
-            </button>
-            <button mat-raised-button  class="pull-right  btn-primary margin-right-10" >
-                Export
-            </button>
-            
+    <div class="routing-table-layout">
+      <!-- <div class="routing-table-tab">
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/all']">All</a>
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/new']" matTooltip="0 Orders">New</a>
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/returning']" matTooltip="More than 1 Order">Returning</a>
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/abandoned']" matTooltip="Abandoned Checkout in last 30 days">Abandoned Checkouts</a>
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/emailsubs']" matTooltip="subscribed">Email Subscribers</a>
+      </div>
+      <router-outlet></router-outlet> -->
+      <mat-tab-group>
+        <mat-tab label="All"> 
+          
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle = !filterToggle">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Location: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Location" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="col-sm-4">
+    
+                              </div>
+                                <div class="col-sm-3" >
+                                <button mat-raised-button  class="btn-primary"> Search</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="col-sm-2" style="font-size: 25px; cursor: pointer;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            </div>
+                            
+                        </div> 
+                        
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Showing 3 of 3 Customers</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Lavanya Tallury</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>0$ Spent</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Anurag</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>5$ Spent</td>
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Navin Malik</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>10$ Spent</td>
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+        </mat-tab>
+        <mat-tab label="New" matTooltip="0 Orders"> 
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle2 = !filterToggle2">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle2">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Location: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Location" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="col-sm-4">
+    
+                              </div>
+                                <div class="col-sm-3" >
+                                <button mat-raised-button  class="btn-primary"> Search</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="col-sm-2" style="font-size: 25px; cursor: pointer;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            </div>
+                            
+                        </div> 
+                        
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Showing 1 of 1 Customers</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Lavanya Tallury</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>0$ Spent</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                
+          
+              </tbody>
+            </table>
+          </div>
+          
+        </mat-tab>
+        <mat-tab label="Returning" matTooltip="More than 1 Order"> 
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle3 = !filterToggle3">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle3">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Location: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Location" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="col-sm-4">
+    
+                              </div>
+                                <div class="col-sm-3" >
+                                <button mat-raised-button  class="btn-primary"> Search</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="col-sm-2" style="font-size: 25px; cursor: pointer;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            </div>
+                            
+                        </div> 
+                        
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Showing 2 of 2 Customers</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Anurag</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>5$ Spent</td>
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Navin Malik</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>10$ Spent</td>
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+          
+        </mat-tab>
+        <mat-tab label="Abandoned Checkouts" matTooltip="Abandoned Checkout in last 30 days">  
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle4 = !filterToggle4">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle4">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Location: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Location" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="col-sm-4">
+    
+                              </div>
+                                <div class="col-sm-3" >
+                                <button mat-raised-button  class="btn-primary"> Search</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="col-sm-2" style="font-size: 25px; cursor: pointer;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            </div>
+                            
+                        </div> 
+                        
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Showing 2 of 2 Customers</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Neelesh</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>5$ Spent</td>
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Maruthi</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>10$ Spent</td>
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+          
+        </mat-tab>
+        <mat-tab label="Email Subscribers" matTooltip="Subscribed">  
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle5 = !filterToggle5">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle5">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Location: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Location" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="col-sm-4">
+    
+                              </div>
+                                <div class="col-sm-3" >
+                                <button mat-raised-button  class="btn-primary"> Search</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="col-sm-2" style="font-size: 25px; cursor: pointer;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            </div>
+                            
+                        </div> 
+                        
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Showing 2 of 2 Customers</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Neelesh</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>5$ Spent</td>
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Maruthi</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>10$ Spent</td>
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+          
+        </mat-tab>
+      </mat-tab-group>
     </div>
   </div>
-  <div class="routing-table-layout">
-    <div class="routing-table-tab">
-      <a routerLinkActive="active" [routerLink]="['/vendor/customers/all']">All</a>
-      <a routerLinkActive="active" [routerLink]="['/vendor/customers/new']" matTooltip="0 Orders">New</a>
-      <a routerLinkActive="active" [routerLink]="['/vendor/customers/returning']" matTooltip="More than 1 Order">Returning</a>
-      <a routerLinkActive="active" [routerLink]="['/vendor/customers/abandoned']" matTooltip="Abandoned Checkout in last 30 days">Abandoned Checkouts</a>
-      <a routerLinkActive="active" [routerLink]="['/vendor/customers/emailsubs']" matTooltip="subscribed">Email Subscribers</a>
-    </div>
-    <router-outlet></router-outlet>
-  </div>
+  <app-add-customer-dialog *ngIf="showAddCustomer" (newItemEvent)="exitShowAddCustomer($event)"></app-add-customer-dialog>
 </div>

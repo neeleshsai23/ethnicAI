@@ -14,6 +14,7 @@ import { ImportDialogComponent } from './all-products/import-dialog/import-dialo
 import { ExportDialogComponent } from './all-products/export-dialog/export-dialog.component';
 import { CreateCollectionDialogComponent } from './collections/create-collection-dialog/create-collection-dialog.component';
 import { AddTransferDialogComponent } from './transfers/add-transfer-dialog/add-transfer-dialog.component';
+import {ProductOverviewComponent} from './all-products/product-overview/product-overview.component';
 
 export const routes = [
     {path:"",redirectTo:"all",pathMatch:"full"},
@@ -24,7 +25,7 @@ export const routes = [
 ]
 
 @NgModule({
-  declarations: [ AllProductsComponent, InventoryComponent, TransfersComponent, CollectionsComponent,ImportDialogComponent, ExportDialogComponent,CreateCollectionDialogComponent,AddTransferDialogComponent],
+  declarations: [ AllProductsComponent, InventoryComponent, TransfersComponent, CollectionsComponent,ImportDialogComponent, ExportDialogComponent,CreateCollectionDialogComponent,AddTransferDialogComponent,ProductOverviewComponent],
   imports: [
     CommonModule,NgxChartsModule,RouterModule.forChild(routes),
       SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

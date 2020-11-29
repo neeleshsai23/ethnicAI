@@ -1,3 +1,90 @@
-<p>
-  add-customer-dialog works!
-</p>
+<div class="w-100" fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon style="cursor: pointer;" (click)="exitShowAddCustomer(false)">arrow_back</mat-icon> <h4 style="margin-left:20px">Customers</h4>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Customer Overview</h5>
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="margin-top: 10px;">
+        <div fxLayout="column" style="width:45%">
+          <p>First Name</p>
+          <input type="text" class="form-control"/>
+        </div>
+        <div fxLayout="column" style="width:45%">
+          <p>Last Name</p>
+          <input type="text" class="form-control"/>
+        </div>
+      </div>
+      <div style="margin-top: 10px;">
+        <p>Email</p>
+        <input type="text" class="form-control"/>
+      </div>
+      <div style="margin-top: 10px;">
+        <p>Phone Number</p>
+        <input type="text" class="form-control"/>
+      </div>
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Address</h5>
+      
+      <div style="margin-top: 10px;">
+        <p>Company</p>
+        <input type="text" class="form-control"/>
+      </div>
+      <div style="margin-top: 10px;">
+        <p>Address</p>
+        <input type="text" class="form-control"/>
+      </div>
+      <div style="margin-top: 10px;">
+        <p>Apartment, Suite, etc..</p>
+        <input type="text" class="form-control"/>
+      </div>
+      <div style="margin-top: 10px;">
+        <p>City</p>
+        <input type="text" class="form-control"/>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="margin-top: 10px;">
+        <div fxLayout="column" style="width:45%">
+          <p>Country/ Region</p>
+          <mat-select class="form-control" placeholder="Select Country/ Region">
+            <mat-option>US</mat-option>
+            <mat-option>UK</mat-option>
+            <mat-option>CANADA</mat-option>
+            <mat-option>UAE</mat-option>
+            <mat-option>AUSTRALIA</mat-option>
+          </mat-select>
+        </div>
+        <div fxLayout="column" style="width:45%">
+          <p>Last Name</p>
+          <input type="text" class="form-control"/>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Notes</h5>
+     
+      <div style="margin-top: 10px;">
+        <!-- <p>Note</p> -->
+        <input type="text" class="form-control"/>
+      </div>
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h5>Tags</h5>
+     
+      <div style="margin-top: 10px;">
+        <!-- <p>Note</p> -->
+        <input type="text" class="form-control"/>
+      </div>
+    </div>
+    
+    
+    <mat-dialog-actions align="end" style="margin-left: 68%;margin-top: 20px;">
+      <!-- <button mat-raised-button class="CancelClass" (click)="showAddProduct = !showAddProduct" style="margin-right:10px" >Back</button> -->
+      <button mat-raised-button class="btn-primary"  >Save</button>
+      
+    </mat-dialog-actions>
+  </div>
+</div>

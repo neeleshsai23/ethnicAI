@@ -13,6 +13,7 @@ import { ArchivedComponent } from './archived/archived.component';
 import { AddProductDialogComponent } from './add-product-dialog/add-product-dialog.component';
 import { ImportDialogComponent } from './import-dialog/import-dialog.component';
 import { ExportDialogComponent } from './export-dialog/export-dialog.component';
+import { ProductOverviewComponent } from './product-overview/product-overview.component';
 
 export const routes = [
     // {path:"",redirectTo:"all",pathMatch:"full"},
@@ -25,7 +26,7 @@ export const routes = [
 ]
 
 @NgModule({
-  declarations: [ AllComponent, ActiveComponent, DraftComponent, ArchivedComponent, AddProductDialogComponent],
+  declarations: [ AllComponent, ActiveComponent, DraftComponent, ArchivedComponent, AddProductDialogComponent, ],
   imports: [
     CommonModule,NgxChartsModule,RouterModule.forChild(routes),
       SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

@@ -1,0 +1,43 @@
+<div class="w-100" fxLayout="row" fxLayoutAlign="center center" style="height:60px;border-bottom:1px solid rgba(150,150,150,1)">
+  <h3>Export Orders</h3>
+</div>
+<div fxLayout="column" style="margin-top:20px">
+  <div fxLayout="column">
+    <p>Export</p>
+    <div>
+      <input type="radio" name="pages"/>
+      <label>Current Page</label>
+    </div>
+    <div>
+      <input type="radio" name="pages"/>
+      <label>All Orders</label>
+    </div>
+    <div>
+      <input type="radio" name="pages"/>
+      <label>Selected</label>
+    </div>
+    <div>
+      <input type="radio" name="pages"/>
+      <label>Customer matching your search</label>
+    </div>
+
+  </div>
+</div>
+<div fxLayout="column" style="margin-top:20px">
+  <div fxLayout="column">
+    <p>Export As</p>
+    <div>
+      <input type="radio" name="pages"/>
+      <label>CSV for Excel, Numbers, or other spreadsheet programs</label>
+    </div>
+    <div>
+      <input type="radio" name="pages"/>
+      <label>Plain CSV file</label>
+    </div>
+
+  </div>
+</div>
+<mat-dialog-actions align="end" style="margin-left: 60%;">
+  <button mat-raised-button class="btn-primary" (click)="close()">Export Customers</button>
+  <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
+</mat-dialog-actions>

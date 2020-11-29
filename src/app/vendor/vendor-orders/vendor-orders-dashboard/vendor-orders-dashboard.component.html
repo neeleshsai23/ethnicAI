@@ -1,4 +1,4 @@
-<div fxLayout="row"  style="padding: 5px 5px 10px 5px;margin-top: 30px;">
+<!-- <div fxLayout="row"  style="padding: 5px 5px 10px 5px;margin-top: 30px;">
   <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/dashboard/items']"
     class="col-sm font-color">Items
   </a>
@@ -23,12 +23,113 @@
 
 </div>
 <router-outlet></router-outlet>
+ -->
 
-
-
-
-
-
-
-
-
+ <div class="w-100" fxLayout="column" fxLayoutAlign="center center" style="padding:20px 0;">
+  <div fxLayout="column" style="margin-top: 20px;">
+    <div fxLayout="row" fxLayoutAlign="start center" style="margin-top:20px;line-height: 1;" >
+      <mat-icon style="cursor: pointer;" (click)="exitOrderDashboard(false)">arrow_back</mat-icon> 
+      <h3 style="margin-left:20px;margin-top: 5px;">#EAI0737</h3>
+      <h5 style="margin-left: 10px;">Payment Pending</h5>
+      <h5 style="margin-left: 10px;">Unfulfilled</h5>
+    </div>
+    <div style="margin-top: 10px;">
+      <p>29 November 2020 at 3:#8 P.M</p>
+    </div>
+    <div fxLayout="row" style="margin-top: 20px;">
+      <div fxLayout="column">
+        <div fxLayout="column" style="box-shadow:0 0 2px 0 rgba(100,100,100,1);border-radius: 5px;padding:20px;background: white;width: 500px;">
+          <h4 style="font-weight:bold">Unfulfilled (1)</h4>
+          <div fxLayout="row" fxLayoutAlign="space-between start" style="margin-top: 20px;">
+            <img src="../../../../assets/images/whiteshirt.jpg" style="width:50px;height:50px"/>
+            <div fxLayout="column">
+              <p style="font-size:16px;color: blue;">Designer Printed White Shirt</p>
+              <p style="font-size:14px;color: rgba(150,150,150,1);">SKU: HL-BD-08</p>
+            </div>
+            <p>$17 X 1</p>
+            <p>$17</p>
+          </div>
+          <hr>
+          <div style="margin:15px 0;">
+            <button mat-raised-button class="pull-right btn-success"> Mark as Fulfilled</button>
+          </div>
+          
+        </div>
+        <div fxLayout="column" style="box-shadow:0 0 2px 0 rgba(100,100,100,1);border-radius: 5px;padding:20px;background: white;width: 500px;margin-top: 20px;">
+          <h4 style="font-weight:bold">Pending</h4>
+          <div fxLayout="row" fxLayoutAlign="space-between start" style="margin-top: 20px;">
+            <p>Subtotal :</p>
+            <p style="color:rgba(90,90,90,1);margin-left: -60px;">1 Item</p>
+            <p style="color:rgba(90,90,90,1)">$17.00</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between start" style="margin-top: 20px;">
+            <p>Shipping :</p>
+            <p style="color:rgba(90,90,90,1);margin-left: -60px;">Free Shipping (0.5 KG)</p>
+            <p style="color:rgba(90,90,90,1)">$0.00</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between start" style="margin-top: 20px;">
+            <p>Tax :</p>
+            <p style="color:rgba(90,90,90,1);margin-left: -60px;">IGST 5% (Included)</p>
+            <p style="color:rgba(90,90,90,1)">$1.00</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between start" style="margin-top: 20px;">
+            <p style="font-weight: bold;">Total :</p>
+            <p style="color:rgba(90,90,90,1)">$18.00</p>
+          </div>
+          <hr>
+          <div fxLayout="row" fxLayoutAlign="space-between start" style="margin-top: 10px;">
+            <p style="font-weight: bold;">Paid by Customer :</p>
+            <p style="color:rgba(90,90,90,1)">$0.00</p>
+          </div>
+          <hr>
+          <div style="margin:15px 0;">
+            <button mat-raised-button class="pull-right btn-success"> Collect Payment</button>
+          </div>
+          
+        </div>
+      </div>
+      <div fxLayout="column" style="margin-left: 30px;">
+        <div fxLayout="column" style="box-shadow:0 0 2px 0 rgba(100,100,100,1);border-radius: 5px;padding:20px;background: white;width: 300px;">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <h4>Notes</h4>
+            <p style="color: blue;">Edit</p>
+          </div>
+          <div style="margin-top: 20px;">
+            <p style="color: rgba(100,100,100,1);">No notes from Customer</p>
+          </div>
+          
+        </div>
+        <div fxLayout="column" style="box-shadow:0 0 2px 0 rgba(100,100,100,1);border-radius: 5px;padding:20px;background: white;width: 300px;margin-top: 20px;">
+          <h4>Customer</h4>
+          <div style="margin-top: 20px;">
+            <p style="color: blue;">Anurag</p>
+            <p>1 Order</p>
+          </div>
+          <hr>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <h5>Contact Information</h5>
+            <p style="color: blue;">Edit</p>
+          </div>
+          <p style="margin-top: 10px;color: blue;">anurag@gmail.com</p>
+          <p>+91-81405 43672</p>
+          <hr>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <h5>Shipping Address</h5>
+            <p style="color: blue;">Edit</p>
+          </div>
+          <div fxLayout="column">
+            <p>Anurag</p>
+            <p>305,B-Block,State Towers</p>
+            <p>Madhura Nagar</p>
+            <p>Hyderabad</p>
+            <p>India - 500090</p>
+            <p style="color: blue;cursor: pointer;">View Map</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>

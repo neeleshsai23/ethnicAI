@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material';
 
 import {ExportDialogComponent} from './export-dialog/export-dialog.component';
@@ -16,9 +16,19 @@ export class AllProductsAdminComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  @ViewChild('options') options: ElementRef;
   selected =1;
   showAddProduct = false;
+  clicked=false;
+  
+  clickedBox(){
+    if(this.options.nativeElement.checked==true){
+      this.clicked = true;
+    }else{
+      this.clicked = false;
+    }
+    
+  }
 
   @ViewChild('fileInput')
   fileInput;

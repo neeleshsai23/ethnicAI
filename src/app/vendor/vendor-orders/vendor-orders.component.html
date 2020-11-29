@@ -1,4 +1,4 @@
-<div fxLayout="row wrap" >
+<!-- <div fxLayout="row wrap" >
   
   <div class="col-xs-12" >
     <div class="pills">
@@ -45,7 +45,7 @@
 </div>
 
 
-<!-- <div fxLayout="row"  style="padding: 5px 5px 10px 5px;margin-top: 30px;">
+<div fxLayout="row"  style="padding: 5px 5px 10px 5px;margin-top: 30px;">
   <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/summary']"
     class="col-sm font-color">Summary
   </a>
@@ -71,14 +71,709 @@
   <a routerLinkActive="active-link" [routerLink]="['/vendor/orders/closure']"
     class="col-sm font-color">Closure
   </a>
-</div> -->
+</div>
 <router-outlet></router-outlet>
+ -->
 
+ <div *ngIf="!showOrderDashboard" class="routing-layout">
+  <div>
+    <div fxLayout="row">
+      <div class="col-xs-3 ">
+      </div>
+      <div class="col-xs-9 ">
+          
+          
+          <button mat-raised-button  class="pull-right  btn-primary margin-right-10" (click)="openExportDialog()">
+              Export
+          </button>
+              
+      </div>
+    </div>
+    <div class="routing-table-layout">
+      <!-- <div class="routing-table-tab">
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/all']">All</a>
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/new']" matTooltip="0 Orders">New</a>
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/returning']" matTooltip="More than 1 Order">Returning</a>
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/abandoned']" matTooltip="Abandoned Checkout in last 30 days">Abandoned Checkouts</a>
+        <a routerLinkActive="active" [routerLink]="['/vendor/customers/emailsubs']" matTooltip="subscribed">Email Subscribers</a>
+      </div>
+      <router-outlet></router-outlet> -->
+      <mat-tab-group>
+        <mat-tab label="All"> 
+          
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle = !filterToggle">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Order ID: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Order ID" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                    Date: 
+                                </div>
+                                <div class="col-sm-8">
+                                  <input type="date" placeholder="Search by Date" class="form-control" >
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        <div class="row" style="padding-top:10px !important">
+                          
+                            <div class="col-lg-1" style="margin-left:80%!important;">
+                                <button mat-raised-button  class="pull-right btn-primary"> Search</button>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Customer</th>
+                  <th>Total</th>
+                  <th>Payment</th>
+                  <th>Fulfillment</th>
+                  <th>Items</th>
+                  <th>Delivery Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Done</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Fulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+        </mat-tab>
+        <!-- <mat-tab label="Unfulfilled"> 
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" >
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Showing 1 of 1 Customers</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName">Lavanya Tallury</td>
+                  <td>Hyderabad, TS, India</td>
+                  <td>0 Orders</td>
+                  <td>0$ Spent</td>
+                 
+                </tr>
+                
+          
+              </tbody>
+            </table>
+          </div>
+          
+        </mat-tab> -->
+        <mat-tab label="Unpaid" > 
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle1 = !filterToggle1">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle1">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Order ID: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Order ID" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                    Date: 
+                                </div>
+                                <div class="col-sm-8">
+                                  <input type="date" placeholder="Search by Date" class="form-control" >
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        <div class="row" style="padding-top:10px !important">
+                          
+                            <div class="col-lg-1" style="margin-left:80%!important;">
+                                <button mat-raised-button  class="pull-right btn-primary"> Search</button>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Customer</th>
+                  <th>Total</th>
+                  <th>Payment</th>
+                  <th>Fulfillment</th>
+                  <th>Items</th>
+                  <th>Delivery Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Fulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+          
+        </mat-tab>
+        <mat-tab label="Open">  
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle2 = !filterToggle2">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle2">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Order ID: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Order ID" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                    Date: 
+                                </div>
+                                <div class="col-sm-8">
+                                  <input type="date" placeholder="Search by Date" class="form-control" >
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        <div class="row" style="padding-top:10px !important">
+                          
+                            <div class="col-lg-1" style="margin-left:80%!important;">
+                                <button mat-raised-button  class="pull-right btn-primary"> Search</button>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Customer</th>
+                  <th>Total</th>
+                  <th>Payment</th>
+                  <th>Fulfillment</th>
+                  <th>Items</th>
+                  <th>Delivery Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Unfulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+          
+        </mat-tab>
+        <mat-tab label="Closed">  
+          <div fxLayout="row" style="margin-top:20px">
+            <div class="col-xs-6 ">
+            </div>
+            <div class="col-xs-6 ">
+                  <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle3 = !filterToggle3">
+                    <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+            </div>
+          </div>
+          <div fxLayout="row wrap" *ngIf="filterToggle3">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Order ID: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Order ID" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                   Name: 
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" placeholder="Search by Name" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                    Date: 
+                                </div>
+                                <div class="col-sm-8">
+                                  <input type="date" placeholder="Search by Date" class="form-control" >
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        <div class="row" style="padding-top:10px !important">
+                          
+                            <div class="col-lg-1" style="margin-left:80%!important;">
+                                <button mat-raised-button  class="pull-right btn-primary"> Search</button>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important" > Clear</button>
+                            </div>
+                            <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                            
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"/></th>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Customer</th>
+                  <th>Total</th>
+                  <th>Payment</th>
+                  <th>Fulfillment</th>
+                  <th>Items</th>
+                  <th>Delivery Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Fulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Fulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Fulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Fulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Fulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td class="productName"><a (click)="showOrderDashboard = !showOrderDashboard" >#EAI3737</a></td>
+                  <td>21-10-2020</td>
+                  <td>Anurag</td>
+                  <td>10$</td>
+                  <td>Pending</td>
+                  <td>Fulfilled</td>
+                  <td>1</td>
+                  <td>Free Shipping</td>
+                 
+                  <!-- <td>Option Matrix</td> -->
+                </tr>
+          
+              </tbody>
+            </table>
+          </div>
+          
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
 
-
-
-
-
-
-
+<app-vendor-orders-dashboard *ngIf="showOrderDashboard" (newItemEvent)="exitOrderDashboard($event)"></app-vendor-orders-dashboard>
 

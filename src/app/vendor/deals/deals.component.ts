@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DealsComponent implements OnInit {
 
+  showCreateDiscount: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  exitCreateDiscount(){
+    this.showCreateDiscount = false;
   }
 
 }

@@ -1,4 +1,4 @@
-<div class="NewHeader">
+<!-- <div class="NewHeader">
   <h1 mat-dialog-title>Add product</h1>
 
 </div>
@@ -57,9 +57,6 @@
       <label class="col-sm-6">Charge Tax on this Product</label>
     </div>
 
-    <!-- <div>
-      <h4>Inventory</h4>
-    </div> -->
 
     <div class="form-group">
       <label class="col-sm-4 control-label add-member-label" >SKU(Stock Keeping Unit) :</label>
@@ -116,12 +113,7 @@
       </div>
     </div>
 
-    <!-- <div class="form-group">
-      <div class="col-sm-1">
-        <input type="checkbox" (click)="clicked()"/>
-      </div>
-      <label class="col-sm-6">This product has multiple options, like different sizes or colors</label>
-    </div> -->
+    
     
    
 
@@ -133,4 +125,184 @@
   <button mat-raised-button class="btn-primary" (click)="close()">Save</button>
   <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
 </mat-dialog-actions>
+ -->
 
+ <!-- <div class="w-100" fxLayout="column" fxLayoutAlign="center center" *ngIf="showAddProduct">
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon style="cursor: pointer;" (click)="showAddProduct = !showAddProduct">arrow_back</mat-icon> <h4 style="margin-left:20px">Add Product</h4>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <div>
+        <label>Title</label>
+        <input type="text" class="form-control" placeholder="Enter Product Title"/>
+      </div>
+      <div style="margin-top:20px">
+        <label>Description</label>
+        <textarea rows="3" class="form-control" style="resize: none;"></textarea>
+      </div>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h4>Media</h4>
+      <button mat-raised-button  class="btn-primary" (click)="onClickFileInputButton()" >
+        Upload Photo
+      </button>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h4>Pricing</h4>
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 10px;">
+        <div style="width: 45%;">
+          <label>Price</label>
+          <input type="text" class="form-control" placeholder="$0.00"/>
+        </div>
+        <div style="width: 45%;">
+          <label>Compare at Price</label>
+          <input type="text" class="form-control" placeholder="$0.00"/>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 10px;">
+        <div style="width: 45%;">
+          <label>Cost per Item</label>
+          <input type="text" class="form-control" placeholder="$0.00"/>
+          <p style="color:rgba(200,200,200,1);margin-top: 2px;">Customers won't see this</p>
+        </div>
+        <div style="width: 45%;" fxLayout="row" fxLayoutAlign="space-between center">
+          <div style="width:45%">
+            <label>Margin</label>
+            <p>-</p>
+          </div>
+          <div style="width:45%">
+            <label>Profit</label>
+            <p>-</p>
+          </div >
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <input type="checkbox"/>
+        <p style="margin-left: 15px;margin-top: 10px;">Charge tax on this Product</p>
+      </div>
+      
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h4>Inventory</h4>
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 10px;">
+        <div style="width: 45%;">
+          <label>SKU (Stock Keeping Unit)</label>
+          <input type="text" class="form-control" placeholder=""/>
+        </div>
+        <div style="width: 45%;">
+          <label>Barcode (ISBN, UPC, GTIN, etc..)</label>
+          <input type="text" class="form-control" placeholder=""/>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <input type="checkbox"/>
+        <p style="margin-left: 15px;margin-top: 10px;">Track Quantity</p>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <input type="checkbox"/>
+        <p style="margin-left: 15px;margin-top: 10px;">Continue selling when out of stock</p>
+      </div>
+
+      <hr>
+
+      <h5>QUANTITY</h5>
+
+      <div style="width:50%">
+        <label>Available</label>
+        <input type="number" class="form-control" placeholder="0"/>
+      </div>
+      
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h4>Shipping</h4>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <input type="checkbox"/>
+        <p style="margin-left: 15px;margin-top: 10px;">This is a Physical Product</p>
+      </div>
+      <p style="margin-top:10px">WEIGHT</p>
+      <p style="color:rgba(150,150,150,1)">Used to calculate shipping rates at checkout and label prices during fulfillment.</p>
+      <div style="width: 30%;">
+        <label>Weight (In K.G)</label>
+        <input type="text" class="form-control"/>
+      </div>
+
+      <hr>
+
+      <p style="margin-top:10px">CUSTOMS INFORMATION</p>
+      <p style="color:rgba(150,150,150,1)">Used by border officers to calculate duties when shipping internationally. Shown on customs forms you print during fulfillment.</p>
+      
+      <div >
+        <label>Country of Origin</label>
+        <mat-select class='form-control' placeholder="Select Country">
+          <mat-option [value]=1 >INDIA</mat-option>
+          <mat-option [value]=2 >BANGLADESH</mat-option>
+          <mat-option [value]=3 >NEPAL</mat-option>
+          <mat-option [value]=4 >CHINA</mat-option>
+        </mat-select>
+        <p style="color:rgba(200,200,200,1);margin-top: 2px;">In most cases, where the product is manufactured.</p>
+      </div>
+      <div >
+        <label>HS (Harmonized System) code</label>
+        <input type="text" class="form-control" placeholder="Search by Keyword or HS Code"/>
+        <p style="color:rgba(200,200,200,1);margin-top: 2px;">Used by border officers to classify this product.</p>
+      </div>
+
+      
+      
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h4>Variants</h4>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <input #options type="checkbox" (click)="clickedBox()"/>
+        <p style="margin-left: 15px;margin-top: 10px;">This product has multiple options, like different sizes or colors</p>
+      </div>
+      
+      <hr>
+
+      <div *ngIf="clicked">
+        <p>OPTIONS</p>
+        <div fxLayout="row" fxLayoutAlign="space-between flex-end">
+          <div style="width: 30%;">
+            <label>Option 1</label>
+            <mat-select class='form-control' [(value)]="selected">
+              <mat-option [value]=1 >SIZE</mat-option>
+              <mat-option [value]=2 >COLOR</mat-option>
+              <mat-option [value]=3 >MATERIAL</mat-option>
+              <mat-option [value]=4 >SIZE</mat-option>
+              <mat-option [value]=5 >TYPE</mat-option>
+            </mat-select>
+          </div>
+          <div style="width: 65%;">
+            <input type="text" class="form-control" placeholder="Enter Sizes"/>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between flex-end" style="margin-top: 10px;">
+          <div style="width: 30%;">
+            <label>Option 2</label>
+            <mat-select class='form-control' [(value)]="selected">
+              <mat-option [value]=1 >COLOR</mat-option>
+              <mat-option [value]=2 >SIZE</mat-option>
+              <mat-option [value]=3 >MATERIAL</mat-option>
+              <mat-option [value]=4 >SIZE</mat-option>
+              <mat-option [value]=5 >TYPE</mat-option>
+            </mat-select>
+          </div>
+          <div style="width: 65%;">
+            <input type="text" class="form-control" placeholder="Enter Colors"/>
+          </div>
+        </div>
+      </div>
+
+      
+      
+    </div>
+    <mat-dialog-actions align="end" style="margin-left: 68%;margin-top: 20px;">
+      <button mat-raised-button class="btn-primary"  >Save</button>
+      
+    </mat-dialog-actions>
+  </div>
+</div> -->

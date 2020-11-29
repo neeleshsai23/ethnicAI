@@ -18,13 +18,13 @@ export const routes = [
 ]
 
 @NgModule({
-  declarations: [ ExportDialogComponent, CreateDiscountDialogComponent, DiscountCodesComponent, AutomaticDiscountsComponent],
+  declarations: [ ExportDialogComponent,  DiscountCodesComponent, AutomaticDiscountsComponent],
   imports: [
     CommonModule,NgxChartsModule,RouterModule.forChild(routes),
       SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
       ChartsModule
     ],
-    entryComponents:[ExportDialogComponent,CreateDiscountDialogComponent]
+    entryComponents:[ExportDialogComponent]
   
 })
 export class DealsModule { }

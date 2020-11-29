@@ -19,6 +19,11 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { VendorOrdersDashboardComponent } from './vendor-orders/vendor-orders-dashboard/vendor-orders-dashboard.component';
 import { ProductsComponent } from './products/products.component';
 import { CustomersComponent } from './customers/customers.component';
+import {CreateDiscountDialogComponent} from './deals/create-discount-dialog/create-discount-dialog.component';
+import { AddCustomerDialogComponent } from './customers/add-customer-dialog/add-customer-dialog.component';
+import { ExportCustomersDialogComponent } from './customers/export-dialog/export-dialog.component';
+import { ImportCustomersDialogComponent } from './customers/import-customers-dialog/import-customers-dialog.component';
+import { ExportOrdersDialogComponent } from './vendor-orders/export-orders-dialog/export-orders-dialog.component';
 
 
 export const routes= [
@@ -29,7 +34,7 @@ export const routes= [
     {path:"products",component:ProductsComponent,loadChildren:"./products/products.module#ProductsModule",data:{breadcrumb:"Products"}},
     {path:"store",component:DashboardComponent,data:{breadcrumb:"Store"}},
     {path:"deals",component:DealsComponent,loadChildren:"./deals/deals.module#DealsModule",data:{breadcrumb:"Deals"}},
-      {path:"customers",component:CustomersComponent,loadChildren:"./customers/customers-vendor.module#CustomersVendorModule",data:{breadcrumb:"Customers"}},
+      {path:"customers",component:CustomersComponent,data:{breadcrumb:"Customers"}},
     //     {path:"inventory",component:InventoryComponent,loadChildren:"./inventory/inventory-vendor.module#VendorInventoryModule",data:{breadcrumb:"Inventory"}},
 
       {path:"dashboard",component:DashboardComponent,loadChildren:"./dashboard/dashboard-vendor.module#DashboardVendorModule",data:{breadcrumb:"Dashboard"}},
@@ -58,12 +63,13 @@ export const routes= [
 ]
 
 @NgModule({
-    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent,   DealsComponent, BundlesComponent,  LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent,VendorOrdersDashboardComponent, ProductsComponent, CustomersComponent],
+    declarations:[DashboardComponent,VendorFinanceComponent,VendorOrdersComponent, CreateDiscountDialogComponent , DealsComponent, BundlesComponent,  LogisticsComponent, ReviewsComponent, ProfileComponent, MyAccountComponent,VendorOrdersDashboardComponent, ProductsComponent, CustomersComponent,AddCustomerDialogComponent,ExportCustomersDialogComponent,ImportCustomersDialogComponent,ExportOrdersDialogComponent],
     imports: [
         CommonModule,NgxChartsModule,RouterModule.forChild(routes),
         SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
         ChartsModule
-      ]
+      ],
+      entryComponents:[ExportCustomersDialogComponent,ImportCustomersDialogComponent,ExportOrdersDialogComponent]
 })
 
 export class VendorModule {}

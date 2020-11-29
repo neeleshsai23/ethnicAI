@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  border-spacing: 0px;
+}
+
+th,
+td {
+  padding: 15px 25px;
+  border-top: 1px solid rgba(200, 200, 200, 1);
+  border-bottom: 1px solid rgba(200, 200, 200, 1);
+}
+
+td {
+  text-align: left;
+}
+
+// .productName:hover {
+//   text-decoration: underline;
+//   cursor: pointer;
+// }
+
+::ng-deep .mat-tab-label-active {
+  background: transparent !important;
+}

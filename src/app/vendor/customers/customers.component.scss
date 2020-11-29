@@ -59,3 +59,7 @@ td {
 .productName:hover {
   text-decoration: underline;
 }
+
+::ng-deep .mat-tab-label-active {
+  background: transparent !important;
+}

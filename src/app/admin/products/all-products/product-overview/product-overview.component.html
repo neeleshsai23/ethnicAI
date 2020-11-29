@@ -1,0 +1,126 @@
+<div class="w-100" fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon style="cursor: pointer;" (click)="exitProductOverview(false)">arrow_back</mat-icon> <h4 style="margin-left:20px">White Shirt (Draft)</h4>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <div>
+        <label>Title</label>
+        <input type="text" class="form-control" placeholder="Enter Product Title"/>
+      </div>
+      <div style="margin-top:20px">
+        <label>Description</label>
+        <textarea rows="3" class="form-control" style="resize: none;"></textarea>
+      </div>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <h4>Media</h4>
+      <img src="../../../../../assets/images/whiteshirt.jpg" style="width:100px;height:100px"/>
+      <button style="margin-left: 15px;" mat-raised-button  class="btn-primary" (click)="onClickFileInputButton()" >
+        Upload Photo
+      </button>
+    </div>
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <h4>Variants</h4>
+        <p style="cursor: pointer;color: blue;">Add Variant</p>
+      </div>
+      <div class="table-responsive" style="margin-top: 20px;">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox"/></th>
+              <th>Size</th>
+              <th>Colour</th>
+              <th>Price($)</th>
+              <th>Quantity</th>
+              <th>Incoming</th>
+              <th>SKU</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td ><input type="text" value="S" class="form-control" style="width:100px"></td>
+              <td><input type="text" value="White" class="form-control" style="width:100px"></td>
+              <td><input type="text" value="2.00" class="form-control" style="width:100px"></td>
+              <td><input type="number" value="130" class="form-control" style="width:100px"></td>
+              <td>6</td>
+              <td><input type="text" value="23456" class="form-control" style="width:100px"></td>
+              <td  class="text-center">
+                <a style="cursor: pointer;"  >
+                    <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                </a>
+                <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+              </td> 
+            </tr>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td ><input type="text" value="M" class="form-control" style="width:100px"></td>
+              <td><input type="text" value="White" class="form-control" style="width:100px"></td>
+              <td><input type="text" value="2.00" class="form-control" style="width:100px"></td>
+              <td><input type="number" value="130" class="form-control" style="width:100px"></td>
+              <td>6</td>
+              <td><input type="text" value="23456" class="form-control" style="width:100px"></td>
+              <td  class="text-center">
+                <a style="cursor: pointer;"  >
+                    <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                </a>
+                <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+              </td> 
+            </tr>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td ><input type="text" value="L" class="form-control" style="width:100px"></td>
+              <td><input type="text" value="White" class="form-control" style="width:100px"></td>
+              <td><input type="text" value="2.00" class="form-control" style="width:100px"></td>
+              <td><input type="number" value="130" class="form-control" style="width:100px"></td>
+              <td>6</td>
+              <td><input type="text" value="23456" class="form-control" style="width:100px"></td>
+              <td  class="text-center">
+                <a style="cursor: pointer;"  >
+                    <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                </a>
+                <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+              </td> 
+            </tr>
+            <tr>
+              <td><input type="checkbox"/></td>
+              <td ><input type="text" value="XL" class="form-control" style="width:100px"></td>
+              <td><input type="text" value="White" class="form-control" style="width:100px"></td>
+              <td><input type="text" value="2.00" class="form-control" style="width:100px"></td>
+              <td><input type="number" value="130" class="form-control" style="width:100px"></td>
+              <td>6</td>
+              <td><input type="text" value="23456" class="form-control" style="width:100px"></td>
+              <td  class="text-center">
+                <a style="cursor: pointer;"  >
+                    <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                </a>
+                <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+              </td> 
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      
+    
+    </div>
+
+    <div style="padding:20px;box-shadow:0 0 2px 0 rgba(100,100,100,1);margin-top:20px;border-radius: 5px;width:650px">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <h4>Search engine listing preview</h4>
+        <p style="cursor: pointer;color: blue;">Edit website SEO</p>
+      </div>
+      <p style="margin-top: 20px;color: rgb(59, 59, 177);font-size: 18px;">White Shirt</p>
+      <p style="color: green;">https://option-matrix.myshopify.com/products/white-shirt</p>
+    </div>
+    
+    <mat-dialog-actions align="end" style="margin-left: 68%;margin-top: 20px;">
+      <!-- <button mat-raised-button class="CancelClass" (click)="showAddProduct = !showAddProduct" style="margin-right:10px" >Back</button> -->
+      <button mat-raised-button class="btn-primary"  >Save</button>
+      
+    </mat-dialog-actions>
+  </div>
+</div>

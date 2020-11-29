@@ -21,7 +21,7 @@ import { ShowCategoriesComponent } from './vendors/show-categories/show-categori
 import { ConDialogComponent } from './vendors/con-dialog/con-dialog.component';
 import { AddCategoryComponent } from './categories/add-category/add-category.component';
 import { ViewCatComponent } from './categories/view-cat/view-cat.component';
-
+import {ProductsComponent} from './products/products.component';
 
 export const routes = [
  
@@ -31,7 +31,7 @@ export const routes = [
     { path: "customers",loadChildren:"./customers/customers.module#CustomersModule", component: CustomersComponent ,data:{breadcrumb:"Customers"}},
     { path: "categories",loadChildren:"./categories/categories.module#CategoriesModule", component: CategoriesComponent,data:{breadcrumb:"Categories"}},
     // { path: "inventory",loadChildren:"./inventory/inventory.module#InventoryModule", component: InventoryComponent,data:{breadcrumb:"Inventory"}},
-    { path: "products",loadChildren:"./catalog/catalog.module#CatalogModule", component: CatalogComponent,data:{breadcrumb:"Products"}},
+    { path: "products",loadChildren:"./products/products-admin.module#ProductsAdminModule", component: ProductsComponent,data:{breadcrumb:"Products"}},
     { path: "orders",loadChildren:"./orders/orders.module#OrdersModule",data:{breadcrumb:"Orders"}},
     { path: "payouts",loadChildren:"./payouts/payouts.module#PayoutsModule", component: PayoutsComponent,data:{breadcrumb:"Payouts"}},
     { path: "reports",loadChildren:"./reports/reports.module#ReportsModule", component: ReportsComponent,data:{breadcrumb:"Reports"}},
@@ -41,7 +41,7 @@ export const routes = [
 
 
 @NgModule({
-    declarations: [DashboardComponent, VendorsComponent,CategoriesComponent,InventoryComponent,CatalogComponent,ReportsComponent,AddVendorComponent,
+    declarations: [DashboardComponent, VendorsComponent,CategoriesComponent,InventoryComponent,CatalogComponent,ProductsComponent,ReportsComponent,AddVendorComponent,
        PayoutsComponent,CustomersComponent, AddCustomerComponent,ShowCategoriesComponent, ConDialogComponent,AddCategoryComponent,ViewCatComponent],
     imports: [
       CommonModule,NgxChartsModule,RouterModule.forChild(routes),

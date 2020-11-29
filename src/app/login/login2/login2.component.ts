@@ -1,4 +1,4 @@
-import { Component, OnInit,Input ,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit,Input ,Output,EventEmitter, AfterViewInit,ElementRef,ViewChild} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {Router} from '@angular/router';
 
@@ -7,11 +7,25 @@ import {Router} from '@angular/router';
   templateUrl: './login2.component.html',
   styleUrls: ['./login2.component.scss']
 })
-export class Login2Component implements OnInit {
+export class Login2Component implements OnInit,AfterViewInit {
+
+  @ViewChild('password') password:ElementRef;
 
   constructor(public route: Router) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(){
+    document.getElementById('eye').addEventListener('mouseover',()=>{
+      this.password.nativeElement.type="text"
+    })
+
+    document.getElementById('eye').addEventListener('mouseout',()=>{
+      this.password.nativeElement.type="password"
+    })
+
+
   }
 
   @Input() username:any;

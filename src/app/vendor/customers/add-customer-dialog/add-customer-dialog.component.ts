@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-customer-dialog',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCustomerDialogComponent implements OnInit {
 
+  @Output() newItemEvent = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  exitShowAddCustomer(value:boolean){
+    this.newItemEvent.emit(value)
   }
 
 }

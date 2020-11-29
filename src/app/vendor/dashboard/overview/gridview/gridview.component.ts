@@ -12,8 +12,12 @@ export class GridviewComponent implements OnInit {
 
   public single: any[];
   public singles: any[];
+  public double: any[];
+  public doubles: any[];
   public multi: any[];
   public analytics: any[];
+  public analytics1: any[];
+  public analytics2: any[];
   public showLegend = true;
   public showLegends = false;
   public gradient = true;
@@ -36,51 +40,150 @@ export class GridviewComponent implements OnInit {
     this.settings = this.appSettings.settings; 
     const single = [
       {
-        name: 'P-09825',
+        name: 'US',
         value: 20
       },
       {
-        name: 'P-98756',
+        name: 'UK',
         value: 10
       },
       {
-        name: 'P-38723',
+        name: 'UAE',
         value: 15
       },
       {
-        name: 'P-34526',
+        name: 'CANADA',
         value: 30
       },
       {
-        name: 'P-23451',
+        name: 'AUSTRALIA',
         value: 2
       },
     ];
     const singles = [
       {
-        name: 'Ravi',
-        value: 20
+        name: 'US',
+        value: 200
       },
       {
-        name: 'Srinu',
+        name: 'UK',
+        value: 250
+      },
+      {
+        name: 'UAE',
+        value: 210
+      },
+      {
+        name: 'CANADA',
+        value: 180
+      },
+      {
+        name: 'AUSTRALIA',
+        value: 190
+      }
+    ];
+    const double = [
+      {
+        name: 'KURTIS',
+        value: 40
+      },
+      {
+        name: 'SAREES',
         value: 33
       },
       {
-        name: 'Shekar',
-        value: 21
+        name: 'SAREE BLOUSE',
+        value: 11
       },
       {
-        name: 'Raj',
+        name: 'KURTAS',
         value: 18
       },
       {
-        name: 'Siva',
+        name: 'LEHENGAS',
         value: 19
       }
     ];
+    const doubles = [
+      {
+        name: 'US',
+        value: 26
+      },
+      {
+        name: 'UK',
+        value: 14
+      },
+      {
+        name: 'UAE',
+        value: 19
+      },
+      {
+        name: 'CANADA',
+        value: 34
+      },
+      {
+        name: 'AUSTRALIA',
+        value: 8
+      },
+    ];
     const analytics = [
       {
-        name:"Subscribed",series: [
+        name:"Orders",series: [
+          {
+            name: 'January',
+            value: 10
+          },
+          {
+            name: 'February',
+            value: 15
+          },
+          {
+            name: 'March',
+            value: 8
+          },
+          {
+            name: 'April',
+            value: 20
+          },
+          {
+            name: 'May',
+            value: 25
+          },
+          {
+            name: 'June',
+            value: 35
+          },
+          {
+            name: 'July',
+            value: 55
+          },
+          {
+            name: 'August',
+            value: 30
+          },
+          {
+            name: 'September',
+            value: 26
+          },
+          {
+            name: 'October',
+            value: 10
+          },
+          {
+            name: 'November',
+            value: 26
+          },
+          {
+            name: 'December',
+            value: 10
+          }
+        ]
+        
+      }
+    ];
+    const analytics1 = [
+      {
+        name:"Orders",series: [
           {
             name: 'January',
             value: 10
@@ -131,8 +234,63 @@ export class GridviewComponent implements OnInit {
           }
         ]
       }
-    ]
-    Object.assign(this, {single,singles,analytics}); 
+    ];
+    const analytics2 = [
+      {
+        name:"Value",series: [
+          {
+            name: 'January',
+            value: 100
+          },
+          {
+            name: 'February',
+            value: 150
+          },
+          {
+            name: 'March',
+            value: 40
+          },
+          {
+            name: 'April',
+            value: 60
+          },
+          {
+            name: 'May',
+            value: 55
+          },
+          {
+            name: 'June',
+            value: 25
+          },
+          {
+            name: 'July',
+            value: 95
+          },
+          {
+            name: 'August',
+            value: 20
+          },
+          {
+            name: 'September',
+            value: 86
+          },
+          {
+            name: 'October',
+            value: 50
+          },
+          {
+            name: 'November',
+            value: 76
+          },
+          {
+            name: 'December',
+            value: 80
+          }
+        ]
+      }
+    ];
+        
+    Object.assign(this, {single,singles,double,doubles,analytics,analytics1,analytics2}); 
   }
   
   public onSelect(event) {

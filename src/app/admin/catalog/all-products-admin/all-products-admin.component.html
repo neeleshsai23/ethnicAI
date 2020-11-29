@@ -324,13 +324,13 @@
       <h4>Variants</h4>
 
       <div fxLayout="row" fxLayoutAlign="start center">
-        <input type="checkbox"/>
+        <input #options type="checkbox" (click)="clickedBox()"/>
         <p style="margin-left: 15px;margin-top: 10px;">This product has multiple options, like different sizes or colors</p>
       </div>
       
       <hr>
 
-      <div>
+      <div *ngIf="clicked">
         <p>OPTIONS</p>
         <div fxLayout="row" fxLayoutAlign="space-between flex-end">
           <div style="width: 30%;">
