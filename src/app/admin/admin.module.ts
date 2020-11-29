@@ -19,6 +19,8 @@ import { CustomersComponent } from './customers/customers.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 import { ShowCategoriesComponent } from './vendors/show-categories/show-categories.component';
 import { ConDialogComponent } from './vendors/con-dialog/con-dialog.component';
+import { AddCategoryComponent } from './categories/add-category/add-category.component';
+import { ViewCatComponent } from './categories/view-cat/view-cat.component';
 
 
 export const routes = [
@@ -40,13 +42,13 @@ export const routes = [
 
 @NgModule({
     declarations: [DashboardComponent, VendorsComponent,CategoriesComponent,InventoryComponent,CatalogComponent,ReportsComponent,AddVendorComponent,
-       PayoutsComponent,CustomersComponent, AddCustomerComponent,ShowCategoriesComponent, ConDialogComponent],
+       PayoutsComponent,CustomersComponent, AddCustomerComponent,ShowCategoriesComponent, ConDialogComponent,AddCategoryComponent,ViewCatComponent],
     imports: [
       CommonModule,NgxChartsModule,RouterModule.forChild(routes),
       SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
       ChartsModule
     ],
-    entryComponents:[AddVendorComponent,AddCustomerComponent,ShowCategoriesComponent, ConDialogComponent]
+    entryComponents:[AddVendorComponent,AddCustomerComponent,ShowCategoriesComponent, ConDialogComponent,AddCategoryComponent,ViewCatComponent]
    
     
   })

@@ -4,13 +4,18 @@
         <div class="pills">
           <ul class="nav nav-pills" style="margin-top: 15px;">
             <li routerLinkActive="active">
-              <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/dashboard/summary']">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/dashboard/summary/overview']">
                 <mat-icon>list_alt</mat-icon> Summary
               </a>
             </li>
             <li routerLinkActive="active">
-              <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/dashboard/vendors']">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/dashboard/vendors/gridview']">
                 <mat-icon>groups</mat-icon> Vendors
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/eai/dashboard/summary/mapview']" routerLinkActive="router-link-active" >
+                <mat-icon>place </mat-icon> Map view
               </a>
             </li>
             

@@ -1,3 +1,57 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="h-100 w-100">
-  <img src="../../../assets/images/notfound.webp"/>
+<div fxLayout="row" style="margin-top:20px;">
+  <div class="col-xs-6 ">
+  </div>
+  <div class="col-xs-6 ">
+      <div class="flex-p">
+          <button mat-raised-button class="pull-right  btn-primary" (click)="openCollectionDialog()" >
+              <mat-icon>add</mat-icon> Add Category
+          </button>
+         
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+         >
+          <mat-icon>filter_list</mat-icon> Filter
+      </button>
+      
+  </div>
+  
+</div>
+</div>
+<div fxLayout="row" style="margin-top:20px">
+  <div class="col-sm-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                    
+                    <th>Category Name</th>
+                    <th class="text-center">Category Description</th>
+                    <th class="text-center">Sub Categories</th>
+                  
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+                   
+                    <td>{{item.category}}</td>
+                    <td class="text-center">{{item.description}}</td>
+                    <td class="text-center"><a style="color: blue;cursor: pointer;" (click)="opensubcat()">{{item.subcat}}</a></td>
+                    <!-- <td class="text-center"><a style="color:blue;cursor: pointer;">{{value.images}}</a></td> -->
+                    <td [ngStyle]="{'color': item.status=='Active'? 'rgb(72, 158, 19)' : 'red'}" style="text-align: center !important;">
+                        {{item.status}}
+                    </td>
+                      
+                    <td  class="text-center">
+                        <a style="cursor: pointer;"  >
+                            <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                        </a>
+                        <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+                    </td> 
+                  </tr>
+  
+              </tbody>
+          </table>
+        </div>
+    </div>
 </div>

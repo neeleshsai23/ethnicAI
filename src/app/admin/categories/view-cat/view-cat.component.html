@@ -1,0 +1,27 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>Sub Categories </h1>
+</div> 
+
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate [formGroup]="gridColumnForm" style="margin-top:10px">
+    <h5 class="col-sm-4">1) Jeans</h5>
+    <h5 class="col-sm-4">2) Tracks</h5>
+    <h5 class="col-sm-4">3) Half Tracks</h5>
+    <h5 class="col-sm-4">4) Kurti Pants</h5>
+
+    <h5 class="col-sm-4" >5) Formals</h5>
+   
+  
+    <!-- <mat-checkbox class="col-sm-4" formControlName="Prospects">Invoiced</mat-checkbox> -->
+    <!-- <mat-checkbox class="col-sm-4" formControlName="LastUpdated">Last Updated</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="StartDate">Start Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" formControlName="FinishDate">End Date</mat-checkbox> -->
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary">Save</button>
+  <button mat-raised-button class="CancelClass" (click)="close()">Close</button>
+</mat-dialog-actions>
+
