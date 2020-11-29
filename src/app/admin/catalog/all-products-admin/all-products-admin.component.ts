@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material';
 
 import {ExportDialogComponent} from './export-dialog/export-dialog.component';
@@ -16,6 +16,25 @@ export class AllProductsAdminComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  selected =1;
+  showAddProduct = false;
+
+  @ViewChild('fileInput')
+  fileInput;
+
+  file: File | null = null;
+
+  onClickFileInputButton(): void {
+    this.fileInput.nativeElement.click();
+  }
+
+  onChangeFileInput(): void {
+    const files: { [key: string]: File } = this.fileInput.nativeElement.files;
+    this.file = files[0];
+  }
+
+  
 
   openAddProductDialog(){
     this.dialog.open(AddProductDialogAdminComponent,{

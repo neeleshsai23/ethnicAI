@@ -55,9 +55,6 @@ export const routes= [
       {path:"user/support",component:VendorFinanceComponent,data:{breadcrumb:"Settings"}},
       {path:"user/masterdata",component:VendorFinanceComponent,data:{breadcrumb:"Settings"}},
       {path:"user/lookup",component:VendorFinanceComponent,data:{breadcrumb:"Settings"}},
-
-
-
 ]
 
 @NgModule({

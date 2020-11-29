@@ -17,6 +17,8 @@ export class CustomersComponent implements OnInit {
     {"name":"Singha","email":"singh@ethnic.com","phone":"9956789797","address":"4-3/5,plot-123,kphb","suite":"-","city":"Hyderabad","country":"India","pincode":"500079","orders":"3","status":"Active"},
 
   ]
+
+  filterToggle:boolean;
     
     
     

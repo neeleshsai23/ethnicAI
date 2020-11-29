@@ -53,7 +53,7 @@ import {
 import { ShowroomComponent } from './showroom/showroom.component';
 import { Login2Component } from './login/login2/login2.component';
 import { TestComponent } from './test/test.component';
-import { CoalescingComponentFactoryResolver } from "./coalescing-component-factory-resolver.service";
+import { InventoryComponent } from "./vendor/products/inventory/inventory.component";
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -135,8 +135,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-    },
-    CoalescingComponentFactoryResolver
+    }
   ],
   bootstrap: [AppComponent],
 })

@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 
 import {ImportDialogComponent} from '../all-products/import-dialog/import-dialog.component';
 import {ExportDialogComponent} from '../all-products/export-dialog/export-dialog.component';
-import {ViewProductsDialogComponent} from './view-products-dialog/view-products-dialog.component';
 
 @Component({
   selector: 'app-inventory',

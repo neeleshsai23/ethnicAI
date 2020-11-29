@@ -30,7 +30,7 @@ export const routes = [
     { path: "vendors",loadChildren:"./vendors/vendors.module#VendorsModule", component: VendorsComponent,data:{breadcrumb:"Vendors"}},
     { path: "customers",loadChildren:"./customers/customers.module#CustomersModule", component: CustomersComponent ,data:{breadcrumb:"Customers"}},
     { path: "categories",loadChildren:"./categories/categories.module#CategoriesModule", component: CategoriesComponent,data:{breadcrumb:"Categories"}},
-    { path: "inventory",loadChildren:"./inventory/inventory.module#InventoryModule", component: InventoryComponent,data:{breadcrumb:"Inventory"}},
+    // { path: "inventory",loadChildren:"./inventory/inventory.module#InventoryModule", component: InventoryComponent,data:{breadcrumb:"Inventory"}},
     { path: "products",loadChildren:"./catalog/catalog.module#CatalogModule", component: CatalogComponent,data:{breadcrumb:"Products"}},
     { path: "orders",loadChildren:"./orders/orders.module#OrdersModule",data:{breadcrumb:"Orders"}},
     { path: "payouts",loadChildren:"./payouts/payouts.module#PayoutsModule", component: PayoutsComponent,data:{breadcrumb:"Payouts"}},

@@ -12,15 +12,19 @@ import { InventoryAdminComponent } from './inventory-admin/inventory-admin.compo
 import { ImportDialogComponent } from './all-products-admin/import-dialog/import-dialog.component';
 import { ExportDialogComponent } from './all-products-admin/export-dialog/export-dialog.component';
 import { AddProductDialogAdminComponent } from './all-products-admin/add-product-dialog-admin/add-product-dialog-admin.component';
+import { TrasfersAdminComponent } from './trasfers-admin/trasfers-admin.component';
+import { CollectionsAdminComponent } from './collections-admin/collections-admin.component';
 
 export const routes =[
   {path:"",redirectTo:"all",pathMatch:"full"},
   {path:"all",component:AllProductsAdminComponent},
-  {path:"inventory",component:InventoryAdminComponent} 
+  {path:"inventory",component:InventoryAdminComponent} ,
+  {path:"transfers",component:TrasfersAdminComponent},
+  {path:"collections",component:CollectionsAdminComponent}
 ]
 
 @NgModule({
-  declarations: [AllProductsAdminComponent, InventoryAdminComponent, ImportDialogComponent, ExportDialogComponent, AddProductDialogAdminComponent],
+  declarations: [AllProductsAdminComponent, InventoryAdminComponent, ImportDialogComponent, ExportDialogComponent, AddProductDialogAdminComponent, TrasfersAdminComponent, CollectionsAdminComponent],
   imports: [
     CommonModule,NgxChartsModule,RouterModule.forChild(routes),
       SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,

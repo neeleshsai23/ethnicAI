@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material';
 
 import {AddProductDialogComponent} from './add-product-dialog/add-product-dialog.component';
@@ -19,6 +19,27 @@ export class AllProductsComponent implements OnInit {
      }
 
   ngOnInit() {
+  }
+  selected =1;
+  showAddProduct = false;
+  clicked=false;
+
+  clickedBox(){
+    this.clicked = true;
+  }
+
+  @ViewChild('fileInput')
+  fileInput;
+
+  file: File | null = null;
+
+  onClickFileInputButton(): void {
+    this.fileInput.nativeElement.click();
+  }
+
+  onChangeFileInput(): void {
+    const files: { [key: string]: File } = this.fileInput.nativeElement.files;
+    this.file = files[0];
   }
 
   openAddProductDialog(){

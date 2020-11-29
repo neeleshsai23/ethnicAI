@@ -16,13 +16,13 @@ export const routes = [
 ]
 
 @NgModule({
-  declarations: [ AllComponent, CreateCollectionDialogComponent],
+  declarations: [ AllComponent, ],
   imports: [
     CommonModule,NgxChartsModule,RouterModule.forChild(routes),
       SharedModule,ConfirmationPopoverModule,ReactiveFormsModule,FormsModule,
       ChartsModule
     ],
-    entryComponents:[CreateCollectionDialogComponent]
+    entryComponents:[]
   
 })
 

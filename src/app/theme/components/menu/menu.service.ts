@@ -48,7 +48,7 @@ export class MenuService {
           // new Menu (6, 'Inventory', '/vendor/catalog/inventory', null, 'dns', null, false, 4,"white",true), 
           new Menu (7, 'Orders', '/vendor/orders', null, 'reorder', null, false, 0,"white",true),
           new Menu (8, 'Deals', '/vendor/deals', null, 'local_offer', null, false, 0,"white",true),
-          new Menu (9, 'customers', '/vendor/customers', null, 'groups', null, false, 0,"white",true),
+          new Menu (9, 'Customers', '/vendor/customers', null, 'groups', null, false, 0,"white",true),
           // new Menu (10, 'Inventory', '/vendor/inventory', null, 'dns', null, false, 0,"white",true),
 
          

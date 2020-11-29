@@ -29,6 +29,8 @@ export class VendorsComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  filterToggle:boolean;
   public onSelect(event) {
     console.log(event);
   }
