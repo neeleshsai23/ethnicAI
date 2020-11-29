@@ -4,7 +4,7 @@
 
 <div mat-dialog-content>
  
-  <form novalidate [formGroup]="docxForm">
+  <form novalidate >
     <table class="table table-striped table-bordered" style="width: 100%;">
       <thead class="tbl-head">
         <th>Contact Name</th>
@@ -15,7 +15,7 @@
       <tbody>
         <tr formArrayName="jobCodeDetails"
         >
-          <ng-container [formGroupName]="index">
+          <ng-container >
             <td>
               <input type="text" formControlName="ContactName" class="form-control">
             </td>
