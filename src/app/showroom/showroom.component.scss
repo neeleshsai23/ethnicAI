@@ -267,7 +267,7 @@ input {
   z-index: 16;
   position: fixed;
   bottom: 20px;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -276,7 +276,7 @@ input {
 }
 
 #subscribe-dialog {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
